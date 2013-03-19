@@ -13,7 +13,7 @@ OMERO_ICE34_JOB=${OMERO_ICE34_JOB:-OMERO-stable-ice34}
 BIOFORMATS_JOB=${BIOFORMATS_JOB:-BIOFORMATS-stable}
 VIRTUALBOX_PATH=${VIRTUALBOX_PATH:-/ome/data_repo/virtualbox}
 ARTIFACT_PATH=${ARTIFACT_PATH:-/ome/data_repo/releases}
-RELEASE_PATH=${RELEASE_PATH:-/var/www/cvs.openmicroscopy.org.uk/snapshots}
+SNAPSHOT_PATH=${SNAPSHOT_PATH:-/var/www/cvs.openmicroscopy.org.uk/snapshots}
 
 # Test artifact directory existence
 OMERO_ARTIFACT_PATH=$ARTIFACT_PATH/$OMERO_JOB/$OMERO_BUILD

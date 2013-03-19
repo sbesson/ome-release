@@ -58,8 +58,10 @@ else:
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
 else:
-    SNAPSHOT_PATH = "/var/www/cvs.openmicroscopy.org.uk/snapshots/omero/"
-SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots/omero/"
+    SNAPSHOT_PATH = "/var/www/cvs.openmicroscopy.org.uk/snapshots"
+
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero"
+OMERO_SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots/omero/"
 
 
 for x, y in (
@@ -74,7 +76,7 @@ for x, y in (
     ("VM", "virtualbox/omero-vm-@VERSION@.ova"),
     ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")):
 
-    find_pkg(repl, fingerprint_url, SNAPSHOT_PATH, SNAPSHOT_URL, x, y, MD5s)
+    find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, OMERO_SNAPSHOT_URL, x, y, MD5s)
 
 
 for line in fileinput.input(["tmpl.txt"]):
