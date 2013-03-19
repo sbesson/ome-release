@@ -90,7 +90,7 @@ for x in ["bio-formats.jar", "scifio.jar", "bftools.zip",
          "loci-common.jar", "loci_tools.jar", "loci_plugins.jar", "loci-testing-framework.jar"]:
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, BF_SNAPSHOT_URL, \
-            x, "../bioformats/@VERSION@/%s" % x, MD5s)
+            x, "@VERSION@/%s" % x, MD5s)
 
     repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
     repl["@TRUNK_%s@" % x] = "%s/%s" % (trunk_url, x)
