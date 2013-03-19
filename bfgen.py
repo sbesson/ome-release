@@ -79,7 +79,7 @@ if "SNAPSHOT_URL" in os.environ:
 else:
     SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots"
 
-BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bioformats"
+BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bioformats/"
 BF_SNAPSHOT_URL = SNAPSHOT_URL + "/bioformats/"
 repl["@SNAPSHOT_URL@"] = SNAPSHOT_URL
 

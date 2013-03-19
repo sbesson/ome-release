@@ -65,7 +65,7 @@ if "SNAPSHOT_URL" in os.environ:
 else:
     SNAPSHOT_URL = "http://cvs.openmicroscopy.org.uk/snapshots"
 
-OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero"
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
 OMERO_SNAPSHOT_URL = SNAPSHOT_URL + "/omero/"
 
 
