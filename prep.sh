@@ -24,9 +24,9 @@ BIOFORMATS_ARTIFACT_PATH=$ARTIFACT_PATH/$BIOFORMATS_JOB/$BIOFORMATS_BUILD
 [[ -d $BIOFORMATS_ARTIFACT_PATH ]] || exit
 
 # Create release directories
-OMERO_RELEASE_PATH=$RELEASE_PATH/omero/$RELEASE
+OMERO_RELEASE_PATH=$SNAPSHOT_PATH/omero/$RELEASE
 mkdir $OMERO_RELEASE_PATH
-BIOFORMATS_RELEASE_PATH=$RELEASE_PATH/bioformats/$RELEASE
+BIOFORMATS_RELEASE_PATH=$SNAPSHOT_PATH/bioformats/$RELEASE
 mkdir $BIOFORMATS_RELEASE_PATH
 
 # Symlink artifacts into release directories
@@ -41,7 +41,7 @@ for x in $BIOFORMATS_ARTIFACT_PATH/*;
 done
 
 # Rename the OMERO virtualbox artifacts
-OMERO_VIRTUALBOX_PATH=$RELEASE_PATH/omero/virtualbox
+OMERO_VIRTUALBOX_PATH=$SNAPSHOT_PATH/omero/virtualbox
 cp $VIRTUALBOX_PATH/omero-vm-latest-build.ova "$OMERO_VIRTUALBOX_PATH/omero-vm-$RELEASE.ova"
 cp $VIRTUALBOX_PATH/omero-vm-latest-build.ova.md5sum "$OMERO_VIRTUALBOX_PATH/omero-vm-$RELEASE.ova.md5sum"
 perl -i -pe "s/latest-build/$RELEASE/" "$OMERO_VIRTUALBOX_PATH/omero-vm-$RELEASE.ova.md5sum"
