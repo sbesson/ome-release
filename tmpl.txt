@@ -114,7 +114,7 @@ Windows](@DOC_URL@/sysadmins/windows/server-installation.html) or using the
 ## Release notes for OMERO @VERSION@ (@MONTHYEAR@) ##
 
 Full details of features and what is new can be found in the 
-[announcement](REPLACE WITH THE URL OF ANNOUNCEMENT).
+[announcement](@ANNOUCEMENT_URL@).
 
 Full milestone release notes can be found on the [OMERO Trac site](http://trac.openmicroscopy.org.uk/ome/milestone/OMERO-@VERSION@)
 
