@@ -103,7 +103,7 @@ Developers can access builds of individual JAR libraries below.
 </tr>
 <tr>
 <td>OME Plugins for ImageJ</td>
-<td><a href="@scifio.jar@">ome_plugins.jar</a></td>
+<td><a href="@ome_plugins.jar@">ome_plugins.jar</a></td>
 <td><a href="@TRUNK_ome_plugins.jar@">ome_plugins.jar</a></td>
 <td><a href="@DAILY_ome_plugins.jar@">ome_plugins.jar</a></td>
 </tr>
