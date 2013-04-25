@@ -1,60 +1,61 @@
-OMERO Release
-=============
+OME release scripts
+==================
 
-These scripts are used to generate the content at
-https://www.openmicroscopy.org/site/products/omero4/downloads
-for each release.
+These scripts are used during the OMER release to 1 - copy the build
+artifacts to cvs.openmicroscopy.org and generate the
+[OMERO](http://www.openmicroscopy.org/site/products/omero/downloads) and
+[Bio-Formats](http://www.openmicroscopy.org/site/products/bio-formats/downloads)
+download pages for each release.
 
-Preparation:
-------------
+Prerequisites
+-------------
 
-  * Merge all PRs related to the current release
-    (here, e.g. 4.4.4)
+* Merge all PRs related to the current release
 
-  * Check out origin/develop and merge any modified
-    submodules. See merge_all.sh
+* Update all  submodules using the OMERO-submods-{stable, develop} jobs.
 
-  * Tag: ``git tag -u "Josh Moore (Glencoe Software, Inc.) <you@example.com>" -m "Release version 4.4.4" v.4.4.4``
+* Tag the VERSION of openmicroscopy.git and bioformats.git
 
-  * Push the tag and the branch to github
-    git push origin v.4.4.4 develop
+	```
+	git tag -u "Josh Moore (Glencoe Software, Inc.) <you@example.com>" -m "Release version VERSION" v.VERSION
+	````
 
-Regular usage steps consist of:
--------------------------------
+* Push the tag and the branch to GitHub
 
-  * After the OMERO-trunk and OMERO-trunk-ice34
-    builds pass, promote them with "RELEASE".
-    This will transfer the files under
-    omero/releases/OMERO-trunk*/<BUILDNUMBER>
+	```
+	git push origin v.4.4.4 develop
+	```
 
-  * Create a directory as an omedev with the
-    release number and chmod a+w
+* After the BIOFORMATS-{stable, trunk}, OMERO-{stable,trunk} and
+OMERO-{stable,trunk}-ice34 builds pass, promote them with "RELEASE".
+This will transfer the files under /ome/data-repo/releases/$BUILD_NAME/$BUILD_NUMBER
 
-  * Run prep.sh as hudson. This performs the following:
+Preparation
+-----------
 
-     - Rename the OVA to include the version number
-         (e.g. 4.4.4) and be sure to modify the MD5
-         file to use the new name.
+Run [prep.sh](prep.sh) as hudson. This performs the following:
 
-     - Symlink OMERO-trunk/<BUILDNUMBER> to
-         omero/4.4.4
+- Create a omero/VERSION and a bioformats/RELEASE folders
+under SNAPSHOT_PATH.
 
-  * Manually copy OMERO-4.4.6.pdf into release dir.
+- Symlink all the promoted OMERO artifacts to omero/VERSION/
 
-  * Run gen.py 4.4.4 <BUILDNUMBER> and save
-    the output as the download page on plone.
-    If testing (i.e. staging) use:
-    ``STAGING=1 ./gen.py 4.4.4 b3097 | mail you@example.com``
+- Rename the OVA to include the version number (e.g. VERSION) and be sure to
+modify the MD5 file to use the new name.
 
-These instructions should be unified with ReleaseProcess.
+- Symlink all the promoted Bio-Formats artifacts to bioformats/VERSION/
 
-Bio-Formats Release
-===================
+Downloads page generation
+-------------------------
 
-Similar to the OMERO release, a BF release requires:
+* To generate the OMERO downloads page, run [gen.py](gen.py)::
 
- * Copying all the artifacts to ../bioformats/VERSION/
+	```
+	python gen.py VERSION bBUILDNUMBER [bBUILDNUMBER_ICE34]
+	```
 
- * Then executing `./bfgen.py VERSION` from inside of the **omero** directory.
+* To generate the Bio-Formats downloads page, run [bfgen.py](bfgen.py)::
 
- * STAGING and other flags are respected.
+	```
+     python bfgen.py VERSION bBUILDNUMBER
+	```
