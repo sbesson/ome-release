@@ -1,7 +1,7 @@
 OME release scripts
 ==================
 
-These scripts are used during the OMER release to 1 - copy the build
+These scripts are used during the OMER release to copy the build
 artifacts to cvs.openmicroscopy.org and generate the
 [OMERO](http://www.openmicroscopy.org/site/products/omero/downloads) and
 [Bio-Formats](http://www.openmicroscopy.org/site/products/bio-formats/downloads)
@@ -10,40 +10,56 @@ download pages for each release.
 Prerequisites
 -------------
 
-* Merge all PRs related to the current release
+* Merge all PRs related to the upcoming release. Update all submodules using the OMERO-submods-{stable, develop} jobs.
 
-* Update all  submodules using the OMERO-submods-{stable, develop} jobs.
-
-* Tag the VERSION of openmicroscopy.git and bioformats.git
+* Tag the `RELEASE` of openmicroscopy.git and bioformats.git
 
 	```
-	git tag -u "Josh Moore (Glencoe Software, Inc.) <you@example.com>" -m "Release version VERSION" v.VERSION
+	git tag -u "Josh Moore (Glencoe Software, Inc.) <you@example.com>" -m "Release version RELEASE" v.RELEASE
 	````
 
 * Push the tag and the branch to GitHub
 
 	```
-	git push origin v.4.4.4 develop
+	git push origin v.RELEASE develop
 	```
 
 * After the BIOFORMATS-{stable, trunk}, OMERO-{stable,trunk} and
-OMERO-{stable,trunk}-ice34 builds pass, promote them with "RELEASE".
-This will transfer the files under /ome/data-repo/releases/$BUILD_NAME/$BUILD_NUMBER
+OMERO-{stable,trunk}-ice34 builds pass, promote them. This will transfer the
+build artifacts to $ARTIFACT_PATH/$BUILD_NAME/$BUILD_NUMBER.
 
 Preparation
 -----------
 
-Run [prep.sh](prep.sh) as hudson. This performs the following:
+Run [prep.sh](prep.sh) as hudson. This script performs the following actions:
 
-- Create a omero/VERSION and a bioformats/RELEASE folders
-under SNAPSHOT_PATH.
+- Create two folders for symlinking the artifacts under `SNAPSHOT_PATH`: `omero/RELEASE` and `bioformats/RELEASE`
 
-- Symlink all the promoted OMERO artifacts to omero/VERSION/
+- Symlink all the promoted OMERO artifacts to `omero/RELEASE/`
 
-- Rename the OVA to include the version number (e.g. VERSION) and be sure to
+- Rename the OVA to include the version number (e.g. RELEASE) and be sure to
 modify the MD5 file to use the new name.
 
-- Symlink all the promoted Bio-Formats artifacts to bioformats/VERSION/
+- Symlink all the promoted Bio-Formats artifacts to `bioformats/RELEASE/`
+
+Several environment variables can be configured for this step:
+
+- `RELEASE` is the number of the upcoming release for example 4.4.7
+
+- `OMERO_JOB`, `OMERO_ICE34_JOB` and `BIOFORMATS_JOB` determine the names of
+the jobs used to produce the release artifacts, for examples OMERO-stable,
+OMERO-stable-ice34 and BIOFORMATS-stable.
+
+- `OMERO_BUILD`, `OMERO_ICE34_BUILD` and `BIOFORMATS_BUILD` determine the
+build numbers of the jobs used to produce the release artifacts.
+
+- `VIRTUALBOX_PATH` and `ARTIFACT_PATH` are the folders where the OVA and the
+promoted builds are stored. Their default values are /ome/data_repo/virtualbox
+and /ome/data_repo/releases.
+
+- `SNAPSHOT_PATH` is the folder where the OMERO and Bio-Formats artifacts will
+be symlinked. Its default value is
+/var/www/cvs.openmicroscopy.org.uk/snapshots.
 
 Downloads page generation
 -------------------------
@@ -51,11 +67,11 @@ Downloads page generation
 * To generate the OMERO downloads page, run [gen.py](gen.py)::
 
 	```
-	python gen.py VERSION bBUILDNUMBER [bBUILDNUMBER_ICE34]
+	python gen.py RELEASE bBUILDNUMBER [bBUILDNUMBER_ICE34]
 	```
 
 * To generate the Bio-Formats downloads page, run [bfgen.py](bfgen.py)::
 
 	```
-     python bfgen.py VERSION bBUILDNUMBER
+     python bfgen.py RELEASE bBUILDNUMBER
 	```
