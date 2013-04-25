@@ -1,7 +1,7 @@
 OME release scripts
 ==================
 
-These scripts are used during the OMER release to copy the build
+These scripts are used during the OMERO release to copy the build
 artifacts to cvs.openmicroscopy.org and generate the
 [OMERO](http://www.openmicroscopy.org/site/products/omero/downloads) and
 [Bio-Formats](http://www.openmicroscopy.org/site/products/bio-formats/downloads)
@@ -47,7 +47,7 @@ Several environment variables can be configured for this step:
 - `RELEASE` is the number of the upcoming release for example 4.4.7
 
 - `OMERO_JOB`, `OMERO_ICE34_JOB` and `BIOFORMATS_JOB` determine the names of
-the jobs used to produce the release artifacts, for examples OMERO-stable,
+the jobs used to produce the release artifacts, for example OMERO-stable,
 OMERO-stable-ice34 and BIOFORMATS-stable.
 
 - `OMERO_BUILD`, `OMERO_ICE34_BUILD` and `BIOFORMATS_BUILD` determine the
@@ -81,7 +81,7 @@ Downloads page generation
 
 Several environment variables can be configured for this step:
 
-- if `STAGING` is defined, the documentation URI will point at the staging
+- if `STAGING` is defined, the documentation URL will point at the staging
 documentation instead of the release documentation, for example
 https://www.openmicroscopy.org/site/support/bio-formats-staging instead of
 https://www.openmicroscopy.org/site/support/bio-formats.
