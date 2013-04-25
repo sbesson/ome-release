@@ -64,14 +64,32 @@ be symlinked. Its default value is
 Downloads page generation
 -------------------------
 
-* To generate the OMERO downloads page, run [gen.py](gen.py)::
+* To generate the OMERO downloads page, run [gen.py](gen.py):
 
 	```
 	python gen.py RELEASE bBUILDNUMBER [bBUILDNUMBER_ICE34]
 	```
 
-* To generate the Bio-Formats downloads page, run [bfgen.py](bfgen.py)::
+  If the Ice 3.4 build number is not specified, it is assumed to be the same
+  as the Ice 3.3 build number
+
+* To generate the Bio-Formats downloads page, run [bfgen.py](bfgen.py):
 
 	```
      python bfgen.py RELEASE bBUILDNUMBER
 	```
+
+Several environment variables can be configured for this step:
+
+- if `STAGING` is defined, the documentation URI will point at the staging
+documentation instead of the release documentation, for example
+https://www.openmicroscopy.org/site/support/bio-formats-staging instead of
+https://www.openmicroscopy.org/site/support/bio-formats.
+
+- `SNAPSHOT_PATH` and `SNAPSHOT_URL` are the folder and the URL where the
+OMERO and Bio-Formats artifacts are symlinked and downloadable. Their default
+values are /var/www/cvs.openmicroscopy.org.uk/snapshots and
+http://cvs.openmicroscopy.org.uk/snapshots.
+
+- `ANNOUCEMENT_URL` is the URL of the announcement post to be used in the
+OMERO downloads page.
