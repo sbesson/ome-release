@@ -42,6 +42,7 @@ repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 # Read major version from input version
+import re
 split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 

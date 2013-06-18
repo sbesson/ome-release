@@ -25,6 +25,7 @@ repl = {"@VERSION@": version,
 MD5s = []
 
 # Read major version from input version
+import re
 split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
