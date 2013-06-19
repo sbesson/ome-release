@@ -68,7 +68,7 @@ def check_url(url):
 
     # need to actually check the URI
     try:
-        f = opener.open(HeadRequest(url), **kwargs)
+        f = opener.open(HeadRequest(url))
         f.close()
     except Exception, err:
         return 'broken', str(err)
