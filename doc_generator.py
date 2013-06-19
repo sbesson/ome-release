@@ -67,15 +67,15 @@ def check_url(url):
     """
 
     # need to actually check the URI
-   try:
-       f = opener.open(HeadRequest(uri), **kwargs)
-       f.close()
-   except Exception, err:
-       return 'broken', str(err)
-   if f.url.rstrip('/') == uri.rstrip('/'):
-       return 'working', 'new'
-   else:
-       return 'redirected', f.url
+    try:
+        f = opener.open(HeadRequest(uri), **kwargs)
+        f.close()
+    except Exception, err:
+        return 'broken', str(err)
+    if f.url.rstrip('/') == uri.rstrip('/'):
+        return 'working', f.url
+    else:
+        return 'redirected', f.url
 
 def hashfile(filename, blocksize=65536):
     m = hashlib.md5()
