@@ -68,11 +68,11 @@ def check_url(url):
 
     # need to actually check the URI
     try:
-        f = opener.open(HeadRequest(uri), **kwargs)
+        f = opener.open(HeadRequest(url), **kwargs)
         f.close()
     except Exception, err:
         return 'broken', str(err)
-    if f.url.rstrip('/') == uri.rstrip('/'):
+    if f.url.rstrip('/') == url.rstrip('/'):
         return 'working', f.url
     else:
         return 'redirected', f.url
