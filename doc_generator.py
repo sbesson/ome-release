@@ -97,7 +97,7 @@ def repl_all(repl, line, check_http=False):
         line = line.replace(k, v)
     if check_http:
         for part in line.split():
-            if part.startswith("href="):
+            if part.startswith("href=") and not part[6] == '/':
                 part = part[6:]
                 part = part[0: part.find('"')]
                 if not check_url(part):
