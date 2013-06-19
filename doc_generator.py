@@ -99,7 +99,7 @@ def repl_all(repl, line, check_http=False):
                 part = part[6:]
                 url = part[0: part.find('"')]
                 [status, info] = check_url(url)
-                if not status == 'working' or status == 'redirected':
+                if not status == 'working' and not status == 'redirected':
                     raise Exception("%s: %s" % (url, info))
     return line
 
