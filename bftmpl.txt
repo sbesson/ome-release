@@ -3,6 +3,7 @@
 
 * <a href="@loci_tools.jar@">LOCI Tools (loci_tools.jar)</a>: complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available [in the user guide](@DOC_URL@/users/imagej/installing.html)
 * <a href="@bftools.zip@">Command line tools (bftools.zip)</a>: bundle of scripts for using Bio-Formats on the command line.
+* <a href="@bfmatlab.zip@">Matlab Toolbox (bfmatlab.zip)</a>: MATLAB functions and required libraries for accessing Bio-Formats from MATLAB.
 
 Please note:
 
