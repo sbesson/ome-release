@@ -104,6 +104,7 @@ Windows](@DOC_URL@/sysadmins/windows/server-installation.html) or using the
  <td rowspan="2" align=center> <a href="@VM@">Download</a>  </td>
  <td align=center><a href="@SERVER33@">Download</a>  </td>
  <td align=center> <a href="@SERVER34@">Download</a>  </td>
+ <td align=center> <a href="@SERVER35@">Download</a>  </td>
  <td rowspan="2" align=center><a href="@DOCS@">Download</a> </td>
 </tr>
 </table>
@@ -122,7 +123,7 @@ Full milestone release notes can be found on the [OMERO Trac site](http://trac.o
 
 This release includes:
 
- - OMERO.server (Ice 3.3 & Ice 3.4)
+ - OMERO.server (Ice 3.3/3.4/3.5)
  - OMERO.clients
  - OMERO.insight-ij
  - OMERO.matlab
@@ -163,6 +164,11 @@ The git release tag for this version is `v.@VERSION@` (sha1:
 <tr>
   <td>@SERVER34_BASE@</td>
   <td>@SERVER34_MD5@</td>
+</tr>
+<tr>
+  <td>@SERVER35_BASE@</td>
+  <td>@SERVER35_MD5@</td>
+</tr>
 <tr>
   <td>@DOCS_BASE@</td>
   <td>@DOCS_MD5@</td>
