@@ -1,4 +1,4 @@
-Title: Downloads
+Title: OMERO Downloads
 Date: 2013-10-08
 Tags:omero, downloads
 Author: The OME Team
