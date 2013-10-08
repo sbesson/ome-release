@@ -19,11 +19,11 @@ bf: bfgen html
 
 gen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
-	python gen.py $(RELEASE) $(OMERO_BUILD)
+	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.md
 
 bfgen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
-	python bfgen.py $(RELEASE) $(OMERO_BUILD)
+	python bfgen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.md
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
