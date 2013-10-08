@@ -7,6 +7,7 @@ SITENAME = u'Downloads'
 SITEURL = ''
 
 THEME = 'ome_theme'
+THEME_STATIC_PATHS = []
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'

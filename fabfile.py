@@ -22,14 +22,14 @@ def clean():
         local('mkdir {deploy_path}'.format(**env))
 
 def build():
-    local('pelican -s pelicanconf.py')
+    local('pelican -s pelicanconf.py content')
 
 def rebuild():
     clean()
     build()
 
 def regenerate():
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -r -s pelicanconf.py content')
 
 def serve():
     local('cd {deploy_path} && python -m SimpleHTTPServer'.format(**env))

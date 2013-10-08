@@ -1,3 +1,8 @@
+Title: Downloads
+Date: 2013-10-08
+Tags:bio-formats, downloads
+Author: The OME Team
+Summary: Bio-Formats Downloads
 
 ## Bio-Formats @VERSION@ ##
 
