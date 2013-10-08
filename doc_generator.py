@@ -104,7 +104,7 @@ def repl_all(repl, line, check_http=False):
     return line
 
 
-def find_pkg(repl, fingerprint_url, snapshot_path, snapshot_url, name, path, ignore_md5=[]):
+def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     """
     Mutates the repl argument
     """
@@ -122,7 +122,7 @@ def find_pkg(repl, fingerprint_url, snapshot_path, snapshot_url, name, path, ign
             if not check_url(furl):
                 raise Exception("Error accessing %s for %s" % (furl, path))
     """
-    repl["@%s@" % name] = snapshot_url + path[len(snapshot_path):]
+    repl["@%s@" % name] = "./" + path[len(snapshot_path):]
     repl["@%s_MD5@" % name] = hash
     repl["@%s_BASE@" % name] = os.path.basename(path)
     #repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
