@@ -110,8 +110,6 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     """
     path = repl_all(repl, path)
     rv = glob.glob(snapshot_path + path)
-    hash = "SKIP"
-    """
     if len(rv) != 1:
         raise Exception("Results!=1 for %s (%s): %s" % (name, snapshot_path + path, rv))
     path = rv[0]
@@ -121,7 +119,6 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
             furl = "/".join([fingerprint_url, hash, "api", "xml"])
             if not check_url(furl):
                 raise Exception("Error accessing %s for %s" % (furl, path))
-    """
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]
     repl["@%s_MD5@" % name] = hash
     repl["@%s_BASE@" % name] = os.path.basename(path)
