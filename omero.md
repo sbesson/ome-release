@@ -1,3 +1,8 @@
+Title: Downloads
+Date: 2013-10-08
+Tags:omero, downloads
+Author: The OME Tea
+Summary: OMERO Downloads
 
 ## General instructions ##
 
