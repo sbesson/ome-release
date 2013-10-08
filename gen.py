@@ -82,6 +82,7 @@ for x, y in (
     ("MATLAB_CLIENTS", "@VERSION@/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
     ("SERVER33", "@VERSION@/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
     ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD_ICE34@.zip"),
+    ("SERVER35", "@VERSION@/OMERO.server-@VERSION@-ice35-@BUILD_ICE35@.zip"),
     ("DOCS", "@VERSION@/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
     ("VM", "virtualbox/omero-vm-@VERSION@-ice33-@BUILD@.ova"),
     ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")):
