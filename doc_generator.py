@@ -93,7 +93,7 @@ def hashfile(filename, blocksize=65536):
 def repl_all(repl, line, check_http=False):
     for k, v in repl.items():
         line = line.replace(k, v)
-    if check_http:
+    if False: # check_http:
         for part in line.split():
             if part.startswith("href=") and not part[6] == '/':
                 part = part[6:]
