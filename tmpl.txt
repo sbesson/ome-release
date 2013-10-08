@@ -102,6 +102,7 @@ Windows](@DOC_URL@/sysadmins/windows/server-installation.html) or using the
 <tr>
  <th> Ice 3.3 </th>
  <th> Ice 3.4 </th>
+ <th> Ice 3.5 </th>
 </tr>
 <tr>
 </tr>
