@@ -29,7 +29,7 @@ about each release.
 [OMERO.importer](@DOC_URL@/users/clients-overview.html#omero-importer) and 
 [OMERO.editor](@DOC_URL@/users/clients-overview.html#omero-editor). All 
 clients are completely written in the Java programming language but require 
-version **1.5** or higher.
+version **1.6** or higher.
 
  * Your installation can also make use of OMERO.web as an alternative client 
 through which you or your users may access their data (see OMERO.web 
