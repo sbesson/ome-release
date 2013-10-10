@@ -79,8 +79,8 @@ for x, y in (
     ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
     ("SERVER35", "@VERSION@/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
     ("DOCS", "@VERSION@/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
-    #("VM", "virtualbox/omero-vm-@VERSION@-ice33-@BUILD@.ova"),
-    #("DOC", "@VERSION@/OMERO-@VERSION@.pdf")
+    ("VM", "virtualbox/omero-vm-@VERSION@-ice33-@BUILD@.ova"),
+    ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")
     ):
 
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
