@@ -78,7 +78,7 @@ should NOT add loci_tools.jar)
 
 ## OMERO server @VERSION@ downloads ##
 
- * OMERO @VERSION@ now supports Ice 3.5, Ice 3.4 and Ice 3.3, download the
+ * OMERO @VERSION@ now supports Ice 3.3, 3.4, and 3.5, download the
 server corresponding to your Ice version below. (Note that the client(s)
 should work with either version of the server.)
 
