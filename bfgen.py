@@ -56,7 +56,7 @@ else:
     SNAPSHOT_PATH = "/ome/data_repo/public/"
 
 
-BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bioformats/"
+BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/"
 
 for x, y in (
     ("bio-formats.jar", "@VERSION@/bio-formats.jar"),
