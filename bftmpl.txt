@@ -23,10 +23,6 @@ After downloading the relevant files, you may want to take a look at our Bio-For
 To access bug fixes between stable releases, you can download the [daily LOCI Tools build](@DAILY_loci_tools.jar@) (updated every night) or the [trunk LOCI Tools build](@TRUNK_loci_tools.jar@) (updated within minutes of every Git push) for the latest bug fixes, but  **please be aware** that these builds are not always thoroughly tested and should be considered beta quality.
 
 
-## Bio-Formats examples ## 
-
-
-
 ## Bio-Formats component builds ##
 
 Developers can access builds of individual JAR libraries below.
