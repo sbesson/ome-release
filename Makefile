@@ -25,7 +25,7 @@ gen:
 bfgen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
 	mkdir -p $(CONTENTDIR)
-	python bfgen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.md
+	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.md
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
