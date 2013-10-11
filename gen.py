@@ -65,7 +65,7 @@ if "SNAPSHOT_PATH" in os.environ:
 else:
     SNAPSHOT_PATH = "/ome/data_repo/public/"
 
-OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/@VERSION/"
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/" + version + "/"
 
 if "ANNOUCEMENT_URL" in os.environ:
     repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
