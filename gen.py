@@ -78,17 +78,17 @@ else:
     repl["@MILESTONE@"] = "OMERO-%s" % version
 
 for x, y in (
-    ("LINUX_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
-    ("MAC_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
-    ("WIN_CLIENTS", "@VERSION@/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
-    ("IJ_CLIENTS", "@VERSION@/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
-    ("MATLAB_CLIENTS", "@VERSION@/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER33", "@VERSION@/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER34", "@VERSION@/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
-    ("SERVER35", "@VERSION@/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
-    ("DOCS", "@VERSION@/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
-    ("VM", "@VERSION@/OMERO.vm-@VERSION@-@BUILD@.ova"),
-    ("DOC", "@VERSION@/OMERO-@VERSION@.pdf")
+    ("LINUX_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
+    ("MAC_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
+    ("WIN_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
+    ("IJ_CLIENTS", "@VERSION@/artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
+    ("MATLAB_CLIENTS", "@VERSION@/Oartifacts/MERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER33", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER34", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
+    ("SERVER35", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
+    ("DOCS", "@VERSION@/artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
+    ("VM", "@VERSION@/artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
+    ("DOC", "@VERSION@/artifacts/OMERO-@VERSION@.pdf")
     ):
 
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
