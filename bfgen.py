@@ -59,25 +59,25 @@ else:
 BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/"
 
 for x, y in (
-    ("bio-formats.jar", "@VERSION@/bio-formats.jar"),
-    ("scifio.jar", "@VERSION@/scifio.jar"),
-    ("bftools.zip", "@VERSION@/bftools.zip"),
-    ("bfmatlab.zip", "@VERSION@/bfmatlab.zip"),
-    ("ome_tools.jar", "@VERSION@/ome_tools.jar"),
-    ("ome-io.jar", "@VERSION@/ome-io.jar"),
-    ("ome-xml.jar", "@VERSION@/ome-xml.jar"),
-    ("ome_plugins.jar", "@VERSION@/ome_plugins.jar"),
-    ("ome-editor.jar", "@VERSION@/ome-editor.jar"),
-    ("poi-loci.jar", "@VERSION@/poi-loci.jar"),
-    ("jai_imageio.jar", "@VERSION@/jai_imageio.jar"),
-    ("lwf-stubs.jar", "@VERSION@/lwf-stubs.jar"),
-    ("mdbtools-java.jar", "@VERSION@/mdbtools-java.jar"),
-    ("metakit.jar", "@VERSION@/metakit.jar"),
-    ("loci-common.jar", "@VERSION@/loci-common.jar"),
-    ("loci_tools.jar", "@VERSION@/loci_tools.jar"),
-    ("loci_plugins.jar", "@VERSION@/loci_plugins.jar"),
-    ("loci-testing-framework.jar", "@VERSION@/loci-testing-framework.jar"),
-    ("DOC", "@VERSION@/Bio-Formats-@VERSION@.pdf")
+    ("bio-formats.jar", "@VERSION@/artifacts/bio-formats.jar"),
+    ("scifio.jar", "@VERSION@/artifacts/scifio.jar"),
+    ("bftools.zip", "@VERSION@/artifacts/bftools.zip"),
+    ("bfmatlab.zip", "@VERSION@/artifacts/bfmatlab.zip"),
+    ("ome_tools.jar", "@VERSION@/artifacts/ome_tools.jar"),
+    ("ome-io.jar", "@VERSION@/artifacts/ome-io.jar"),
+    ("ome-xml.jar", "@VERSION@/artifacts/ome-xml.jar"),
+    ("ome_plugins.jar", "@VERSION@/artifacts/ome_plugins.jar"),
+    ("ome-editor.jar", "@VERSION@/artifacts/ome-editor.jar"),
+    ("poi-loci.jar", "@VERSION@/artifacts/poi-loci.jar"),
+    ("jai_imageio.jar", "@VERSION@/artifacts/jai_imageio.jar"),
+    ("lwf-stubs.jar", "@VERSION@/artifacts/lwf-stubs.jar"),
+    ("mdbtools-java.jar", "@VERSION@/artifacts/mdbtools-java.jar"),
+    ("metakit.jar", "@VERSION@/artifacts/metakit.jar"),
+    ("loci-common.jar", "@VERSION@/artifacts/loci-common.jar"),
+    ("loci_tools.jar", "@VERSION@/artifacts/loci_tools.jar"),
+    ("loci_plugins.jar", "@VERSION@/artifacts/loci_plugins.jar"),
+    ("loci-testing-framework.jar", "@VERSION@/artifacts/loci-testing-framework.jar"),
+    ("DOC", "@VERSION@/artifacts/Bio-Formats-@VERSION@.pdf")
     ):
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)
