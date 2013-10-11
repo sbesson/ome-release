@@ -213,5 +213,5 @@ To find out more about using git, you might take a look at
 ## Previous versions ##
 
 Previous versions of the OMERO software can be found on our 
-[Legacy Downloads](legacy_downloads) page.
+[Legacy Downloads](../?C=M;O=D) page.
 
