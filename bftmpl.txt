@@ -12,7 +12,7 @@ Summary: Bio-Formats Downloads
 
 Please note:
 
-* Internet Explorer sometimes renames JAR files to ZIP (e.g., loci_tools.jar becomes loci_tools.zip); if this happens to you, simply rename the file back to its original name after the download is complete.
+* Internet Explorer sometimes renames JAR files to ZIP (e.g. loci_tools.jar becomes loci_tools.zip); if this happens to you, simply rename the file back to its original name after the download is complete.
 * For some browsers, you may need to right-click or control-click the link and choose "Save link as..." or a similar option to download the file.
 
 After downloading the relevant files, you may want to take a look at our Bio-Formats @VERSION@ [online documentation](@DOC_URL@) page or at the [PDF documentation](@DOC@).
@@ -145,5 +145,5 @@ Bio-Formats is an open source project. You can access the source code from the B
 
 ## Previous versions ##
 
-Previous versions of Bio-Formats can be found on the [Bio-Formats archive](@BF_SNAPSHOT_URL@?C=M;O=D) page.
+Previous versions of Bio-Formats can be found on the [Bio-Formats archive](../?C=M;O=D) page.
 
