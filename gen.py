@@ -65,7 +65,7 @@ if "SNAPSHOT_PATH" in os.environ:
 else:
     SNAPSHOT_PATH = "/ome/data_repo/public/"
 
-OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/@VERSION/"
 
 if "ANNOUCEMENT_URL" in os.environ:
     repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
@@ -78,17 +78,17 @@ else:
     repl["@MILESTONE@"] = "OMERO-%s" % version
 
 for x, y in (
-    ("LINUX_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
-    ("MAC_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
-    ("WIN_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
-    ("IJ_CLIENTS", "@VERSION@/artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
-    ("MATLAB_CLIENTS", "@VERSION@/artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER33", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER34", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
-    ("SERVER35", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
-    ("DOCS", "@VERSION@/artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
-    ("VM", "@VERSION@/artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
-    ("DOC", "@VERSION@/artifacts/OMERO-@VERSION@.pdf")
+    ("LINUX_CLIENTS", "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
+    ("MAC_CLIENTS", "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
+    ("WIN_CLIENTS", "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
+    ("IJ_CLIENTS", "artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
+    ("MATLAB_CLIENTS", "artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER33", "artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
+    ("SERVER34", "artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
+    ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
+    ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
+    ("VM", "artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
+    ("DOC", "artifacts/OMERO-@VERSION@.pdf")
     ):
 
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
