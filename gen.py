@@ -82,7 +82,7 @@ for x, y in (
     ("MAC_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
     ("WIN_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
     ("IJ_CLIENTS", "@VERSION@/artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
-    ("MATLAB_CLIENTS", "@VERSION@/Oartifacts/MERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
+    ("MATLAB_CLIENTS", "@VERSION@/artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
     ("SERVER33", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
     ("SERVER34", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
     ("SERVER35", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
