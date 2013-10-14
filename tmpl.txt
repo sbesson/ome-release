@@ -200,7 +200,7 @@ The git release tag for this version is `v.@VERSION@` (sha1:
 </tr>
 <tr>
   <td>@MATLAB34_CLIENTS_BASE@</td>
-  <td>@MATLAB_CLIENTS_MD5@</td>
+  <td>@MATLAB34_CLIENTS_MD5@</td>
 </tr>
 <tr>
   <td>@LINUX35_CLIENTS_BASE@</td>
