@@ -4,18 +4,14 @@
 
 import os
 import sys
-import glob
-import hashlib
-import httplib
 import datetime
-import urlparse
 import fileinput
 
 
 # For calculating tags
 import github
 
-from doc_generator import *
+from doc_generator import find_pkg, repl_all
 
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
@@ -38,7 +34,7 @@ repl = {"@VERSION@": version,
 
 # Read major version from input version
 import re
-split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
+split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
 gh = github.Github(user_agent="PyGithub")
@@ -56,21 +52,23 @@ for repo in (repo1, repo2):
 
 repl["@SHA1_FULL@"] = tag.commit.sha
 repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
-repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" % major_version
+repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
+    % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
     repl["@DOC_URL@"] += "-staging"
 
 if "SNAPSHOT_PATH" in os.environ:
-    SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
+    SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
 else:
     SNAPSHOT_PATH = "/ome/data_repo/public/"
 
-OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/"
+OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/" + version + "/"
 
 if "ANNOUCEMENT_URL" in os.environ:
     repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
 else:
-    repl["@ANNOUCEMENT_URL@"] = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
+    repl["@ANNOUCEMENT_URL@"] = \
+        "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
 if "MILESTONE" in os.environ:
     repl["@MILESTONE@"] = os.environ.get('MILESTONE')
@@ -78,18 +76,42 @@ else:
     repl["@MILESTONE@"] = "OMERO-%s" % version
 
 for x, y in (
-    ("LINUX_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
-    ("MAC_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
-    ("WIN_CLIENTS", "@VERSION@/artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
-    ("IJ_CLIENTS", "@VERSION@/artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
-    ("MATLAB_CLIENTS", "@VERSION@/artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER33", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
-    ("SERVER34", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
-    ("SERVER35", "@VERSION@/artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
-    ("DOCS", "@VERSION@/artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
-    ("VM", "@VERSION@/artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
-    ("DOC", "@VERSION@/artifacts/OMERO-@VERSION@.pdf")
-    ):
+        ("LINUX33_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.linux.zip"),
+        ("MAC33_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.mac.zip"),
+        ("WIN33_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice33-@BUILD@.win.zip"),
+        ("IJ33_CLIENTS",
+         "artifacts/OMERO.insight-ij-@VERSION@-ice33-@BUILD@.zip"),
+        ("MATLAB33_CLIENTS",
+         "artifacts/OMERO.matlab-@VERSION@-ice33-@BUILD@.zip"),
+        ("LINUX34_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice34-@BUILD@.linux.zip"),
+        ("MAC34_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice34-@BUILD@.mac.zip"),
+        ("WIN34_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice34-@BUILD@.win.zip"),
+        ("IJ34_CLIENTS",
+         "artifacts/OMERO.insight-ij-@VERSION@-ice34-@BUILD@.zip"),
+        ("MATLAB34_CLIENTS",
+         "artifacts/OMERO.matlab-@VERSION@-ice34-@BUILD@.zip"),
+        ("LINUX35_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.linux.zip"),
+        ("MAC35_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.mac.zip"),
+        ("WIN35_CLIENTS",
+         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.win.zip"),
+        ("IJ35_CLIENTS",
+         "artifacts/OMERO.insight-ij-@VERSION@-ice35-@BUILD@.zip"),
+        ("MATLAB35_CLIENTS",
+         "artifacts/OMERO.matlab-@VERSION@-ice35-@BUILD@.zip"),
+        ("SERVER33", "artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
+        ("SERVER34", "artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
+        ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
+        ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
+        ("VM", "artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
+        ("DOC", "artifacts/OMERO-@VERSION@.pdf")):
 
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
 

@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import github
-import subprocess
-from doc_generator import *
+import os
+import sys
+import datetime
+import fileinput
+
+from doc_generator import find_pkg, repl_all
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
-daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-daily/lastSuccessfulBuild/artifact/artifacts"
-trunk_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-trunk/lastSuccessfulBuild/artifact/artifacts"
+daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-daily/" \
+    "lastSuccessfulBuild/artifact/artifacts"
+trunk_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-trunk/" \
+    "lastSuccessfulBuild/artifact/artifacts"
 
 
 def usage():
@@ -26,12 +31,13 @@ MD5s = []
 
 # Read major version from input version
 import re
-split_version =  re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
+split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
 # # Creating Github instance
 # try:
-#     p = subprocess.Popen("git","config","--get","github.token", stdout = subprocess.PIPE)
+#     p = subprocess.Popen("git","config","--get","github.token", stdout =
+#                          subprocess.PIPE)
 #     rc = p.wait()
 #     if rc:
 #         raise Exception("rc=%s" % rc)
@@ -46,39 +52,41 @@ major_version = int(split_version[1])
 #         break
 # repl["@SHA1_FULL@"] = tag.commit.sha
 # repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
-repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/bio-formats%s" % major_version
+repl["@DOC_URL@"] = \
+    "https://www.openmicroscopy.org/site/support/bio-formats%s" \
+    % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
     repl["@DOC_URL@"] += "-staging"
 
 if "SNAPSHOT_PATH" in os.environ:
-    SNAPSHOT_PATH =  os.environ.get('SNAPSHOT_PATH')
+    SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
 else:
     SNAPSHOT_PATH = "/ome/data_repo/public/"
 
 
-BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/"
+BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
 
 for x, y in (
-    ("bio-formats.jar", "@VERSION@/bio-formats.jar"),
-    ("scifio.jar", "@VERSION@/scifio.jar"),
-    ("bftools.zip", "@VERSION@/bftools.zip"),
-    ("bfmatlab.zip", "@VERSION@/bfmatlab.zip"),
-    ("ome_tools.jar", "@VERSION@/ome_tools.jar"),
-    ("ome-io.jar", "@VERSION@/ome-io.jar"),
-    ("ome-xml.jar", "@VERSION@/ome-xml.jar"),
-    ("ome_plugins.jar", "@VERSION@/ome_plugins.jar"),
-    ("ome-editor.jar", "@VERSION@/ome-editor.jar"),
-    ("poi-loci.jar", "@VERSION@/poi-loci.jar"),
-    ("jai_imageio.jar", "@VERSION@/jai_imageio.jar"),
-    ("lwf-stubs.jar", "@VERSION@/lwf-stubs.jar"),
-    ("mdbtools-java.jar", "@VERSION@/mdbtools-java.jar"),
-    ("metakit.jar", "@VERSION@/metakit.jar"),
-    ("loci-common.jar", "@VERSION@/loci-common.jar"),
-    ("loci_tools.jar", "@VERSION@/loci_tools.jar"),
-    ("loci_plugins.jar", "@VERSION@/loci_plugins.jar"),
-    ("loci-testing-framework.jar", "@VERSION@/loci-testing-framework.jar"),
-    ("DOC", "@VERSION@/Bio-Formats-@VERSION@.pdf")
-    ):
+        ("bio-formats.jar", "artifacts/bio-formats.jar"),
+        ("scifio.jar", "artifacts/scifio.jar"),
+        ("bftools.zip", "artifacts/bftools.zip"),
+        ("bfmatlab.zip", "artifacts/bfmatlab.zip"),
+        ("ome_tools.jar", "artifacts/ome_tools.jar"),
+        ("ome-io.jar", "artifacts/ome-io.jar"),
+        ("ome-xml.jar", "artifacts/ome-xml.jar"),
+        ("ome_plugins.jar", "artifacts/ome_plugins.jar"),
+        ("ome-editor.jar", "artifacts/ome-editor.jar"),
+        ("poi-loci.jar", "artifacts/poi-loci.jar"),
+        ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
+        ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
+        ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
+        ("metakit.jar", "artifacts/metakit.jar"),
+        ("loci-common.jar", "artifacts/loci-common.jar"),
+        ("loci_tools.jar", "artifacts/loci_tools.jar"),
+        ("loci_plugins.jar", "artifacts/loci_plugins.jar"),
+        ("loci-testing-framework.jar",
+         "artifacts/loci-testing-framework.jar"),
+        ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf")):
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)
 
