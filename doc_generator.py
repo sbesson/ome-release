@@ -143,6 +143,6 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
                 raise Exception("Error accessing %s for %s" % (furl, path))
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]
     repl["@%s_MD5@" % name] = hash
-    repl["%%s_SIZE@" % name] = humansize(os.path.getsize(path))
+    repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
     repl["@%s_BASE@" % name] = os.path.basename(path)
     #repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
