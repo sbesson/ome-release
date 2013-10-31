@@ -40,16 +40,16 @@ major_version = int(split_version[1])
 # gh = github.Github(user_agent="PyGithub")
 # ome = "openmicroscopy"
 # scc = "snoopycrimecop"
-# 
+#
 # repo1 = gh.get_organization(ome).get_repo(ome)
 # repo2 = gh.get_user(scc).get_repo(ome)
-# 
+#
 # for repo in (repo1, repo2):
 #     for tag in repo.get_tags():
 #         if tag.name == ("v.%s" % version):
 #             break
 #         tag = None  # Disallow fall-through
-# 
+#
 # repl["@SHA1_FULL@"] = tag.commit.sha
 # repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
 repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
