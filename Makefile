@@ -13,7 +13,7 @@ ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
 endif
 
-omero: gen html
+omero: gen
 
 bf: bfgen html
 
