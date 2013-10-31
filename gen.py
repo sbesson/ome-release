@@ -96,5 +96,5 @@ for x, y in (
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
 
 
-for line in fileinput.input(["tmpl.txt"]):
+for line in fileinput.input(["omero_downloads.html"]):
     print repl_all(repl, line, check_http=True),

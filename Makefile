@@ -20,7 +20,7 @@ bf: bfgen html
 gen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
 	mkdir -p $(CONTENTDIR)
-	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.md
+	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
 
 bfgen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
