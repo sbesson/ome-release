@@ -44,10 +44,12 @@ repo2 = gh.get_user(scc).get_repo(ome)
 for repo in (repo1, repo2):
     for tag in repo.get_tags():
         if tag.name == ("v.%s" % version):
-            repl["@TAG_URL@"] = tag.commit.html_url
+            found = True
             break
-        tag = None  # Disallow fall-through
+    if found:
+        break
 
+repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
 repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
     % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
