@@ -7,11 +7,7 @@ import sys
 import datetime
 import fileinput
 
-
-
-
 from doc_generator import find_pkg, repl_all
-
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
 MD5s = []
