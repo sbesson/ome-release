@@ -2,6 +2,7 @@ PY=python
 PELICAN=pelican
 PELICANOPTS=
 
+IMAGESDIR=images/
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
@@ -13,14 +14,15 @@ ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
 endif
 
-omero: gen html
+omero: gen
 
 bf: bfgen html
 
 gen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)
 	mkdir -p $(CONTENTDIR)
-	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.md
+	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 bfgen:
 	[ ! -d $(CONTENTDIR) ] || rm -rf $(CONTENTDIR)

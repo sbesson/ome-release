@@ -7,12 +7,7 @@ import sys
 import datetime
 import fileinput
 
-
-# For calculating tags
-import github
-
 from doc_generator import find_pkg, repl_all
-
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
 MD5s = []
@@ -37,7 +32,9 @@ import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
-gh = github.Github(user_agent="PyGithub")
+# For calculating tags
+import github
+gh = github.Github()
 ome = "openmicroscopy"
 scc = "snoopycrimecop"
 
@@ -47,11 +44,12 @@ repo2 = gh.get_user(scc).get_repo(ome)
 for repo in (repo1, repo2):
     for tag in repo.get_tags():
         if tag.name == ("v.%s" % version):
+            found = True
             break
-        tag = None  # Disallow fall-through
+    if found:
+        break
 
-repl["@SHA1_FULL@"] = tag.commit.sha
-repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
+repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
 repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
     % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
@@ -96,5 +94,5 @@ for x, y in (
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
 
 
-for line in fileinput.input(["tmpl.txt"]):
+for line in fileinput.input(["omero_downloads.html"]):
     print repl_all(repl, line, check_http=True),

@@ -110,6 +110,20 @@ def repl_all(repl, line, check_http=False):
                     raise Exception("%s: %s" % (url, info))
     return line
 
+suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+
+
+def humansize(nbytes):
+    # See http://stackoverflow.com/questions/14996453
+    if nbytes == 0:
+        return '0 B'
+    i = 0
+    while nbytes >= 1000 and i < len(suffixes)-1:
+        nbytes /= 1000.
+        i += 1
+    f = ('%.2f' % nbytes).rstrip('0').rstrip('.')
+    return '%s %s' % (f, suffixes[i])
+
 
 def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     """
@@ -128,6 +142,7 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
             if not check_url(furl):
                 raise Exception("Error accessing %s for %s" % (furl, path))
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]
-    repl["@%s_MD5@" % name] = hash
+    repl["@%s_MD5@" % name] = hash[0:6]
+    repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
     repl["@%s_BASE@" % name] = os.path.basename(path)
     #repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))

@@ -1,0 +1,813 @@
+@media screen {
+/* The global section tabs. */
+#portal-globalnav {
+    padding: 0em 0em 0em 2em;
+    white-space: nowrap;
+    list-style: none;
+    margin: 0;
+    height: auto;
+    line-height: normal;
+}
+#portal-globalnav li {
+    display: inline;
+}
+#portal-globalnav li a {
+    /* The normal, unselected tabs. They are all links */
+    background-color: transparent;
+    border-color: #CFCFF0;
+    border-width: 1px;
+    border-style: solid solid none solid;
+    color: #000066;
+    height: auto;
+    margin-right: 0.5em;
+    padding: 0em 1.25em;
+    text-decoration: none;
+    text-transform: none;
+}
+#portal-globalnav li.selected a {
+    /* The selected tab. There's only one of this */
+    background-color: #EBEBFA;
+    border: 1px solid #CFCFF0;
+    border-bottom: #EBEBFA 1px solid;
+    color: #000066;
+}
+#portal-globalnav li a:hover {
+    background-color: #EBEBFA;
+    border-color: #CFCFF0;
+    border-bottom-color: #EBEBFA;
+    color: #000066;
+}
+#portal-personaltools {
+    /* Bar with personalized menu (user preferences, favorites etc) */
+    background-color: #EBEBFA;
+    border-top-color: #CFCFF0;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: #CFCFF0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    line-height: 1.6em;
+    color: Black;
+    padding: 0em 3em 0em 3em;
+    margin: 0;
+    text-align: right;
+    text-transform: none;
+    list-style: none;
+}
+#portal-personaltools .portalUser {
+    padding-left: 18px;
+}
+#portal-personaltools .portalNotLoggedIn {
+    /* Used on all descriptions relevant to those not logged in */
+    color: Black;
+    padding: 0;
+    background: transparent;
+    background-image: none;
+}
+#portal-personaltools li {
+    color: #000066;
+    margin-left: 1em;
+    display: inline;
+}
+#portal-personaltools li a {
+    text-decoration: none;
+    color: #000066;
+}
+#portal-personaltools .visualIconPadding {
+    padding-left: 10px;
+}
+
+/* Site-wide action menu - font size, contact, index, sitemap etc */
+#portal-siteactions {
+    background-color: transparent;
+    white-space: nowrap;
+    list-style-image: none;
+    list-style-type: none;
+    margin: 1px 0 0 0;
+    height: auto;
+    line-height: normal;
+    float: right;
+    padding: 3px 2em 3px 0;
+}
+#portal-siteactions li {
+    display: inline;
+}
+#portal-siteactions li a {
+    background-color: transparent;
+    color: #76797c;
+    height: auto;
+    padding: 0.2em;
+    margin-right: 0.2em;
+    text-decoration: none;
+    text-transform: none;
+}
+#portal-siteactions li.selected a {
+    background-color: #EBEBFA;
+    color: #000066;
+    border: 1px solid #CFCFF0;
+}
+#portal-siteactions li a:hover {
+    background-color: #EBEBFA;
+    color: #000066;
+    border: 1px solid #CFCFF0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	font-size: medium;
+	border-style: none;
+}
+
+#portal-top {
+    font: 74% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+    background-color: white;
+    color: Black;
+    margin: 0;
+    padding: 0;
+    letter-spacing: normal;
+    line-height 100%;
+}
+
+div.document {
+	font-size: 14px;
+    line-height 150%;
+}
+
+div.related {
+	font-size: 14px;
+}
+
+#portal-top a {
+    color: #436976;
+    background-color: transparent;
+}
+
+#portal-breadcrumbs {
+    /* The path bar, including breadcrumbs and add to favorites */
+    border-bottom-color: #CFCFF0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-transform: none;
+    line-height: 1.6em;
+	text-align: left;
+}
+#portal-breadcrumbs a {
+    text-decoration: none;
+}
+.breadcrumbSeparator {
+    font-size: 120%;
+}
+
+#portal-header {
+	text-align: left;
+}
+
+pre {
+    /* Override the style applied to pre by ploneCustom.css */
+    max-width: none !important;
+}
+
+a.internal > em {
+    /* Remove italics from hyperlinks to internal content*/
+    font-style: normal;
+}
+
+}
+
+@media print{
+
+#portal-top {
+	display:none;
+}
+
+}
+
+
+/* - ploneCustom.css - */
+@media all {
+/*
+ *  This is the file where you put your CSS changes. 
+ *  You should preferrably use this and override the 
+ *  relevant properties you want to change here instead 
+ *  of customizing plone.css to survive upgrades. Writing
+ *  your own plone.css only makes sense for very heavy 
+ *  customizations. Useful variables from Plone are 
+ *  documented at the bottom of this file.
+ */
+ 
+/*  (do not remove this :) */
+/*  (not this either :) */
+
+/* start - google search tweaks */
+div.google-search-box-outer {
+	text-align: center;
+}
+div.google-search-box-inner {
+	max-width: 60%;
+	margin: 0 auto;
+}
+/* end - google search tweaks */
+
+/* start - style for page bottom citations */
+div.attrib {
+	font-size: smaller;
+	color: gray;
+	clear: both;
+	padding-top: 1em;
+}
+
+div.attrib h3 {
+	color: gray;
+}
+
+div.attrib dl dt {
+	float: left;
+}
+/* end - style for page bottom citations */
+
+/* start - tables for client-documentation page */
+div.clientdocs table {
+	border: thick solid #fffeff;
+	width: 100%;
+}
+
+div.clientdocs table tbody tr td  {
+	width: 10em;
+	text-align: center;
+	background: #EBEBFA;
+	margin: 5em;
+}
+
+div.clientdocs table tbody tr {
+	margin: 5em;
+}
+
+/* end - tables for client-documentation page */
+
+/* fix the width of drop down menues */
+#portal-globalnav li ul {
+        width: auto;
+}
+
+div.feature-header {
+	font-weight: bold;
+	font-size: larger;
+	margin-bottom: 0.6em;
+}
+
+div.feature-icon {
+	margin-right: 1em;
+	float: left;
+}
+
+div.ome-feature {
+	height: 8em;
+	margin: 1em;
+	padding: 1em 0.7em;
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em; 
+	width: 17em; 
+	float:left;
+	position: relative;
+}
+
+div.feature-link {
+	text-align: right;
+}
+
+div.feature-link a:link {
+	color: blue;
+}
+
+div.feature-link a:visited {
+    color: #436976;
+}
+
+div.feature-text a:link {
+	color: blue;
+}
+
+div.feature-text a:visited {
+    color: #436976;
+}
+
+/* START - Centers images when they are in a <p> block */
+p.CenterImage
+{
+    text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+}
+/* END - Centers images when they are in a <p> block */
+
+/* START - Styles for the Side Info Box */
+.InfoBox {
+ padding: .5em 1em;
+ margin: 0 0 2em 1em;
+ float: right;
+ border: 1px solid #ddc;
+ background: #EBEBFA;
+ position: relative;
+}
+.InfoBox h4 { font-size: 12px; margin: 0 }
+.InfoBox ul, .InfoBox ol { list-style: none; padding: 0; margin: 0 }
+.InfoBox ul ul, .InfoBox ol ol { padding-left: 1.2em }
+.InfoBox li { margin: 0; padding: 0 }
+.InfoBox .active { background: #ff9; position: relative; }
+/* END - Styles for the Side Info Box */
+
+/* START - Styles for the Side Info Box */
+.NoteBox {
+ padding: .5em 1em;
+ margin: 0 100 2em 1em;
+ border: 1px solid #ddc;
+ background: #EBEBFA;
+ position: relative;
+}
+.NoteBox h4 { font-size: 12px; margin: 0 }
+.NoteBox ul, .NoteBox ol { list-style: none; padding: 0; margin: 0 }
+.NoteBox ul ul, .InfoBox ol ol { padding-left: 1.2em }
+.NoteBox li { margin: 0; padding: 0 }
+.NoteBox .active { background: #ff9; position: relative; }
+/* END - Styles for the Side Info Box */
+
+
+/* begin new block texting table change is picked up */
+
+div.alt-table tr:nth-child(odd) {
+    background-color: #EBEBFA;
+}
+div.alt-table tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+#content a[href^="http://cvs.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://cvs.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="http://qa.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://qa.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="http://trac.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://trac.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="http://hudson.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://hudson.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="http://www.ome-xml.org"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://www.ome-xml.org"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+
+#content a[href^="http://www.openmicroscopy.org"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="https://www.openmicroscopy.org"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+#content a[href^="http://validator.openmicroscopy.org.uk"], #content a.link-external {
+background:none;
+padding:0;
+}
+
+
+blockquote {
+    border-left: 14px solid #CFCFF0;
+    color: #000066;
+}
+
+#content h5,
+#content h6 {
+    color: #000066;
+}
+
+#portal-globalnav {
+    background-color: #B3B3E6;
+}
+
+#portal-globalnav li {
+	background-color:  #B3B3E6 ;
+}
+
+#portal-header {
+    background-color: #000066;
+    border-top: 14px solid #E6E7E8;
+    border-bottom: 0px solid #B3B3E6;
+    background-image:  url(corner-cell.gif); 
+    layer-background-image: url(corner-cell.gif); 
+    background-position: center right; 
+    background-repeat: no-repeat;
+}
+
+#portal-logo img {
+    margin: 0em 0em 1.2em 0em;
+}
+
+#portal-column-one .visualPadding {
+    padding: 0em 0em 1em 0em;
+}
+
+#portal-siteactions li a {
+    border: 0px;
+}
+
+#portal-siteactions li a:hover {
+    border: 0px;
+}
+
+.serverCompareTable {
+	margin: 30px;
+}
+
+/* screenshot page */
+
+.screengroup {
+	clear: both;
+}
+
+.screenrow {
+	clear: both;
+	width: 750px;
+	margin: 0px auto 0px auto;
+}
+.screencell {
+	text-align: center;
+	width: 210px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.screenhalfcellpad {
+	text-align: center;	
+	width: 93px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.screenthumb {
+	width: 200px;
+	text-align: center;
+	display: inline-block;
+}
+.screencaption {
+	padding-top: 20px;
+}
+
+/* product page */
+
+.productgroup {
+	clear: both;
+	background-color: #EBEBFA;
+	border: 1em solid #CFCFF0;
+	padding: 1px 2em 2em;
+	margin-bottom: 3em;
+}
+
+.productrow {
+	clear: both;
+	width: 750px;
+	margin: 0px auto 0px auto;
+}
+.productcell {
+	text-align: center;
+	width: 210px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.producthalfcellpad {
+	text-align: center;	
+	width: 93px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.productonehalfcellpad {
+	text-align: center;	
+	width: 310px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.producttwocellpad {
+	text-align: center;	
+	width: 410px;
+	padding: 10px 18px 10px 18px;
+	float: left;
+}
+.productmainimage {
+	
+}
+.productmaintext {
+	text-align: left;
+	font-size: larger;
+}
+.productlinktext {
+	text-align: right;
+	font-size: larger;
+}
+.productthumb {
+	width: 200px;
+	text-align: center;
+	display: inline-block;
+}
+.productcaption {
+	padding-top: 20px;
+}
+
+/* about lab page */
+
+.about_lab img {
+	float: left;
+	clear:  both;
+	padding-right: 10px;
+}
+
+.about_lab p {
+	clear: both;
+	padding-top: 10px;
+}
+
+.about_lab h2{
+	clear: both;
+	padding-top: 20px;
+}
+
+/* splash screen front page - version up to OMERO 4.0.3 (later uses other .css file) */
+
+.splash_screen {
+        background-color: #000066;
+        max-width: 700px;
+        border: 1px solid #B3B3E6;
+ 	padding: 25px;
+	margin: 15px auto;
+}
+
+.splash_screen a {
+	text-decoration: none;
+}
+
+.splash_screen h1{
+	text-align: center;
+	border-style: none;
+	color: #B3B3E6;
+	font-size: 26px;
+}
+
+.splash_screen h2{
+	text-align: center;
+	border-style: none;
+	color: #B3B3E6;
+}
+
+.splash_screen p{
+	text-align: center;
+	border-style: none;
+	color: #B3B3E6;
+}
+
+.splash_screen a:link{
+	border-style: none;
+}
+
+#splash-left-side {
+	text-align: center;
+	float: left;
+}
+
+#splash-right-side {
+	text-align: center;
+	float: right;
+}
+
+#splash-top {
+	clear: both;
+}
+
+#splash-bottom {
+	clear: both;
+}
+
+td.xyz_stacks_res {
+  border-collapse:collapse;
+  border: 1px solid #000000;
+  background-color: #dee3e7;
+  text-align: center;
+}
+
+code, tt {
+    font-size: 100%;
+    background : none;
+}
+pre {
+    font-size: 100%;
+    background-color: #f1f1f1;
+    max-width: 60em;
+
+}
+
+/* begin block adding formating for ome-xml landing page */
+div.ome-xml-front-box-set h1, div.ome-xml-front-box-set h2, div.ome-xml-front-box-set h3 {
+	margin-left: 0;
+}
+
+div.ome-xml-front-box-set div.ome-xml-front-box-one div.ome-xml-front-box-screen a img {
+padding-left: 60px;
+}
+
+div.ome-xml-front-about-area {
+width: 810px;
+background-color: white;
+border: 1px solid #CFCFF0;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius: 2em;
+padding-right: 10px;
+padding-left: 10px;
+margin-right: auto;
+margin-left: auto;
+background: #FCFCFF;
+}
+
+div.ome-xml-front-about-area h2 {
+text-align: center;
+border-style: none;
+padding-bottom: 2px;
+}
+
+p.ome-xml-front-about-para a {
+text-decoration: none;
+color: navy;
+border-bottom: none;
+}
+
+span.ome-xml-front-about-span {
+text-decoration: none;
+}
+
+p.ome-xml-front-about-para {
+text-align: justify;
+}
+
+div.ome-xml-front-box-inner {
+border: solid thin #CFCFF0;
+height: 13em;
+padding: 15px;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius: 2em;
+width: 231px;
+float:left;
+position: relative;
+background: #FCFCFF;
+margin: 14px 10px 10px;
+}
+
+div.ome-xml-front-box-feature {
+margin: 10px;
+padding: 15px;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius: 2em;
+width: 360px;
+float:left;
+position: relative;
+}
+
+div.ome-xml-front-box-text {
+margin-top: 20px;
+}
+
+div.ome-xml-front-box-strapline {
+font-size: smaller;
+}
+
+div.ome-xml-front-box-icon {
+display: none;
+}
+
+div.ome-xml-front-box-screen {
+margin: 1em;
+height: 14em;
+padding: 1em 0.9em;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius: 2em;
+width: 360px;
+float:right;
+position: relative;
+bottom: 30px;
+}
+
+div.ome-xml-front-box-one {
+width: 850px;
+height: 18em;
+-webkit-border-radius: 2em;
+-moz-border-radius: 2em;
+border-radius: 2em;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+}
+
+div.ome-xml-front-box-two {
+	width: 850px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.ome-xml-front-bottom-box {
+clear: both;
+}
+
+/* end block adding formating for ome-xml landing page */
+
+/* begin block adding hiring ribbon */
+
+.left-ribbon-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 10em;
+  display:none;
+}
+
+/* end block adding hiring ribbon */
+
+#portal-footer {
+    background-color: #EBEBFA;
+    border-top: 1px solid #CFCFF0;
+    border-bottom: 1px solid #CFCFF0;
+    float: none;
+    line-height: 1.2em;
+    margin: 2em 0em 1em 0em;
+    padding: 0.5em 0em 1em 0em;
+    text-align: center;
+    font: 74% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+    color: Black;
+}
+#portal-footer p {
+    margin: 0.25em 0;
+    line-height: 1.5em;
+}
+#portal-footer a {
+    text-decoration: none;
+    color: #436976;
+    border: none;
+}
+#portal-footer a:visited {
+    color: #436976;
+}
+#portal-footer a:hover {
+    text-decoration: underline;
+}
+
+}
+
+
+}
+/* close the open media all */
+@media print {
+#portal-header {
+    display: none;
+}
+}
+
