@@ -53,7 +53,7 @@ major_version = int(split_version[1])
 # repl["@SHA1_FULL@"] = tag.commit.sha
 # repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
 repl["@DOC_URL@"] = \
-    "https://www.openmicroscopy.org/site/support/bio-formats%s" \
+    "http://www.openmicroscopy.org/site/support/bio-formats%s" \
     % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
     repl["@DOC_URL@"] += "-staging"
