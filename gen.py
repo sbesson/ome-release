@@ -51,7 +51,7 @@ for repo in (repo1, repo2):
         break
 
 repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
-repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
+repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s" \
     % major_version
 if "STAGING" in os.environ and os.environ.get("STAGING"):
     repl["@DOC_URL@"] += "-staging"
