@@ -53,6 +53,8 @@ for repo in (repo1, repo2):
 repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
 repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s" \
     % major_version
+repl["@HELP_URL@"] = "http://help.openmicroscopy.org/getting-started-%s.html"\
+    % major_version
 
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
