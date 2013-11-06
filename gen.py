@@ -42,6 +42,7 @@ repo1 = gh.get_organization(ome).get_repo(ome)
 repo2 = gh.get_user(scc).get_repo(ome)
 
 for repo in (repo1, repo2):
+    found = False
     for tag in repo.get_tags():
         if tag.name == ("v.%s" % version):
             found = True
@@ -50,10 +51,10 @@ for repo in (repo1, repo2):
         break
 
 repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
-repl["@DOC_URL@"] = "https://www.openmicroscopy.org/site/support/omero%s" \
+repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s" \
     % major_version
-if "STAGING" in os.environ and os.environ.get("STAGING"):
-    repl["@DOC_URL@"] += "-staging"
+repl["@HELP_URL@"] = "http://help.openmicroscopy.org/getting-started-%s.html"\
+    % major_version
 
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
