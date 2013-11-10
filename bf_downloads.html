@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" href="images/plonematch.css" type="text/css">
+        <meta charset="utf-8">
+          
+  
+      <meta name="tags" contents="bio-formats">
+      <meta name="tags" contents="downloads">
+  
+    <style type="text/css"></style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+    <body id="index" class="home">
+
+		<!-- OME Banner - START -->
+		<div id="portal-top">
+			<div id="portal-header">
+				<ul id="portal-siteactions">
+					<li>
+						<br>
+					</li>
+				</ul><a id="portal-logo" accesskey="1" href="http://downloads.openmicroscopy.org/" name="portal-logo"><img src="images/logo.jpg" alt="" title="" height="73" width="450"></a>
+			  <div id="portal-globalnav">
+					<br>
+				</div>
+			</div>
+			<div id="portal-personaltools-wrapper">
+				<ul id="portal-personaltools" class="visualInline">
+					<li>
+						<br>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="visualClear" id="clear-space-before-wrapper-table">
+		<!-- OME Banner - END -->
+
+                                  <!-- /#menu -->
+<section id="content" class="body" style="margin-left:20px;">
+
+<div class="entry-content">
+
+<h2>Bio-Formats @VERSION@ Downloads</h2>
+
+<p>
+  <strong><a href="#tools">Tools</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#components">Components</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#legacy">Legacy</a> </strong></p>
+
+<ul>
+<li>
+<p>Full documentation is available as <a href="@DOC_URL@">web documentation</a>  or <a href="@DOC@">PDF documentation</a>.</p>
+</li>
+</ul>
+
+
+<h2><a name="tools" id="tools"></a>Bio-Formats tools downloads</h2>
+
+<div class="alt-table">
+  <table width="800" border="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th width="269">Clients</th>
+        <th width="85">Size</th>
+        <th width="271">File Name</th>
+        <th width="125">Checksum</th>
+        </tr>
+      <tr>
+        <td><a href="@LOCI_TOOLS@"><img src="images/bf_loci_tools.png" alt="LOCI Tools" /></a></td>
+        <td align="center">@LOCI_TOOLS_SIZE@</td>
+        <td>@LOCI_TOOLS_NAME@</td>
+        <td align="center">@LOCI_TOOLS_MD5@ (<a href="@LOCI_TOOLS@.md5">MD5</a>)</td>
+      </tr>
+      <tr>
+        <td><a href="@COMMAND_LINE_TOOLS@"><img src="images/bf_cm_tools.png" alt="Command Line Tools" /></a></td>
+        <td align="center">@COMMAND_LINE_TOOLS_SIZE@</td>
+        <td>@COMMAND_LINE_TOOLS_NAME@</td>
+        <td align="center">@COMMAND_LINE_TOOLS@ (<a href="@COMMAND_LINE_TOOLS@.md5">MD5</a>)</td>
+      </tr>
+      <tr>
+        <td><a href="@MATLAB_TOOLS@"><img src="images/bf_matlab_toolbox.png" alt="MATLAB Toolbox" /></a></td>
+        <td align="center">@MATLAB_TOOLS_SIZE@</td>
+        <td>@MATLAB_TOOLS_NAME@</td>
+        <td align="center">@MATLAB_TOOLS_MD5@ (<a href="@MATLAB_TOOLS@.md5">MD5</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ul>
+<li>
+<p>@LOCI_TOOLS_NAME@ is complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available in the
+<a href="@DOC_URL@/users/imagej/installing.html">user guide</a>.</p>
+</li>
+<li>
+<p>@COMMAND_LINE_TOOLS_NAME@ is a bundle of scripts for using Bio-Formats on the command line.</p>
+</li>
+<li>
+<p>@MATLAB_TOOLS_NAME@ is a bundle of functions for using Bio-Formats from MATLAB.</p>
+</li>
+</ul>
+
+<h2><a name="components" id="components"></a>Bio-Formats components downloads</h2>
+
+<div class="alt-table">
+  <table width="800" border="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th width="180">Project</th>
+        <th width="150">@VERSION</th>
+        <th width="150">Trunk build</th>
+        <th width="150">Daily build</th>
+        </tr>
+	<tr>
+		<th align="center"colspan="4">Core</th>
+	</tr>
+	<tr>
+		<td>Bio-Formats library</td>
+		<td><a href="@bio-formats.jar@">bio-formats.jar</a></td>
+		<td><a href="@TRUNK_bio-formats.jar@">bio-formats.jar</a></td>
+		<td><a href="@DAILY_bio-formats.jar@">bio-formats.jar</a></td>
+		</tr>
+		<tr>
+		<td>SCIFIO</td>
+		<td><a href="@scifio.jar@">scifio.jar</a></td>
+		<td><a href="@TRUNK_scifio.jar@">scifio.jar</a></td>
+		<td><a href="@DAILY_scifio.jar@">scifio.jar</a></td>
+		</tr>
+		<tr>
+		<td>LOCI Common</td>
+		<td><a href="@loci-common.jar@">loci-common.jar</a></td>
+		<td><a href="@TRUNK_loci-common.jar@">loci-common.jar</a></td>
+		<td><a href="@DAILY_loci-common.jar@">loci-common.jar</a></td>
+		</tr>
+		<tr>
+		<td>OME-XML Java library</td>
+		<td><a href="@ome-xml.jar@">ome-xml.jar</a></td>
+		<td><a href="@TRUNK_ome-xml.jar@">ome-xml.jar</a></td>
+		<td><a href="@DAILY_ome-xml.jar@">ome-xml.jar</a></td>
+		</tr>
+		<tr>
+		<td>LOCI Plugins for ImageJ</td>
+		<td><a href="@loci_plugins.jar@">loci_plugins.jar</a></td>
+		<td><a href="@TRUNK_loci_plugins.jar@">loci_plugins.jar</a></td>
+		<td><a href="@DAILY_loci_plugins.jar@">loci_plugins.jar</a></td>
+		</tr>
+		<tr>
+		<td>Metakit</td>
+		<td><a href="@metakit.jar@">metakit.jar</a></td>
+		<td><a href="@TRUNK_metakit.jar@">metakit.jar</a></td>
+		<td><a href="@DAILY_metakit.jar@">metakit.jar</a></td>
+		</tr>
+		<tr>
+		<td>OME I/O</td>
+		<td><a href="@ome-io.jar@">ome-io.jar</a></td>
+		<td><a href="@TRUNK_ome-io.jar@">ome-io.jar</a></td>
+		<td><a href="@DAILY_ome-io.jar@">ome-io.jar</a></td>
+		</tr>
+		<tr>
+		<td>OME Tools</td>
+		<td><a href="@ome_tools.jar@">ome_tools.jar</a></td>
+		<td><a href="@TRUNK_ome_tools.jar@">ome_tools.jar</a></td>
+		<td><a href="@DAILY_ome_tools.jar@">ome_tools.jar</a></td>
+		</tr>
+		<tr>
+		<td>OME Plugins for ImageJ</td>
+		<td><a href="@ome_plugins.jar@">ome_plugins.jar</a></td>
+		<td><a href="@TRUNK_ome_plugins.jar@">ome_plugins.jar</a></td>
+		<td><a href="@DAILY_ome_plugins.jar@">ome_plugins.jar</a></td>
+		</tr>
+		<tr>
+		<td>LOCI testing framework</td>
+		<td><a href="@loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
+		<td><a href="@TRUNK_loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
+		<td><a href="@DAILY_loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
+		</tr>
+		<tr>
+		<th align="center" colspan="4">Forks</th>
+		</tr>
+		<tr>
+		<td>JAI Image I/O Tools</td>
+		<td><a href="@jai_imageio.jar@">jai_imageio.jar</a></td>
+		<td><a href="@TRUNK_jai_imageio.jar@">jai_imageio.jar</a></td>
+		<td><a href="@DAILY_jai_imageio.jar@">jai_imageio.jar</a></td>
+		</tr>
+		<tr>
+		<td>MDB Tools (Java port)</td>
+		<td><a href="@mdbtools-java.jar@">mdbtools-java.jar</a></td>
+		<td><a href="@TRUNK_mdbtools-java.jar@">mdbtools-java.jar</a></td>
+		<td><a href="@DAILY_mdbtools-java.jar@">mdbtools-java.jar</a></td>
+		</tr>
+		<tr>
+		<td>Apache Jakarta POI</td>
+		<td><a href="@poi-loci.jar@">poi-loci.jar</a></td>
+		<td><a href="@TRUNK_poi-loci.jar@">poi-loci.jar</a></td>
+		<td><a href="@DAILY_poi-loci.jar@">poi-loci.jar</a></td>
+		</tr>
+		<tr>
+		<th align="center" colspan="4">Stubs</th>
+		</tr>
+		<tr>
+		<td>Luratech LuraWave stubs</td>
+		<td><a href="@lwf-stubs.jar@">lwf-stubs.jar</a></td>
+		<td><a href="@TRUNK_lwf-stubs.jar@">lwf-stubs.jar</a></td>
+		<td><a href="@DAILY_lwf-stubs.jar@">lwf-stubs.jar</a></td>
+		</tr>
+		<tr>
+		<th align="center" colspan="4">Legacy</th>
+		</tr>
+		<tr>
+		<td>OME Metadata Editor</td>
+		<td><a href="@ome-editor.jar@">ome-editor.jar</a></td>
+		<td>--</td>
+		<td>--</td>
+		</tr>
+		</table>
+
+</div>
+
+<h2><a name="code" id="code"></a>Source code</h2>
+
+<div class="alt-table">
+<table width="278" border="0" cellpadding="5">
+  <tbody>
+    <tr>
+      <th width="264">Source Code</th>
+      </tr>
+    <tr>
+      <td><a href="http://github.com/openmicroscopy/bioformats" target="_blank"><img src="images/github_rep_link.png" alt="GitHub Repository Link" /></a></td>
+      </tr>
+    <tr>
+      <td><a href="http://git.openmicroscopy.org/" target="_blank"><img src="images/gitweb_int_link.png" alt="Gitweb Interface Link" /></a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+<h2><a name="legacy" id="legacy"></a>Legacy versions</h2>
+
+<ul>
+  <li>
+<p>Previous versions of Bio-Formats can be found on the <a href="http://downloads.openmicroscopy.org/bio-formats/?C=M;O=D">Bio-Formats archive</a> page.</p>
+  </li>
+</ul>
+  
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+        </footer><!-- /#contentinfo -->
+
+		<!-- OME Footer - Start -->
+		<div class="visualClear" id="clear-space-before-footer"><!-- --></div>
+		<div id="portal-footer">
+			<p>
+				<acronym title="Copyright">&copy;</acronym>
+				2000-2013
+				University of Dundee &amp; Open Microscopy Environment. <a href="http://www.openmicroscopy.org/site/about/licensing-attribution/licensing">Creative Commons Attribution 3.0 Unported License</a>
+			</p>
+			<p>
+				OME source code is available under the <a href="http://www.openmicroscopy.org/site/about/licensing">GNU General public license</a> or through commercial license from <a href="http://www.openmicroscopy.org/site/about/development-teams/glencoe-software">Glencoe Software</a>
+			</p>
+		</div>
+		<div class="visualClear">
+		<!-- OME Footer - END -->
+	
+</div></div></body></html>
