@@ -88,7 +88,7 @@ for x, y in (
         ("SERVER33", "artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
         ("SERVER34", "artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
         ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
-        ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice33-@BUILD@.zip"),
+        ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice34-@BUILD@.zip"),
         ("VM", "artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
         ("DOC", "artifacts/OMERO-@VERSION@.pdf")):
 
