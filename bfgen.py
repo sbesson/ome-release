@@ -9,9 +9,9 @@ import fileinput
 from doc_generator import find_pkg, repl_all
 
 fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
-daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-daily/" \
+daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.0-daily/" \
     "lastSuccessfulBuild/artifact/artifacts"
-trunk_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-trunk/" \
+trunk_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.0-latest/" \
     "lastSuccessfulBuild/artifact/artifacts"
 
 
