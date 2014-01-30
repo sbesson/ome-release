@@ -34,29 +34,29 @@ import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 
-# # Creating Github instance
-# try:
-#     p = subprocess.Popen("git","config","--get","github.token", stdout =
-#                          subprocess.PIPE)
-#     rc = p.wait()
-#     if rc:
-#         raise Exception("rc=%s" % rc)
-#     token = p.communicate()
-# except Exception:
-#     token = None
-#
-# gh = github.Github(token, user_agent="PyGithub")
-# repo = gh.get_organization("openmicroscopy").get_repo("bioformats")
-# for tag in repo.get_tags():
-#     if tag.name == ("v%s" % version):
-#         break
-# repl["@SHA1_FULL@"] = tag.commit.sha
-# repl["@SHA1_SHORT@"] = tag.commit.sha[0:10]
+# For calculating tags
+import github
+gh = github.Github()
+ome = "openmicroscopy"
+scc = "snoopycrimecop"
+bf = "bioformats"
+
+repo1 = gh.get_organization(ome).get_repo(bf)
+repo2 = gh.get_user(scc).get_repo(bf)
+
+for repo in (repo1, repo2):
+    found = False
+    for tag in repo.get_tags():
+        if tag.name == ("v%s" % version):
+            found = True
+            break
+    if found:
+        break
+
+repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
 repl["@DOC_URL@"] = \
-    "https://www.openmicroscopy.org/site/support/bio-formats%s" \
+    "http://www.openmicroscopy.org/site/support/bio-formats%s" \
     % major_version
-if "STAGING" in os.environ and os.environ.get("STAGING"):
-    repl["@DOC_URL@"] += "-staging"
 
 if "SNAPSHOT_PATH" in os.environ:
     SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
@@ -69,8 +69,8 @@ BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
 for x, y in (
         ("bio-formats.jar", "artifacts/bio-formats.jar"),
         ("scifio.jar", "artifacts/scifio.jar"),
-        ("bftools.zip", "artifacts/bftools.zip"),
-        ("bfmatlab.zip", "artifacts/bfmatlab.zip"),
+        ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
+        ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
         ("ome_tools.jar", "artifacts/ome_tools.jar"),
         ("ome-io.jar", "artifacts/ome-io.jar"),
         ("ome-xml.jar", "artifacts/ome-xml.jar"),
@@ -82,7 +82,7 @@ for x, y in (
         ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
         ("metakit.jar", "artifacts/metakit.jar"),
         ("loci-common.jar", "artifacts/loci-common.jar"),
-        ("loci_tools.jar", "artifacts/loci_tools.jar"),
+        ("LOCI_TOOLS", "artifacts/loci_tools.jar"),
         ("loci_plugins.jar", "artifacts/loci_plugins.jar"),
         ("loci-testing-framework.jar",
          "artifacts/loci-testing-framework.jar"),
@@ -93,5 +93,5 @@ for x, y in (
     repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
     repl["@TRUNK_%s@" % x] = "%s/%s" % (trunk_url, x)
 
-for line in fileinput.input(["bftmpl.txt"]):
+for line in fileinput.input(["bf_downloads.html"]):
     print repl_all(repl, line, check_http=True),
