@@ -67,10 +67,11 @@ else:
 BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
 
 for x, y in (
-        ("bio-formats.jar", "artifacts/bio-formats.jar"),
-        ("scifio.jar", "artifacts/scifio.jar"),
+        ("BF_PACKAGE", "artifacts/bioformats_package.jar"),
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
+        ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf")):
+        ("bio-formats.jar", "artifacts/bio-formats.jar"),
         ("ome_tools.jar", "artifacts/ome_tools.jar"),
         ("ome-io.jar", "artifacts/ome-io.jar"),
         ("ome-xml.jar", "artifacts/ome-xml.jar"),
@@ -81,16 +82,16 @@ for x, y in (
         ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
         ("metakit.jar", "artifacts/metakit.jar"),
         ("loci-common.jar", "artifacts/loci-common.jar"),
-        ("LOCI_TOOLS", "artifacts/loci_tools.jar"),
+        ("loci_tools.jar", "artifacts/loci_tools.jar"),
         ("loci_plugins.jar", "artifacts/loci_plugins.jar"),
         ("loci-testing-framework.jar",
          "artifacts/loci-testing-framework.jar"),
         ("loci-legacy.jar", "artifacts/loci-legacy.jar"),
+        ("scifio.jar", "artifacts/scifio.jar"),
         ("scifio-devel.jar", "artifacts/scifio-devel.jar"),
         ("scifio-test.jar", "artifacts/scifio-test.jar"),
         ("specification.jar", "artifacts/specification.jar"),
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
-        ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf")):
 
     find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)
 
