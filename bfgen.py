@@ -71,6 +71,7 @@ for x, y in (
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
+        ("JAVADOCS", "artifacts/bio-formats-javadocs.zip"),
         ("bio-formats.jar", "artifacts/bio-formats.jar"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
