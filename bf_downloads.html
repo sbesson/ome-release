@@ -42,17 +42,14 @@
 <h2>Bio-Formats @VERSION@ Downloads</h2>
 
 <p>
-  <strong><a href="#tools">Tools</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#components">Components</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#legacy">Legacy</a> </strong></p>
+  <strong><a href="#tools">Tools</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api">API</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#components">Components</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#legacy">Legacy</a> </strong></p>
 
 <ul>
 <li>
 <p>Full documentation is available as <a href="@DOC_URL@">web documentation</a> or <a href="@DOC@">PDF documentation</a>.</p>
 </li>
 <li>
-<p>The Bio-Formats API documentation is available to read on the web <a href="api">here</a>.</p>
-</li>
-<li>
-<p>Internet Explorer sometimes renames JAR files to ZIP (e.g., loci_tools.jar becomes loci_tools.zip); if this happens to you, simply rename the file back to its original name after the download is complete.</p>
+<p>Internet Explorer sometimes renames JAR files to ZIP (e.g., bioformats_package.jar becomes bioformats_package.zip); if this happens to you, simply rename the file back to its original name after the download is complete.</p>
 </li>
 <li>
 <p>For some browsers, you may need to right-click or control-click the link and choose "Save link as..." or a similar option to download the file.</p>
@@ -70,12 +67,12 @@
         <th width="85">Size</th>
         <th width="150">File Name</th>
         <th width="125">Checksum</th>
-        </tr>
+      </tr>
       <tr>
-        <td><a href="@LOCI_TOOLS@"><img src="images/bf_loci_tools.png" alt="LOCI Tools" /></a></td>
-        <td align="center">@LOCI_TOOLS_SIZE@</td>
-        <td>@LOCI_TOOLS_BASE@</td>
-        <td align="center">@LOCI_TOOLS_MD5@ (<a href="@LOCI_TOOLS@.md5">MD5</a>)</td>
+        <td><a href="@BF_PACKAGE@"><img src="images/bf_package.png" alt="Bio-Formats Package" /></a></td>
+        <td align="center">@BF_PACKAGE_SIZE@</td>
+        <td>@BF_PACKAGE_BASE@</td>
+        <td align="center">@BF_PACKAGE_MD5@ (<a href="@BF_PACKAGE@.md5">MD5</a>)</td>
       </tr>
       <tr>
         <td><a href="@COMMAND_LINE_TOOLS@"><img src="images/bf_cm_tools.png" alt="Command Line Tools" /></a></td>
@@ -95,7 +92,7 @@
 
 <ul>
 <li>
-<p>@LOCI_TOOLS_BASE@ is complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available in the
+<p>@BF_PACKAGE_BASE@ is the complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available in the
 <a href="@DOC_URL@/users/imagej/installing.html">user guide</a>.</p>
 </li>
 <li>
@@ -104,6 +101,33 @@
 <li>
 <p>@MATLAB_TOOLS_BASE@ is a bundle of functions for using Bio-Formats from MATLAB.</p>
 </li>
+</ul>
+
+
+<h2><a name="api" id="api"></a>Bio-Formats API documentation</h2>
+<div class="alt-table">
+<table width="800" border="0" cellpadding="5">
+  <tbody>
+    <tr>
+      <th width="269">API Documentation</th>
+      <th width="85">Size</th>
+      <th width="150">File Name</th>
+      <th width="125">MD5 Checksum</th>
+    </tr>
+    <tr>
+      <td><a href="@JAVADOCS@"><img src="images/api_download.png" alt="API Documentation Download" /></a></td>
+      <td align="center">@JAVADOCS_SIZE@</td>
+      <td>@JAVADOCS_BASE@</td>
+      <td align="center">@JAVADOCS_MD5@ (<a href="@DOCS@.md5">MD5</a>)</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+<ul>
+  <li>
+  <p>The Bio-Formtats API documentation is also available to read on the web <a href="api">here</a></p>
+  </li>
 </ul>
 
 <h2><a name="components" id="components"></a>Bio-Formats components downloads</h2>
@@ -167,6 +191,12 @@
 		<td><a href="@specification.jar@">specification.jar</a></td>
 		<td><a href="@LATEST_specification.jar@">specification.jar</a></td>
 		<td><a href="@DAILY_specification.jar@">specification.jar</a></td>
+		</tr>
+		<tr>
+		<td>LOCI Tools</td>
+		<td><a href="@loci_tools.jar@">loci_tools.jar</a></td>
+		<td><a href="@LATEST_loci_tools.jar@">loci_tools.jar</a></td>
+		<td><a href="@DAILY_loci_tools.jar@">loci_tools.jar</a></td>
 		</tr>
 		<tr>
 		<td>LOCI Plugins for ImageJ</td>
