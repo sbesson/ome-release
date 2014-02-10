@@ -90,7 +90,9 @@ for x, y in (
         ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
         ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice34-@BUILD@.zip"),
         ("VM", "artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
-        ("DOC", "artifacts/OMERO-@VERSION@.pdf")):
+        ("DOC", "artifacts/OMERO-@VERSION@.pdf"),
+        ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
+        ):
 
     find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
 
