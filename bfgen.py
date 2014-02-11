@@ -67,7 +67,7 @@ else:
 BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
 
 for x, y in (
-        ("BF_PACKAGE", "artifacts/bioformats_package.jar"),
+        ("bioformats_package.jar", "artifacts/bioformats_package.jar"),
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
