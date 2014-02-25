@@ -69,10 +69,10 @@
         <th width="125">Checksum</th>
       </tr>
       <tr>
-        <td><a href="@BF_PACKAGE@"><img src="images/bf_package.png" alt="Bio-Formats Package" /></a></td>
-        <td align="center">@BF_PACKAGE_SIZE@</td>
-        <td>@BF_PACKAGE_BASE@</td>
-        <td align="center">@BF_PACKAGE_MD5@ (<a href="@BF_PACKAGE@.md5">MD5</a>)</td>
+        <td><a href="@bioformats_package.jar@"><img src="images/bf_package.png" alt="Bio-Formats Package" /></a></td>
+        <td align="center">@bioformats_package.jar_SIZE@</td>
+        <td>@bioformats_package.jar_BASE@</td>
+        <td align="center">@bioformats_package.jar_MD5@ (<a href="@bioformats_package.jar@.md5">MD5</a>)</td>
       </tr>
       <tr>
         <td><a href="@COMMAND_LINE_TOOLS@"><img src="images/bf_cm_tools.png" alt="Command Line Tools" /></a></td>
@@ -92,14 +92,14 @@
 
 <ul>
 <li>
-<p>@BF_PACKAGE_BASE@ is the complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available in the
+<p>@bioformats_package.jar_BASE@ is the complete bundle (for end users) containing everything needed to read images into ImageJ using Bio-Formats. Instructions for installing Bio-Formats in ImageJ are available in the
 <a href="@DOC_URL@/users/imagej/installing.html">user guide</a>.</p>
 </li>
 <li>
-<p>@COMMAND_LINE_TOOLS_BASE@ is a bundle of scripts for using Bio-Formats on the command line.</p>
+<p>@COMMAND_LINE_TOOLS_BASE@ is a bundle of scripts for using Bio-Formats on the command line <b>now with bioformats_package.jar included so you do not have to install both separately</b>. See the <a href="@DOC_URL@/users/comlinetools/index.html">command line tools documentation</a> for further information.</p>
 </li>
 <li>
-<p>@MATLAB_TOOLS_BASE@ is a bundle of functions for using Bio-Formats from MATLAB.</p>
+<p>@MATLAB_TOOLS_BASE@ is a bundle of functions for using Bio-Formats from MATLAB <b>now with bioformats_package.jar included so you do not have to install both separately</b>. See the <a href="@DOC_URL@/users/matlab/index.html">MATLAB documentation</a> for further information.</p>
 </li>
 </ul>
 
@@ -126,7 +126,7 @@
 
 <ul>
   <li>
-  <p>The Bio-Formtats API documentation is also available to read on the web <a href="api">here</a></p>
+  <p>The Bio-Formats API documentation is also available to read on the web <a href="api">here</a></p>
   </li>
 </ul>
 
@@ -142,134 +142,119 @@
         <th width="150">Daily build</th>
         </tr>
 	<tr>
-		<th align="center"colspan="4">Core</th>
+		<th align="center"colspan="4">Packages</th>
 	</tr>
 	<tr>
-		<td>Bio-Formats library</td>
-		<td><a href="@bio-formats.jar@">bio-formats.jar</a></td>
-		<td><a href="@LATEST_bio-formats.jar@">bio-formats.jar</a></td>
-		<td><a href="@DAILY_bio-formats.jar@">bio-formats.jar</a></td>
-		</tr>
-		<tr>
-		<td>SCIFIO</td>
-		<td><a href="@scifio.jar@">scifio.jar</a></td>
-		<td><a href="@LATEST_scifio.jar@">scifio.jar</a></td>
-		<td><a href="@DAILY_scifio.jar@">scifio.jar</a></td>
-		</tr>
-		<tr>
-		<td>LOCI Common</td>
-		<td><a href="@loci-common.jar@">loci-common.jar</a></td>
-		<td><a href="@LATEST_loci-common.jar@">loci-common.jar</a></td>
-		<td><a href="@DAILY_loci-common.jar@">loci-common.jar</a></td>
-		</tr>
-		<tr>
-		<td>OME-XML Java library</td>
-		<td><a href="@ome-xml.jar@">ome-xml.jar</a></td>
-		<td><a href="@LATEST_ome-xml.jar@">ome-xml.jar</a></td>
-		<td><a href="@DAILY_ome-xml.jar@">ome-xml.jar</a></td>
-		</tr>
-		<tr>
-		<td>LOCI Legacy</td>
-		<td><a href="@loci-legacy.jar@">loci-legacy.jar</a></td>
-		<td><a href="@LATEST_loci-legacy.jar@">loci-legacy.jar</a></td>
-		<td><a href="@DAILY_loci-legacy.jar@">loci-legacy.jar</a></td>
-		</tr>
-		<tr>
-		<td>SCIFIO Development library</td>
-		<td><a href="@scifio-devel.jar@">scifio-devel.jar</a></td>
-		<td><a href="@LATEST_scifio-devel.jar@">scifio-devel.jar</a></td>
-		<td><a href="@DAILY_scifio-devel.jar@">scifio-devel.jar</a></td>
-		</tr>
-		<tr>
-		<td>SCIFIO Test library</td>
-		<td><a href="@scifio-test.jar@">scifio-test.jar</a></td>
-		<td><a href="@LATEST_scifio-test.jar@">scifio-test.jar</a></td>
-		<td><a href="@DAILY_scifio-test.jar@">scifio-test.jar</a></td>
-		</tr>
-		<tr>
-		<td>OME Model Specification</td>
-		<td><a href="@specification.jar@">specification.jar</a></td>
-		<td><a href="@LATEST_specification.jar@">specification.jar</a></td>
-		<td><a href="@DAILY_specification.jar@">specification.jar</a></td>
-		</tr>
-		<tr>
+		<td>Bio-Formats package</td>
+		<td><a href="@bioformats_package.jar@">bioformats_package.jar</a></td>
+		<td><a href="@LATEST_bioformats_package.jar@">bioformats_package.jar</a></td>
+		<td><a href="@DAILY_bioformats_package.jar@">bioformats_package.jar</a></td>
+	</tr>
+	<tr>
 		<td>LOCI Tools</td>
 		<td><a href="@loci_tools.jar@">loci_tools.jar</a></td>
 		<td><a href="@LATEST_loci_tools.jar@">loci_tools.jar</a></td>
 		<td><a href="@DAILY_loci_tools.jar@">loci_tools.jar</a></td>
-		</tr>
-		<tr>
-		<td>LOCI Plugins for ImageJ</td>
-		<td><a href="@loci_plugins.jar@">loci_plugins.jar</a></td>
-		<td><a href="@LATEST_loci_plugins.jar@">loci_plugins.jar</a></td>
-		<td><a href="@DAILY_loci_plugins.jar@">loci_plugins.jar</a></td>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
+		<th align="center"colspan="4">Core</th>
+	</tr>
+	<tr>
+		<td>Bio-Formats API library</td>
+		<td><a href="@formats-api.jar@">formats-api.jar</a></td>
+		<td><a href="@LATEST_formats-api.jar@">formats-api.jar</a></td>
+		<td><a href="@DAILY_formats-api.jar@">formats-api.jar</a></td>
+	</tr>
+	<tr>
+		<td>Bio-Formats BSD library</td>
+		<td><a href="@formats-bsd.jar@">formats-bsd.jar</a></td>
+		<td><a href="@LATEST_formats-bsd.jar@">formats-bsd.jar</a></td>
+		<td><a href="@DAILY_formats-bsd.jar@">formats-bsd.jar</a></td>
+	</tr>
+	<tr>
+		<td>Bio-Formats Common library</td>
+		<td><a href="@formats-common.jar@">formats-common.jar</a></td>
+		<td><a href="@LATEST_formats-common.jar@">formats-common.jar</a></td>
+		<td><a href="@DAILY_formats-common.jar@">formats-common.jar</a></td>
+	</tr>
+	<tr>
+		<td>Bio-Formats GPL library</td>
+		<td><a href="@formats-gpl.jar@">formats-gpl.jar</a></td>
+		<td><a href="@LATEST_formats-gpl.jar@">formats-gpl.jar</a></td>
+		<td><a href="@DAILY_formats-gpl.jar@">formats-gpl.jar</a></td>
+	</tr>
+	<tr>
+		<td>Bio-Formats BSD Test library</td>
+		<td><a href="@formats-bsd-test.jar@">formats-bsd-test.jar</a></td>
+		<td><a href="@LATEST_formats-bsd-test.jar@">formats-bsd-test.jar</a></td>
+		<td><a href="@DAILY_formats-bsd-test.jar@">formats-bsd-test.jar</a></td>
+	</tr>
+	<tr>
+		<td>OME-XML Java library</td>
+		<td><a href="@ome-xml.jar@">ome-xml.jar</a></td>
+		<td><a href="@LATEST_ome-xml.jar@">ome-xml.jar</a></td>
+		<td><a href="@DAILY_ome-xml.jar@">ome-xml.jar</a></td>
+	</tr>
+	<tr>
+		<td>OME Model Specification</td>
+		<td><a href="@specification.jar@">specification.jar</a></td>
+		<td><a href="@LATEST_specification.jar@">specification.jar</a></td>
+		<td><a href="@DAILY_specification.jar@">specification.jar</a></td>
+	</tr>
+	<tr>
+		<td>Bio-Formats Plugins for ImageJ</td>
+		<td><a href="@bio-formats_plugins.jar@">bio-formats_plugins.jar</a></td>
+		<td><a href="@LATEST_bio-formats_plugins.jar@">bio-formats_plugins.jar</a></td>
+		<td><a href="@DAILY_bio-formats_plugins.jar@">bio-formats_plugins.jar</a></td>
+	</tr>
+	<tr>
 		<td>Metakit</td>
 		<td><a href="@metakit.jar@">metakit.jar</a></td>
 		<td><a href="@LATEST_metakit.jar@">metakit.jar</a></td>
 		<td><a href="@DAILY_metakit.jar@">metakit.jar</a></td>
-		</tr>
-		<tr>
-		<td>OME I/O</td>
-		<td><a href="@ome-io.jar@">ome-io.jar</a></td>
-		<td><a href="@LATEST_ome-io.jar@">ome-io.jar</a></td>
-		<td><a href="@DAILY_ome-io.jar@">ome-io.jar</a></td>
-		</tr>
-		<tr>
-		<td>OME Tools</td>
-		<td><a href="@ome_tools.jar@">ome_tools.jar</a></td>
-		<td><a href="@LATEST_ome_tools.jar@">ome_tools.jar</a></td>
-		<td><a href="@DAILY_ome_tools.jar@">ome_tools.jar</a></td>
-		</tr>
-		<tr>
-		<td>OME Plugins for ImageJ</td>
-		<td><a href="@ome_plugins.jar@">ome_plugins.jar</a></td>
-		<td><a href="@LATEST_ome_plugins.jar@">ome_plugins.jar</a></td>
-		<td><a href="@DAILY_ome_plugins.jar@">ome_plugins.jar</a></td>
-		</tr>
-		<tr>
-		<td>LOCI testing framework</td>
-		<td><a href="@loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
-		<td><a href="@LATEST_loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
-		<td><a href="@DAILY_loci-testing-framework.jar@">loci-testing-framework.jar</a></td>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
+	<td>Bio-Formats testing framework</td>
+		<td><a href="@bio-formats-testing-framework.jar@">bio-formats-testing-framework.jar</a></td>
+		<td><a href="@LATEST_bio-formats-testing-framework.jar@">bio-formats-testing-framework.jar</a></td>
+		<td><a href="@DAILY_bio-formats-testing-framework.jar@">bio-formats-testing-framework.jar</a></td>
+	</tr>
+	<tr>
 		<th align="center" colspan="4">Forks</th>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<td>JAI Image I/O Tools</td>
 		<td><a href="@jai_imageio.jar@">jai_imageio.jar</a></td>
 		<td><a href="@LATEST_jai_imageio.jar@">jai_imageio.jar</a></td>
 		<td><a href="@DAILY_jai_imageio.jar@">jai_imageio.jar</a></td>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<td>MDB Tools (Java port)</td>
 		<td><a href="@mdbtools-java.jar@">mdbtools-java.jar</a></td>
 		<td><a href="@LATEST_mdbtools-java.jar@">mdbtools-java.jar</a></td>
 		<td><a href="@DAILY_mdbtools-java.jar@">mdbtools-java.jar</a></td>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<td>Apache Jakarta POI</td>
-		<td><a href="@poi-loci.jar@">poi-loci.jar</a></td>
-		<td><a href="@LATEST_poi-loci.jar@">poi-loci.jar</a></td>
-		<td><a href="@DAILY_poi-loci.jar@">poi-loci.jar</a></td>
-		</tr>
-		<tr>
+		<td><a href="@ome-poi.jar@">ome-poi.jar</a></td>
+		<td><a href="@LATEST_ome-poi.jar@">ome-poi.jar</a></td>
+		<td><a href="@DAILY_ome-poi.jar@">ome-poi.jar</a></td>
+	</tr>
+	<tr>
 		<td>TurboJPEG</td>
 		<td><a href="@turbojpeg.jar@">turbojpeg.jar</a></td>
 		<td><a href="@LATEST_turbojpeg.jar@">turbojpeg.jar</a></td>
 		<td><a href="@DAILY_turbojpeg.jar@">turbojpeg.jar</a></td>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<th align="center" colspan="4">Stubs</th>
-		</tr>
-		<tr>
+	</tr>
+	<tr>
 		<td>Luratech LuraWave stubs</td>
 		<td><a href="@lwf-stubs.jar@">lwf-stubs.jar</a></td>
 		<td><a href="@LATEST_lwf-stubs.jar@">lwf-stubs.jar</a></td>
 		<td><a href="@DAILY_lwf-stubs.jar@">lwf-stubs.jar</a></td>
-		</tr>
+	</tr>
 	</table>
 </div>
 
