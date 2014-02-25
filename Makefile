@@ -18,6 +18,8 @@ omero: gen
 
 bf: bfgen
 
+flimfit: flimfitgen
+
 gen:
 	mkdir -p $(CONTENTDIR)
 	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
@@ -26,6 +28,11 @@ gen:
 bfgen:
 	mkdir -p $(CONTENTDIR)
 	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+flimfitgen:
+	mkdir -p $(CONTENTDIR)
+	python flimfitgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 html:
