@@ -30,15 +30,11 @@ PREFIX = os.environ.get('PREFIX', 'flimfit')
 FLIMFIT_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
-        ("FLIMFIT_50_WIN",
-         "artifacts/FLIMFit-@VERSION@-OME-5.0.win.zip"),
-        ("FLIMFIT_50_MAC",
-         "artifacts/FLIMFit-@VERSION@-OME-5.0.mac.zip"),
-        ("FLIMFIT_44_WIN",
-          "artifacts/FLIMFit-@VERSION@-OME-4.4.win.zip"),
-        ("FLIMFIT_50_MAC",
-          "artifacts/FLIMFit-@VERSION@-OME-4.4.mac.zip"),
-           ):
+        ("FLIMFIT_50_WIN", "artifacts/FLIMFit-@VERSION@-OME-5.0.win.zip"),
+        ("FLIMFIT_50_MAC", "artifacts/FLIMFit-@VERSION@-OME-5.0.mac.zip"),
+        ("FLIMFIT_44_WIN", "artifacts/FLIMFit-@VERSION@-OME-4.4.win.zip"),
+        ("FLIMFIT_44_MAC", "artifacts/FLIMFit-@VERSION@-OME-4.4.mac.zip"),
+        ):
 
     find_pkg(repl, fingerprint_url, FLIMFIT_RSYNC_PATH, x, y, MD5s)
 
