@@ -31,8 +31,8 @@ PREFIX = os.environ.get('PREFIX', 'u-track')
 UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
-        ("SOURCE_CODE", "artifacts/U-Track-@VERSION@.zip"),
-        ("DOC", "artifacts/U-Track-@VERSION@.pdf"),
+        ("SOURCE_CODE", "artifacts/u-track-@VERSION@.zip"),
+        ("DOC", "artifacts/u-track-@VERSION@.pdf"),
         ):
 
     find_pkg(repl, fingerprint_url, UTRACK_RSYNC_PATH, x, y, MD5s)
