@@ -58,13 +58,9 @@ repl["@DOC_URL@"] = \
     "http://www.openmicroscopy.org/site/support/bio-formats%s" \
     % major_version
 
-if "SNAPSHOT_PATH" in os.environ:
-    SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
-else:
-    SNAPSHOT_PATH = "/ome/data_repo/public/"
-
-
-BF_SNAPSHOT_PATH = SNAPSHOT_PATH + "/bio-formats/" + version + "/"
+RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
+PREFIX = os.environ.get('PREFIX', 'bio-formats')
+BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
         ("BF_PACKAGE", "artifacts/bioformats_package.jar"),
@@ -95,7 +91,7 @@ for x, y in (
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ):
 
-    find_pkg(repl, fingerprint_url, BF_SNAPSHOT_PATH, x, y, MD5s)
+    find_pkg(repl, fingerprint_url, BF_RSYNC_PATH, x, y, MD5s)
 
     repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
     repl["@LATEST_%s@" % x] = "%s/%s" % (latest_url, x)

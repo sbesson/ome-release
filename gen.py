@@ -56,23 +56,13 @@ repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s" \
 repl["@HELP_URL@"] = "http://help.openmicroscopy.org/getting-started-%s.html"\
     % major_version
 
-if "SNAPSHOT_PATH" in os.environ:
-    SNAPSHOT_PATH = os.environ.get('SNAPSHOT_PATH')
-else:
-    SNAPSHOT_PATH = "/ome/data_repo/public/"
+RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
+PREFIX = os.environ.get('PREFIX', 'omero')
+OMERO_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
-OMERO_SNAPSHOT_PATH = SNAPSHOT_PATH + "/omero/" + version + "/"
-
-if "ANNOUCEMENT_URL" in os.environ:
-    repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL')
-else:
-    repl["@ANNOUCEMENT_URL@"] = \
-        "https://www.openmicroscopy.org/community/viewforum.php?f=11"
-
-if "MILESTONE" in os.environ:
-    repl["@MILESTONE@"] = os.environ.get('MILESTONE')
-else:
-    repl["@MILESTONE@"] = "OMERO-%s" % version
+forum_url = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
+repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL', forum_url)
+repl["@MILESTONE@"] = os.environ.get('MILESTONE', "OMERO-%s" % version)
 
 for x, y in (
         ("LINUX_CLIENTS",
@@ -94,7 +84,7 @@ for x, y in (
         ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
         ):
 
-    find_pkg(repl, fingerprint_url, OMERO_SNAPSHOT_PATH, x, y, MD5s)
+    find_pkg(repl, fingerprint_url, OMERO_RSYNC_PATH, x, y, MD5s)
 
 
 for line in fileinput.input(["omero_downloads.html"]):
