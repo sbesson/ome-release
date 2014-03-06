@@ -20,6 +20,8 @@ bf: bfgen
 
 flimfit: flimfitgen
 
+utrack: utrackgen
+
 gen:
 	mkdir -p $(CONTENTDIR)
 	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
@@ -33,6 +35,11 @@ bfgen:
 flimfitgen:
 	mkdir -p $(CONTENTDIR)
 	python flimfitgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+utrackgen:
+	mkdir -p $(CONTENTDIR)
+	python utrackgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 html:
