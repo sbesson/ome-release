@@ -46,7 +46,7 @@ utrackgen:
 
 webtagginggen:
 	mkdir -p $(CONTENTDIR)
-	python webtagging.py $(RELEASE) > $(CONTENTDIR)/index.html
+	python webtagginggen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 html:
