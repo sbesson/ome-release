@@ -22,6 +22,8 @@ flimfit: flimfitgen
 
 utrack: utrackgen
 
+webtagging: webtagginggen
+
 gen:
 	mkdir -p $(CONTENTDIR)
 	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
@@ -40,6 +42,11 @@ flimfitgen:
 utrackgen:
 	mkdir -p $(CONTENTDIR)
 	python utrackgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+webtagginggen:
+	mkdir -p $(CONTENTDIR)
+	python webtagging.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 html:
