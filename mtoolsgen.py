@@ -31,8 +31,8 @@ PREFIX = os.environ.get('PREFIX', 'mtools')
 UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
-        ("MTOOLS_WIN", "artifacts/OMERO.mtools_@VERSION@_win.zip"),
-        ("MTOOLS_MAC", "artifacts/OMERO.mtools_@VERSION@_mac.zip"),
+        ("MTOOLS_WIN", "OMERO.mtools_@VERSION@_win.zip"),
+        ("MTOOLS_MAC", "OMERO.mtools_@VERSION@_mac.zip"),
         ):
 
     find_pkg(repl, fingerprint_url, UTRACK_RSYNC_PATH, x, y, MD5s)
