@@ -24,6 +24,8 @@ searcher: searchergen
 
 utrack: utrackgen
 
+mtools: mtoolsgen
+
 webtagging: webtagginggen
 
 gen:
@@ -49,6 +51,11 @@ searchergen:
 utrackgen:
 	mkdir -p $(CONTENTDIR)
 	python utrackgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+mtoolsgen:
+	mkdir -p $(CONTENTDIR)
+	python mtoolsgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 webtagginggen:
