@@ -20,6 +20,8 @@ bf: bfgen
 
 flimfit: flimfitgen
 
+searcher: searchergen
+
 utrack: utrackgen
 
 webtagging: webtagginggen
@@ -37,6 +39,11 @@ bfgen:
 flimfitgen:
 	mkdir -p $(CONTENTDIR)
 	python flimfitgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+searchergen:
+	mkdir -p $(CONTENTDIR)
+	python searchergen.py $(RELEASE) $(PYSLIDVERSION) $(RICERCAVERSION) $(BUILDNUM) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 utrackgen:
