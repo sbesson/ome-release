@@ -145,4 +145,4 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     repl["@%s_MD5@" % name] = hash[0:6]
     repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
     repl["@%s_BASE@" % name] = os.path.basename(path)
-    #repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
+    # repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
