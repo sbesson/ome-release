@@ -10,5 +10,6 @@ before_install:
   - tar -zxvf tidy_mklinux.tgz
 
 script:
+  - ls
   - flake8 -v *.py
   - tidy omero_downloads.html
