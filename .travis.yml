@@ -10,4 +10,4 @@ before_install:
 
 script:
   - flake8 -v *.py
-  - tidy *.html
+  - tidy -e *.html
