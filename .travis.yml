@@ -6,5 +6,9 @@ virtualenv:
 before_install:
   - pip install -r requirements.txt
   - pip install flake8
+  - wget http://tidy.sourceforge.net/trt/tidy_mklinux.tgz
+  - tar -zxvf tidy_mklinux.tgz
 
-script: flake8 -v *.py
+script:
+  - flake8 -v *.py
+  - tidy omero_downloads.html
