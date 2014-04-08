@@ -67,6 +67,7 @@ for x, y in (
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
         ("JAVADOCS", "artifacts/bio-formats-javadocs.zip"),
+        ("SOURCE_CODE", "artifacts/bioformats-@VERSION@.zip"),
         ("bioformats_package.jar", "artifacts/bioformats_package.jar"),
         ("bio-formats_plugins.jar", "artifacts/bio-formats_plugins.jar"),
         ("bio-formats-testing-framework.jar",
