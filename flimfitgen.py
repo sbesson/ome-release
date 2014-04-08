@@ -29,6 +29,13 @@ RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'flimfit')
 FLIMFIT_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
+# Links to the MCR downloads
+repl["@WIN_MCR@"] = "http://www.mathworks.com/supportfiles/downloads/R2013b" \
+    "/deployment_files/R2013b/installers/win64/MCR_R2013b_win64_installer.exe"
+repl["@WIN_MCR@"] = "http://www.mathworks.com/supportfiles/downloads/R2013b" \
+    "/deployment_files/R2013b/installers/maci64" \
+    "/MCR_R2013b_maci64_installer.zip"
+
 for x, y in (
         ("FLIMFIT_50_WIN", "artifacts/FLIMFit_@VERSION@_OME_5.0_x64.zip"),
         ("FLIMFIT_50_MAC", "artifacts/FLIMfit_@VERSION@_OME_5.0_MACI64.zip"),
