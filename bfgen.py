@@ -77,6 +77,7 @@ for x, y in (
         ("ome_plugins.jar", "artifacts/ome_plugins.jar"),
         ("ome-editor.jar", "artifacts/ome-editor.jar"),
         ("poi-loci.jar", "artifacts/poi-loci.jar"),
+        ("JAVADOCS", "artifacts/bio-formats-javadocs.zip"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
         ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
