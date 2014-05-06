@@ -75,7 +75,6 @@ for x, y in (
          "artifacts/OMERO.insight-ij-@VERSION@-ice35-@BUILD@.zip"),
         ("MATLAB_CLIENTS",
          "artifacts/OMERO.matlab-@VERSION@-ice35-@BUILD@.zip"),
-        ("SERVER33", "artifacts/OMERO.server-@VERSION@-ice33-@BUILD@.zip"),
         ("SERVER34", "artifacts/OMERO.server-@VERSION@-ice34-@BUILD@.zip"),
         ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
         ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice34-@BUILD@.zip"),
