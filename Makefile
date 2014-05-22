@@ -30,6 +30,8 @@ mtools: mtoolsgen
 
 webtagging: webtagginggen
 
+ice: icegen
+
 gen:
 	mkdir -p $(CONTENTDIR)
 	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
@@ -68,6 +70,11 @@ mtoolsgen:
 webtagginggen:
 	mkdir -p $(CONTENTDIR)
 	python webtagginggen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+icegen:
+	mkdir -p $(CONTENTDIR)
+	python icegen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 html:
