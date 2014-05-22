@@ -9,17 +9,16 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
+fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
 MD5s = []
 
 
 def usage():
-    print "gen.py version build [build_ice34]"
+    print "gen.py version"
     sys.exit(1)
 
 try:
     version = sys.argv[1]
-    build = sys.argv[2]
 except:
     usage()
 
