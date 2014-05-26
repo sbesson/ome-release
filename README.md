@@ -12,7 +12,10 @@ They are also used for each release of the following partner projects:
 - [OMERO.webtagging](http://downloads.openmicroscopy.org/webtagging),
 - [OMERO.searcher](http://downloads.openmicroscopy.org/searcher),
 - [OMERO.figure](http://downloads.openmicroscopy.org/figure),
-- [OMERO.mtools](http://downloads.openmicroscopy.org/mtools).
+- [OMERO.mtools](http://downloads.openmicroscopy.org/mtools),
+
+and some custom third-party packages:
+- [Ice](http://downloads.openmicroscopy.org/ice).
 
 Prior to the downloads page generation, the artifacts for the corresponding
 release must have been copied under the root folder of the downloads page
@@ -66,6 +69,7 @@ OMERO.webtagging | webtagging
 OMERO.searcher   | searcher
 OMERO.figure     | figure
 OMERO.mtools     | mtools
+Ice              | ice
 
 Additional environment variables are defined in the scripts but should not
 need to be modified:
