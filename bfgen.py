@@ -8,10 +8,10 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
-daily_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.1-daily/" \
+fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
+daily_url = "http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-daily/" \
     "lastSuccessfulBuild/artifact/artifacts"
-latest_url = "http://hudson.openmicroscopy.org.uk/job/BIOFORMATS-5.1-latest/" \
+latest_url = "http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/" \
     "lastSuccessfulBuild/artifact/artifacts"
 
 

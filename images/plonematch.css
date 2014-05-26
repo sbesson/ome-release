@@ -376,12 +376,12 @@ background:none;
 padding:0;
 }
 
-#content a[href^="http://hudson.openmicroscopy.org.uk"], #content a.link-external {
+#content a[href^="http://ci.openmicroscopy.org"], #content a.link-external {
 background:none;
 padding:0;
 }
 
-#content a[href^="https://hudson.openmicroscopy.org.uk"], #content a.link-external {
+#content a[href^="https://ci.openmicroscopy.org"], #content a.link-external {
 background:none;
 padding:0;
 }
