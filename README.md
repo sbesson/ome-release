@@ -5,6 +5,7 @@ These scripts are used during release to generate the downloads pages for each
 release of OME, i.e.:
 - [OMERO](http://downloads.openmicroscopy.org/omero) and
 - [Bio-Formats](http://downloads.openmicroscopy.org/bio-formats).
+
 They are also used for each release of the following partner projects:
 - [FLIMFit](http://downloads.openmicroscopy.org/flimfit),
 - [u-track](http://downloads.openmicroscopy.org/u-track),
@@ -54,22 +55,20 @@ e.g.:
 The output of the target will be located under the `content/` subfolder and
 can be copied over to the release folder.
 
-================ ==========
-Name             Target
-================ ==========
-OMERO            omero
-Bio-Formats      bf
-FLIMFit          flimfit
-u-track          u-track
-OMERO.webtagging webtagging
-OMERO.searcher   searcher
-OMERO.figure     figure
-OMERO.mtools     mtools
-================ ===========
+
+Name             | Target
+-----------------|----------
+OMERO            | omero
+Bio-Formats      | bf
+FLIMFit          | flimfit
+u-track          | u-track
+OMERO.webtagging | webtagging
+OMERO.searcher   | searcher
+OMERO.figure     | figure
+OMERO.mtools     | mtools
 
 Additional environment variables are defined in the scripts but should not
 need to be modified:
 
 - `RSYNC_PATH` and `PREFIX` are the root folder and the prefix of the folder
   where the release artifacts and downloads page.
-
