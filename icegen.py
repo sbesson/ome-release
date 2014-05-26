@@ -25,11 +25,6 @@ except:
 repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-# Read major version from input version
-import re
-split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
-major_version = int(split_version[1])
-
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'ice')
 ICE_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
