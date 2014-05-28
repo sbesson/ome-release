@@ -3,16 +3,16 @@ OME release scripts
 
 These scripts are used during release to generate the downloads pages for each
 release of OME, i.e.:
-- [OMERO](http://downloads.openmicroscopy.org/omero) and
+- [OMERO](http://downloads.openmicroscopy.org/omero)
 - [Bio-Formats](http://downloads.openmicroscopy.org/bio-formats).
 
 They are also used for each release of the following partner projects:
-- [FLIMFit](http://downloads.openmicroscopy.org/flimfit),
-- [u-track](http://downloads.openmicroscopy.org/u-track),
-- [OMERO.webtagging](http://downloads.openmicroscopy.org/webtagging),
-- [OMERO.searcher](http://downloads.openmicroscopy.org/searcher),
-- [OMERO.figure](http://downloads.openmicroscopy.org/figure),
-- [OMERO.mtools](http://downloads.openmicroscopy.org/mtools),
+- [FLIMFit](http://downloads.openmicroscopy.org/flimfit)
+- [u-track](http://downloads.openmicroscopy.org/u-track)
+- [OMERO.webtagging](http://downloads.openmicroscopy.org/webtagging)
+- [OMERO.searcher](http://downloads.openmicroscopy.org/searcher)
+- [OMERO.figure](http://downloads.openmicroscopy.org/figure)
+- [OMERO.mtools](http://downloads.openmicroscopy.org/mtools)
 
 and some custom third-party packages:
 - [Ice](http://downloads.openmicroscopy.org/ice).
