@@ -18,7 +18,7 @@ and some custom third-party packages:
 - [Ice](http://downloads.openmicroscopy.org/ice).
 
 Prior to the downloads page generation, the artifacts for the corresponding
-release must have been copied under the root folder of the downloads page
+release must have been copied to the root folder of the downloads page
 published at `http://downloads.microscroscopy.org`.
 
 Several environment variables can be configured for the downloads page
@@ -75,4 +75,4 @@ Additional environment variables are defined in the scripts but should not
 need to be modified:
 
 - `RSYNC_PATH` and `PREFIX` are the root folder and the prefix of the folder
-  where the release artifacts and downloads page.
+  containing the release artifacts.
