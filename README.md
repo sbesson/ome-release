@@ -4,7 +4,7 @@ OME release scripts
 These scripts are used during release to generate the downloads pages for each
 release of OME, i.e.:
 - [OMERO](http://downloads.openmicroscopy.org/omero)
-- [Bio-Formats](http://downloads.openmicroscopy.org/bio-formats).
+- [Bio-Formats](http://downloads.openmicroscopy.org/bio-formats)
 
 They are also used for each release of the following partner projects:
 - [FLIMFit](http://downloads.openmicroscopy.org/flimfit)
@@ -15,7 +15,7 @@ They are also used for each release of the following partner projects:
 - [OMERO.mtools](http://downloads.openmicroscopy.org/mtools)
 
 and some custom third-party packages:
-- [Ice](http://downloads.openmicroscopy.org/ice).
+- [Ice](http://downloads.openmicroscopy.org/ice)
 
 Prior to the downloads page generation, the artifacts for the corresponding
 release must have been copied to the root folder of the downloads page
