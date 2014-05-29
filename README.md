@@ -35,7 +35,7 @@ generation:
   modules.
 
 - for OMERO, OMERO.figure, OMERO.searcher and OMERO.webtagging,
-  `ANNOUCEMENT_URL` specifies the URL of the announcement post to be used in
+  `ANNOUNCEMENT_URL` specifies the URL of the announcement post to be used in
   the downloads page.
 
 - for OMERO, `MILESTONE` is the name of the Trac milestone associated with the
