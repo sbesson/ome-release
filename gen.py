@@ -9,7 +9,7 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://hudson.openmicroscopy.org.uk/fingerprint"
+fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
 MD5s = []
 
 
