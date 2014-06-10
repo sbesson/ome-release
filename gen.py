@@ -61,7 +61,7 @@ PREFIX = os.environ.get('PREFIX', 'omero')
 OMERO_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 forum_url = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
-repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL', forum_url)
+repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', forum_url)
 repl["@MILESTONE@"] = os.environ.get('MILESTONE', "OMERO-%s" % version)
 
 for x, y in (

@@ -36,7 +36,7 @@ PREFIX = os.environ.get('PREFIX', 'searcher')
 SEARCHER_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 forum_url = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
-repl["@ANNOUCEMENT_URL@"] = os.environ.get('ANNOUCEMENT_URL', forum_url)
+repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', forum_url)
 
 for x, y in (
         ("SEARCHER", "artifacts/omero_searcher-@VERSION@-b@BUILDNUM@.tar.gz"),
