@@ -33,7 +33,7 @@ for x, y in (
         ("ICE_X64_WIN", "Ice-@VERSION@-win-x64-Release.zip"),
         ("ICE_X86_WIN", "Ice-@VERSION@-win-x86-Release.zip"),
         ("SOURCE_CODE", "Ice-@VERSION@.zip"),
-        ("THIRD_PARTY", "ThirdParty-Sources-@VERSION@-1.zip"),
+        ("THIRD_PARTY", "ThirdParty-Sources-@VERSION@.zip"),
         ):
 
     find_pkg(repl, fingerprint_url, ICE_RSYNC_PATH, x, y, MD5s)
