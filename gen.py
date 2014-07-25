@@ -81,6 +81,7 @@ for x, y in (
         ("PYTHON33", "artifacts/OMERO.py-@VERSION@-ice33-@BUILD@.zip"),
         ("PYTHON34", "artifacts/OMERO.py-@VERSION@-ice34-@BUILD@.zip"),
         ("PYTHON35", "artifacts/OMERO.py-@VERSION@-ice35-@BUILD@.zip"),
+        ("JAVA35", "artifacts/OMERO.java-@VERSION@-ice35-@BUILD@.zip"),
         ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice34-@BUILD@.zip"),
         ("VM", "artifacts/OMERO.vm-@VERSION@-@BUILD@.ova"),
         ("DOC", "artifacts/OMERO-@VERSION@.pdf"),
