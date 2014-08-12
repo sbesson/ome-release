@@ -39,8 +39,6 @@ repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2013b" \
 for x, y in (
         ("FLIMFIT_50_WIN", "artifacts/FLIMfit_@VERSION@_OME_5.0_x64.zip"),
         ("FLIMFIT_50_MAC", "artifacts/FLIMfit_@VERSION@_OME_5.0_MACI64.zip"),
-        ("FLIMFIT_44_WIN", "artifacts/FLIMfit_@VERSION@_OME_4.4_x64.zip"),
-        ("FLIMFIT_44_MAC", "artifacts/FLIMfit_@VERSION@_OME_4.4_MACI64.zip"),
         ):
 
     find_pkg(repl, fingerprint_url, FLIMFIT_RSYNC_PATH, x, y, MD5s)
