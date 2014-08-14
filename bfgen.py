@@ -29,10 +29,11 @@ repl = {"@VERSION@": version,
 
 MD5s = []
 
-# Read major version from input version
+# Read major and minor version from input version
 import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
+minor_version = int(split_version[2])
 
 # For calculating tags
 import github
@@ -55,8 +56,8 @@ for repo in (repo1, repo2):
 
 repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
 repl["@DOC_URL@"] = \
-    "http://www.openmicroscopy.org/site/support/bio-formats%s" \
-    % major_version
+    "http://www.openmicroscopy.org/site/support/bio-formats%s.%s" \
+    % (major_version, minor_version)
 
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
