@@ -27,10 +27,11 @@ repl = {"@VERSION@": version,
         "@BUILD@": build,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-# Read major version from input version
+# Read major and minor version from input version
 import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
+minor_version = int(split_version[2])
 
 # For calculating tags
 import github
@@ -51,8 +52,8 @@ for repo in (repo1, repo2):
         break
 
 repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
-repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s" \
-    % major_version
+repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s.%s" \
+    % (major_version, minor_version)
 repl["@HELP_URL@"] = "http://help.openmicroscopy.org/getting-started-%s.html"\
     % major_version
 
