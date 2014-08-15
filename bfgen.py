@@ -68,6 +68,7 @@ for x, y in (
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
         ("JAVADOCS", "artifacts/bio-formats-javadocs.zip"),
         ("SOURCE_CODE", "artifacts/bioformats-@VERSION@.zip"),
+        ("CPP_OSX108", "artifacts/bioformats-cpp-@VERSION@-MacOSX10.8.zip"),
         ("CPP_OSX109", "artifacts/bioformats-cpp-@VERSION@-MacOSX10.9.zip"),
         ("CPP_CENTOS65", "artifacts/bioformats-cpp-@VERSION@-CentOS6.5.zip"),
         ("bioformats_package.jar", "artifacts/bioformats_package.jar"),
