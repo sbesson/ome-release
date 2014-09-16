@@ -9,8 +9,6 @@ import fileinput
 from doc_generator import find_pkg, repl_all
 
 fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-daily_url = "http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-daily/" \
-    "lastSuccessfulBuild/artifact/artifacts"
 latest_url = "http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/" \
     "lastSuccessfulBuild/artifact/artifacts"
 
@@ -94,7 +92,6 @@ for x, y in (
 
     find_pkg(repl, fingerprint_url, BF_RSYNC_PATH, x, y, MD5s)
 
-    repl["@DAILY_%s@" % x] = "%s/%s" % (daily_url, x)
     repl["@LATEST_%s@" % x] = "%s/%s" % (latest_url, x)
 
 for line in fileinput.input(["bf_downloads.html"]):
