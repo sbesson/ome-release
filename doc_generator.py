@@ -4,9 +4,11 @@
 
 import os
 import glob
-import hashlib
 
 from urllib2 import build_opener, Request
+
+FINGERPRINT_URL = os.environ.get(
+    'FINGERPRINT_URL', "http://ci.openmicroscopy.org/fingerprint")
 
 
 class HeadRequest(Request):
@@ -120,7 +122,7 @@ def humansize(nbytes):
     return '%s %s' % (f, suffixes[i])
 
 
-def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
+def find_pkg(repl, snapshot_path, name, path, ignore_md5=[]):
     """
     Mutates the repl argument
     """
@@ -133,7 +135,7 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
     md5_hash = get_hash(path, 'md5')
     sha1_hash = get_hash(path, 'sha1')
     if "SKIP_MD5" not in os.environ and md5_hash not in ignore_md5:
-        furl = "/".join([fingerprint_url, md5_hash, "api", "xml"])
+        furl = "/".join([FINGERPRINT_URL, md5_hash, "api", "xml"])
         if not check_url(furl):
             raise Exception("Error accessing %s for %s" % (furl, path))
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]

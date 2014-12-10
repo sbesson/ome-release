@@ -8,9 +8,8 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-latest_url = "http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/" \
-    "lastSuccessfulBuild/artifact/artifacts"
+latest_url = ("http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/"
+              "lastSuccessfulBuild/artifact/artifacts")
 
 
 def usage():
@@ -24,8 +23,6 @@ except:
 
 repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
-
-MD5s = []
 
 # Read major and minor version from input version
 import re
@@ -91,7 +88,7 @@ for x, y in (
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ):
 
-    find_pkg(repl, fingerprint_url, BF_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, BF_RSYNC_PATH, x, y)
 
     repl["@LATEST_%s@" % x] = "%s/%s" % (latest_url, x)
 

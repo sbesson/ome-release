@@ -9,9 +9,6 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-MD5s = []
-
 
 def usage():
     print "searchergen.py version pyslidversion ricercaversion buildnum"
@@ -44,7 +41,7 @@ for x, y in (
         ("RICERCA", "artifacts/ricerca-@RICERCAVERSION@-b@BUILDNUM@.tar.gz"),
         ):
 
-    find_pkg(repl, fingerprint_url, SEARCHER_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, SEARCHER_RSYNC_PATH, x, y)
 
 
 for line in fileinput.input(["searcher_downloads.html"]):

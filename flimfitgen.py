@@ -9,9 +9,6 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-MD5s = []
-
 
 def usage():
     print "flimfitgen.py version"
@@ -41,7 +38,7 @@ for x, y in (
         ("FLIMFIT_50_MAC", "artifacts/FLIMfit_@VERSION@_OME_5.0_MACI64.zip"),
         ):
 
-    find_pkg(repl, fingerprint_url, FLIMFIT_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, FLIMFIT_RSYNC_PATH, x, y)
 
 
 for line in fileinput.input(["flimfit_downloads.html"]):
