@@ -90,7 +90,7 @@ def get_hash(filename, type):
 
     read_hash = None
     with open(filename + '.' + type, "r") as f:
-        read_hash = f.reader()
+        read_hash = f.read()
     return read_hash
 
 
