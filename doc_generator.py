@@ -84,17 +84,12 @@ def check_url(url):
         return 'redirected', f.url
 
 
-def hashfile(filename, blocksize=65536):
-    m = hashlib.md5()
-    fileobj = open(filename, "r")
-    try:
-        buf = fileobj.read(blocksize)
-        while len(buf) > 0:
-            m.update(buf)
-            buf = fileobj.read(blocksize)
-        return m.hexdigest()
-    finally:
-        fileobj.close()
+def get_hash(filename, type):
+
+    read_hash = None
+    with open(filename + '.' + type, "r") as f:
+        read_hash = f.reader()
+    return read_hash
 
 
 def repl_all(repl, line, check_http=False):
@@ -135,14 +130,14 @@ def find_pkg(repl, fingerprint_url, snapshot_path, name, path, ignore_md5=[]):
         raise Exception("Results!=1 for %s (%s): %s"
                         % (name, snapshot_path + path, rv))
     path = rv[0]
-    hash = hashfile(path)
-    if "SKIP_MD5" not in os.environ:
-        if hash not in ignore_md5:
-            furl = "/".join([fingerprint_url, hash, "api", "xml"])
-            if not check_url(furl):
-                raise Exception("Error accessing %s for %s" % (furl, path))
+    md5_hash = get_hash(path, 'md5')
+    sha1_hash = get_hash(path, 'sha1')
+    if "SKIP_MD5" not in os.environ and md5_hash not in ignore_md5:
+        furl = "/".join([fingerprint_url, md5_hash, "api", "xml"])
+        if not check_url(furl):
+            raise Exception("Error accessing %s for %s" % (furl, path))
     repl["@%s@" % name] = "./" + path[len(snapshot_path):]
-    repl["@%s_MD5@" % name] = hash[0:6]
+    repl["@%s_MD5@" % name] = md5_hash[0:6]
+    repl["@%s_SHA1@" % name] = sha1_hash[0:6]
     repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
     repl["@%s_BASE@" % name] = os.path.basename(path)
-    # repl["@%s_SIZE@" % name] = str(Filesize(os.path.getsize(path)))
