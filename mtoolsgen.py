@@ -8,8 +8,6 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-
 
 def usage():
     print "mtoolsgen.py version"
@@ -23,9 +21,6 @@ except:
 repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-MD5s = []
-
-
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'mtools')
 UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
@@ -35,7 +30,7 @@ for x, y in (
         ("MTOOLS_MAC", "OMERO.mtools_@VERSION@_mac.zip"),
         ):
 
-    find_pkg(repl, fingerprint_url, UTRACK_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, UTRACK_RSYNC_PATH, x, y)
 
 for line in fileinput.input(["mtools_downloads.html"]):
     print repl_all(repl, line, check_http=True),

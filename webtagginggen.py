@@ -9,9 +9,6 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-MD5s = []
-
 
 def usage():
     print "webtagginggen.py version"
@@ -36,7 +33,7 @@ for x, y in (
         ("WEBTAGGING", "webtagging-@VERSION@.zip"),
         ):
 
-    find_pkg(repl, fingerprint_url, WEBTAGGING_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, WEBTAGGING_RSYNC_PATH, x, y)
 
 
 for line in fileinput.input(["webtagging_downloads.html"]):

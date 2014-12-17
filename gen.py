@@ -9,9 +9,6 @@ import fileinput
 
 from doc_generator import find_pkg, repl_all
 
-fingerprint_url = "http://ci.openmicroscopy.org/fingerprint"
-MD5s = []
-
 
 def usage():
     print "gen.py version build [build_ice34]"
@@ -87,7 +84,7 @@ for x, y in (
         ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
         ):
 
-    find_pkg(repl, fingerprint_url, OMERO_RSYNC_PATH, x, y, MD5s)
+    find_pkg(repl, OMERO_RSYNC_PATH, x, y)
 
 
 for line in fileinput.input(["omero_downloads.html"]):
