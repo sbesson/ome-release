@@ -63,14 +63,14 @@ repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', forum_url)
 repl["@MILESTONE@"] = os.environ.get('MILESTONE', "OMERO-%s" % version)
 
 for x, y in (
-        ("LINUX_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.linux.zip"),
-        ("MAC_JAVA6_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.mac_Java6.zip"),
-        ("MAC_JAVA7+_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.mac_Java7+.zip"),
-        ("WIN_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.win.zip"),
+        ("LINUX_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@.linux.zip"),
+        ("MAC_JAVA6_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@.mac_Java6.zip"),
+        ("MAC_JAVA7+_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@.mac_Java7+.zip"),
+        ("WIN_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@.win.zip"),
         ("IJ_CLIENTS",
          "artifacts/OMERO.insight-ij-@VERSION@-ice35-@BUILD@.zip"),
         ("MATLAB_CLIENTS",
