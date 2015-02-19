@@ -5,6 +5,8 @@ import os
 import sys
 import datetime
 import fileinput
+import re
+import github
 
 from doc_generator import find_pkg, repl_all
 
@@ -25,13 +27,11 @@ repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 # Read major and minor version from input version
-import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 minor_version = int(split_version[2])
 
 # For calculating tags
-import github
 gh = github.Github()
 ome = "openmicroscopy"
 scc = "snoopycrimecop"

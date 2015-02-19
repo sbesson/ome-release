@@ -6,6 +6,8 @@ import os
 import sys
 import datetime
 import fileinput
+import re
+import github
 
 from doc_generator import find_pkg, repl_all
 
@@ -25,13 +27,11 @@ repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 # Read major and minor version from input version
-import re
 split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
 major_version = int(split_version[1])
 minor_version = int(split_version[2])
 
 # For calculating tags
-import github
 gh = github.Github()
 ome = "openmicroscopy"
 scc = "snoopycrimecop"
@@ -63,12 +63,14 @@ repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', forum_url)
 repl["@MILESTONE@"] = os.environ.get('MILESTONE', "OMERO-%s" % version)
 
 for x, y in (
-        ("LINUX_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.linux.zip"),
-        ("MAC_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.mac.zip"),
-        ("WIN_CLIENTS",
-         "artifacts/OMERO.clients-@VERSION@-ice35-@BUILD@.win.zip"),
+        ("LINUX_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-linux.zip"),
+        ("MAC_JAVA6_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-mac_Java6.zip"),
+        ("MAC_JAVA7+_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-mac_Java7+.zip"),
+        ("WIN_INSIGHT",
+         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-win.zip"),
         ("IJ_CLIENTS",
          "artifacts/OMERO.insight-ij-@VERSION@-ice35-@BUILD@.zip"),
         ("MATLAB_CLIENTS",
