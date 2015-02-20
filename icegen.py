@@ -11,15 +11,22 @@ from doc_generator import find_pkg, repl_all
 
 
 def usage():
-    print "gen.py version"
+    print "icegen.py version build [source_suffix]"
     sys.exit(1)
 
 try:
     version = sys.argv[1]
+    build = sys.argv[2]
+    if len(sys.argv) < 3:
+        source_suffix = ""
+    else:
+        source_suffix = sys.argv[3]
 except:
     usage()
 
 repl = {"@VERSION@": version,
+        "@BUILD@": build,
+        "@SOURCE_SUFFIX@": source_suffix,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
@@ -27,10 +34,10 @@ PREFIX = os.environ.get('PREFIX', 'ice')
 ICE_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
-        ("ICE_X64_WIN", "Ice-@VERSION@-win-x64-Release.zip"),
-        ("ICE_X86_WIN", "Ice-@VERSION@-win-x86-Release.zip"),
+        ("ICE_X64_WIN", "Ice-@VERSION@-@BUILD@-win-x64-Release.zip"),
+        ("ICE_X86_WIN", "Ice-@VERSION@-@BUILD@-win-x86-Release.zip"),
         ("SOURCE_CODE", "Ice-@VERSION@.zip"),
-        ("THIRD_PARTY", "ThirdParty-Sources-@VERSION@.zip"),
+        ("THIRD_PARTY", "ThirdParty-Sources-@VERSION@@SOURCE_SUFFIX@.zip"),
         ):
 
     find_pkg(repl, ICE_RSYNC_PATH, x, y)
