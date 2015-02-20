@@ -34,10 +34,13 @@ PREFIX = os.environ.get('PREFIX', 'ice')
 ICE_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
-        ("ICE_X64_WIN", "Ice-@VERSION@-@BUILD@-win-x64-Release.zip"),
-        ("ICE_X86_WIN", "Ice-@VERSION@-@BUILD@-win-x86-Release.zip"),
-        ("SOURCE_CODE", "Ice-@VERSION@.zip"),
-        ("THIRD_PARTY", "ThirdParty-Sources-@VERSION@@SOURCE_SUFFIX@.zip"),
+        ("ICE_X64_WIN",
+         "artifacts/Ice-@VERSION@-@BUILD@-win-x64-Release.zip"),
+        ("ICE_X86_WIN",
+         "artifacts/Ice-@VERSION@-@BUILD@-win-x86-Release.zip"),
+        ("SOURCE_CODE", "artifacts/Ice-@VERSION@.zip"),
+        ("THIRD_PARTY",
+         "artifacts/ThirdParty-Sources-@VERSION@@SOURCE_SUFFIX@.zip"),
         ):
 
     find_pkg(repl, ICE_RSYNC_PATH, x, y)
