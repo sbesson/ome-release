@@ -63,7 +63,7 @@ webtagginggen:
 
 icegen:
 	mkdir -p $(CONTENTDIR)
-	python icegen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	python icegen.py $(RELEASE) $(ICE_BUILD) $(SOURCE_SUFFIX) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 clean:
