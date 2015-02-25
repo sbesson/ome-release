@@ -7,6 +7,7 @@ import sys
 import datetime
 import fileinput
 
+from utils import RSYNC_PATH
 from doc_generator import find_pkg, repl_all
 
 
@@ -29,7 +30,6 @@ repl = {"@VERSION@": version,
         "@SOURCE_SUFFIX@": source_suffix,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'ice')
 ICE_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 

@@ -5,9 +5,8 @@ import os
 import sys
 import datetime
 import fileinput
-import re
-import github
 
+from utils import RSYNC_PATH, get_version, get_tag
 from doc_generator import find_pkg, repl_all
 
 latest_url = ("http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/"
@@ -27,34 +26,13 @@ repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
 # Read major and minor version from input version
-split_version = re.split("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$", version)
-major_version = int(split_version[1])
-minor_version = int(split_version[2])
+major_version, minor_version = get_version(version)
 
-# For calculating tags
-gh = github.Github()
-ome = "openmicroscopy"
-scc = "snoopycrimecop"
-bf = "bioformats"
+repl["@TAG_URL@"] = get_tag("bioformats", version)
+repl["@DOC_URL@"] = (
+    "http://www.openmicroscopy.org/site/support/bio-formats%s.%s"
+    % (major_version, minor_version))
 
-repo1 = gh.get_organization(ome).get_repo(bf)
-repo2 = gh.get_user(scc).get_repo(bf)
-
-for repo in (repo1, repo2):
-    found = False
-    for tag in repo.get_tags():
-        if tag.name == ("v%s" % version):
-            found = True
-            break
-    if found:
-        break
-
-repl["@TAG_URL@"] = repo.html_url + '/tree/' + tag.name
-repl["@DOC_URL@"] = \
-    "http://www.openmicroscopy.org/site/support/bio-formats%s.%s" \
-    % (major_version, minor_version)
-
-RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
 BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 

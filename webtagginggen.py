@@ -7,6 +7,7 @@ import sys
 import datetime
 import fileinput
 
+from utils import RSYNC_PATH, FORUM_URL
 from doc_generator import find_pkg, repl_all
 
 
@@ -22,12 +23,10 @@ except:
 repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'webtagging')
 WEBTAGGING_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
-forum_url = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
-repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', forum_url)
+repl["@ANNOUNCEMENT_URL@"] = os.environ.get('ANNOUNCEMENT_URL', FORUM_URL)
 
 for x, y in (
         ("WEBTAGGING", "webtagging-@VERSION@.zip"),
