@@ -31,18 +31,19 @@ repl["@DOC_URL@"] = (
     % (major_version, minor_version))
 
 PREFIX = os.environ.get('PREFIX', 'libbioformats')
-BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
+BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
+BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts'
 
 for x, y in (
-        ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
-        ("DOXYGEN", "artifacts/bio-formats-javadocs.zip"),
-        ("SOURCE_CODE", "artifacts/bioformats-@VERSION@.zip"),
+        ("DOC", BF_RELATIVE_PATH + "/artifacts/Bio-Formats-@VERSION@.pdf"),
+        ("SOURCE_CODE",
+         BF_RELATIVE_PATH + "artifacts/bioformats-@VERSION@.zip"),
         ("CPP_OSX108", "artifacts/bioformats-cpp-@VERSION@-MacOSX10.8.zip"),
         ("CPP_CENTOS65",
          "artifacts/bioformats-cpp-@VERSION@-CentOS6.5-x86_64.zip"),
         ):
 
-    find_pkg(repl, BF_RSYNC_PATH, x, y)
+    find_pkg(repl, BFCPP_RSYNC_PATH, x, y)
 
 
 for line in fileinput.input(["libbioformats_downloads.html"]):
