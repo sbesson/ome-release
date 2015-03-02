@@ -7,6 +7,8 @@ omero: gen
 
 bf: bfgen
 
+libbioformats: libbioformatsgen
+
 figure: figuregen
 
 flimfit: flimfitgen
@@ -29,6 +31,11 @@ gen:
 bfgen:
 	mkdir -p $(CONTENTDIR)
 	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+libbioformatsgen:
+	mkdir -p $(CONTENTDIR)
+	python libbioformatsgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 figuregen:
