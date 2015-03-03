@@ -32,17 +32,27 @@ repl["@DOC_URL@"] = (
 
 PREFIX = os.environ.get('PREFIX', 'libbioformats')
 BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
+
+# Links to Bio-Formats artifacts
 BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts/'
+bf_artifacts = [
+    ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
+    ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-@VERSION@.zip")]
 
-for x, y in (
-        ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
-        ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-@VERSION@.zip"),
-        ("DOXYGEN", "artifacts/bioformats-cpp-apidoc-@VERSION@.zip"),
-        ("CPP_OSX108", "artifacts/bioformats-cpp-@VERSION@-MacOSX10.8.zip"),
-        ("CPP_CENTOS65",
-         "artifacts/bioformats-cpp-@VERSION@-CentOS6.5-x86_64.zip"),
-        ):
+# Links to Bio-Formats C++ artifacts
+platforms = {'OSX108': 'MacOSX10.8',
+             'CENTOS65': 'CentOS6.5'}
+build_types = ['Debug', 'Release']
 
+bf_cpp_artifacts = []
+for platform in platforms.keys():
+    for build_type in build_types:
+        bf_cpp_artifacts.append(
+            ('%s_%s' % (platform, build_type.upper()),
+             'artifacts/bioformats-cpp-@VERSION@-%s-%s.tar.xz'
+             % (build_type, platforms[platform])))
+
+for x, y in bf_artifacts + bf_cpp_artifacts:
     find_pkg(repl, BFCPP_RSYNC_PATH, x, y)
 
 
