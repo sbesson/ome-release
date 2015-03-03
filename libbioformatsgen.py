@@ -32,7 +32,7 @@ repl["@DOC_URL@"] = (
 
 PREFIX = os.environ.get('PREFIX', 'libbioformats')
 BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
-BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts'
+BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts/'
 
 for x, y in (
         ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
