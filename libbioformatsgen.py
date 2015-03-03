@@ -25,7 +25,7 @@ repl = {"@VERSION@": version,
 # Read major and minor version from input version
 major_version, minor_version = get_version(version)
 
-repl["@TAG_URL@"] = get_tag("bioformats", version)
+repl["@TAG_URL@"] = get_tag_url("bioformats", version)
 repl["@DOC_URL@"] = (
     "http://www.openmicroscopy.org/site/support/bio-formats%s.%s"
     % (major_version, minor_version))

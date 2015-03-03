@@ -10,7 +10,7 @@ RSYNC_PATH = os.environ.get(
 FORUM_URL = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
 
-def split_version(version):
+def get_version(version):
     """Read major and minor version from input version"""
     version_pattern = re.compile("^([0-9]+)\.([0-9]+)\.([0-9]+)(.*?)$")
     split_version = version_pattern.split(version)

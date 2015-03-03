@@ -26,7 +26,7 @@ repl = {"@VERSION@": version,
 
 major_version, minor_version = get_version(version)
 
-repl["@TAG_URL@"] = get_tag("openmicroscopy", version)
+repl["@TAG_URL@"] = get_tag_url("openmicroscopy", version)
 repl["@DOC_URL@"] = "http://www.openmicroscopy.org/site/support/omero%s.%s" \
     % (major_version, minor_version)
 repl["@HELP_URL@"] = "http://help.openmicroscopy.org/getting-started-%s.html"\
