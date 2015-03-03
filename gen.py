@@ -6,7 +6,7 @@ import os
 import sys
 import datetime
 import fileinput
-from utils import RSYNC_PATH, FORUM_URL, get_version, get_tag
+from utils import RSYNC_PATH, FORUM_URL, get_version, get_tag_url
 from doc_generator import find_pkg, repl_all
 
 

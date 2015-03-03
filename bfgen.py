@@ -6,7 +6,7 @@ import sys
 import datetime
 import fileinput
 
-from utils import RSYNC_PATH, get_version, get_tag
+from utils import RSYNC_PATH, get_version, get_tag_url
 from doc_generator import find_pkg, repl_all
 
 latest_url = ("http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/"
