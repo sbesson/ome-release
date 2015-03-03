@@ -37,6 +37,7 @@ BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts/'
 for x, y in (
         ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
         ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-@VERSION@.zip"),
+        ("DOXYGEN", "artifacts/bioformats-cpp-apidoc-@VERSION@.zip"),
         ("CPP_OSX108", "artifacts/bioformats-cpp-@VERSION@-MacOSX10.8.zip"),
         ("CPP_CENTOS65",
          "artifacts/bioformats-cpp-@VERSION@-CentOS6.5-x86_64.zip"),
