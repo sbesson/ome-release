@@ -5,8 +5,8 @@ import os
 import re
 import github
 
-DOWNLOADS_PATH = os.environ.get(
-    'DOWNLOADS_PATH', '/ome/www/downloads.openmicroscopy.org')
+RSYNC_PATH = os.environ.get(
+    'RSYNC_PATH', '/ome/www/downloads.openmicroscopy.org')
 FORUM_URL = "https://www.openmicroscopy.org/community/viewforum.php?f=11"
 
 
