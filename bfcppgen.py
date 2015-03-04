@@ -30,7 +30,7 @@ repl["@DOC_URL@"] = (
     "http://www.openmicroscopy.org/site/support/bio-formats%s.%s"
     % (major_version, minor_version))
 
-PREFIX = os.environ.get('PREFIX', 'libbioformats')
+PREFIX = os.environ.get('PREFIX', 'bio-formats-cpp')
 BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 # Links to Bio-Formats artifacts
@@ -56,5 +56,5 @@ for x, y in bf_artifacts + bf_cpp_artifacts:
     find_pkg(repl, BFCPP_RSYNC_PATH, x, y)
 
 
-for line in fileinput.input(["libbioformats_downloads.html"]):
+for line in fileinput.input(["bf_cpp_downloads.html"]):
     print repl_all(repl, line, check_http=True),
