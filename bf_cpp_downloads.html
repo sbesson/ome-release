@@ -63,9 +63,8 @@
                 </div>
                     <p><strong><a href="#support"
                             >Supported platforms</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api"
-                            >API</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#unsupported"
-                            >Unsupported platforms</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                            href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            >API</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="#code">Code</a><a
                             href="#previous">Previous versions</a>
                     </strong></p>
                 <ul>
@@ -116,17 +115,20 @@
                     <li>
                         <p>These releases are built against a specific
                             platform release and therefore should
-                            always work with the specified platform 
+                            always work with the specified platform
                             release.</p>
                     </li>
                     <li>
-                        <p>Unsupported platforms are packages which may be
-                            updated such that the release build
+                        <p>Unsupported binaries are available
+                            <a href="artifacts">here</a> for platforms which
+							may be updated such that the release build
                             no longer works, or that rely on additional
                             third-party packages. Therefore we cannot
                             guarantee these specific binary builds will be
                             usable in the future or on your particular set-up.
-                            See the <a href="#unsupported">Unsupported platforms</a> section below.</p>
+							However, you should be able to build
+                            your own binaries to work on all these operating
+                            systems.</p
                     </li>
                 </ul>
                 <h2><a name="api" id="api"></a>Bio-Formats C++ API
@@ -209,89 +211,6 @@
                         </tbody>
                     </table>
                 </div>
-                <h2><a name="unsupported" id="unsupported"></a>Unsupported platforms</h2>
-                <div class="alt-table">
-                    <table width="800" border="0" cellpadding="5" summary="Unsupported versions">
-                        <tbody>
-                            <tr>
-                                <th width="269">Downloads</th>
-                                <th width="85">Size</th>
-                                <th width="150">File Name</th>
-                                <th width="125">SHA1 Checksum</th>
-                            </tr>
-                            <tr>
-                                <td><a href="@OSX108_RELEASE@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="OS X 10.8 C++ Release binaries"
-                                     /></a></td>
-                                <td align="center">@OSX108_RELEASE_SIZE@</td>
-                                <td>@OSX108_RELEASE_BASE@</td>
-                                <td align="center">@OSX108_RELEASE_SHA1@ (<a
-                                        href="@OSX108_RELEASE@.sha1">SHA1</a>)</td>
-                            </tr>
-                            <tr>
-                                <td><a href="@OSX108_DEBUG@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="OS X 10.8 C++ Debug binaries"
-                                     /></a></td>
-                                <td align="center">@OSX108_DEBUG_SIZE@</td>
-                                <td>@OSX108_DEBUG_BASE@</td>
-                                <td align="center">@OSX108_DEBUG_SHA1@ (<a
-                                        href="@OSX108_DEBUG@.sha1">SHA1</a>)</td>
-                            </tr>
-                            <tr>
-                                <td><a href="@OSX1010_RELEASE@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="OS X 10.10 C++ Release binaries"
-                                     /></a></td>
-                                <td align="center">@OSX1010_RELEASE_SIZE@</td>
-                                <td>@OSX1010_RELEASE_BASE@</td>
-                                <td align="center">@OSX1010_RELEASE_SHA1@ (<a
-                                        href="@OSX1010_RELEASE@.sha1">SHA1</a>)</td>
-                            </tr>
-                            <tr>
-                                <td><a href="@OSX1010_DEBUG@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="OS X 10.10 C++ Debug binaries"
-                                     /></a></td>
-                                <td align="center">@OSX1010_DEBUG_SIZE@</td>
-                                <td>@OSX1010_DEBUG_BASE@</td>
-                                <td align="center">@OSX1010_DEBUG_SHA1@ (<a
-                                        href="@OSX1010_DEBUG@.sha1">SHA1</a>)</td>
-                            </tr>
-                            <tr>
-                                <td><a href="@FREEBSD_RELEASE@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="FreeBSD C++ Release binaries"
-                                     /></a></td>
-                                <td align="center">@FREEBSD_RELEASE_SIZE@</td>
-                                <td>@FREEBSD_RELEASE_BASE@</td>
-                                <td align="center">@FREEBSD_RELEASE_SHA1@ (<a
-                                        href="@FREEBSD_RELEASE@.sha1">SHA1</a>)</td>
-                            </tr>
-                            <tr>
-                                <td><a href="@FREEBSD_DEBUG@"><img
-                                        src="images/bf_c++_mac_10_8.png"
-                                        alt="FreeBSD C++ Debug binaries"
-                                     /></a></td>
-                                <td align="center">@FREEBSD_DEBUG_SIZE@</td>
-                                <td>@FREEBSD_DEBUG_BASE@</td>
-                                <td align="center">@FREEBSD_DEBUG_SHA1@ (<a
-                                        href="@FREEBSD_DEBUG@.sha1">SHA1</a>)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul>
-                    <li>
-                        <p>Binary builds for unsupported platforms are not
-                            guaranteed to work for your individual set-up or
-                            if the platform package is updated after they were
-                            produced. However, you should be able to build
-                            your own binaries to work on all these operating
-                            systems.</p>
-                    </li>
-                </ul>
                 <h2><a name="previous" id="previous"></a>Previous versions</h2>
                 <ul>
                     <li>
