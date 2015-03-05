@@ -41,10 +41,10 @@ bf_artifacts = [
     ("DOXYGEN", "artifacts/bioformats-cpp-apidoc-@VERSION@.tar.xz")]
 
 # Links to Bio-Formats C++ artifacts
-platforms = {'OSX108': 'MacOSX10.8',
+platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1010': 'MacOSX10.10',
              'CENTOS65': 'CentOS6.5-x86_64',
-             'FREEBSD': 'FreeBSD10.1-RELEASE-x86_64'}
+             'FREEBSD': 'FreeBSD10.1-x86_64'}
 build_types = ['Debug', 'Release']
 
 bf_cpp_artifacts = []
