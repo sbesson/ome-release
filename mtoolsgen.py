@@ -6,6 +6,7 @@ import sys
 import datetime
 import fileinput
 
+from utils import RSYNC_PATH
 from doc_generator import find_pkg, repl_all
 
 
@@ -21,7 +22,6 @@ except:
 repl = {"@VERSION@": version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
 
-RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'mtools')
 UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 

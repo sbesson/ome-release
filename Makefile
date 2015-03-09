@@ -7,6 +7,8 @@ omero: gen
 
 bf: bfgen
 
+bfcpp: bfcppgen
+
 figure: figuregen
 
 flimfit: flimfitgen
@@ -29,6 +31,11 @@ gen:
 bfgen:
 	mkdir -p $(CONTENTDIR)
 	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+bfcppgen:
+	mkdir -p $(CONTENTDIR)
+	python bfcppgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 figuregen:
