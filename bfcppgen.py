@@ -43,6 +43,7 @@ bf_artifacts = [
 # Links to Bio-Formats C++ artifacts
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1010': 'MacOSX10.10',
+             'OSX109': 'MacOSX10.9',
              'CENTOS65': 'CentOS6.5-x86_64',
              'FREEBSD': 'FreeBSD10.1-x86_64'}
 build_types = ['Debug', 'Release']
