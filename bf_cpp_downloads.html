@@ -60,6 +60,16 @@
                 allowing developers to prepare their code for the future
                 public release and is <b>used at your own risk</b>. The Model
                 and API are still subject to change at this stage.
+                <p>
+                <b>NOTE</b><br/>
+                The following builds are provided for testing
+                purposes.  They were known to work when built for this
+                release against the current version of each platform
+                at that time.  It may be preferable to build the
+                Bio-Formats C++ libraries from source, or use the
+                distribution-provided builds for your platform (if
+                available) to ensure they remain binary-compatible
+                with your installation.
                 </div>
                     <p><strong><a href="#supported"
                             >Supported builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#unsupported"
@@ -218,27 +228,31 @@
                         <p>Unsupported builds are available for
 			   rolling-release platforms (BSD ports, MacOS
 			   X homebrew).  The packages and libraries
-			   provided by the rolling release and used by
-			   Bio-Formats may be updated incompatibly in
-			   the future, causing the build no longer
-			   work. We cannot guarantee these specific
-			   binary builds will be usable in the future
-			   or on your particular set-up.</p>
+			   provided by the rolling release and
+			   required by Bio-Formats may be updated
+			   incompatibly in the future, causing the
+			   build no longer work. We cannot guarantee
+			   these specific binary builds will be usable
+			   in the future as the required dependencies
+			   change over time.</p>
                     </li>
                     <li>
                         <p>We also provide builds for CentOS which
 			   rely on third-party libraries not provided
 			   by CentOS directly; you will need a
 			   compatible build of these libraries for our
-			   package to function correctly.</p>
+			   package to function correctly.  CentOS
+			   users may find building from source an
+			   easier alternative until we have a better
+			   solution in place.</p>
                     </li>
                     <li>
                         <p>In all cases you should be able to build
-			   your own binaries to work on operating
-			   systems which meet the requirements covered
-			   in the documentation.  This will ensure
-			   your build is compatible with the libraries
-			   available on the system.</p>
+			   from source to work on operating systems
+			   which meet the requirements covered in the
+			   documentation.  This will ensure your build
+			   is compatible with the libraries available
+			   on the system.</p>
                     </li>
                 </ul>
                 <h2><a name="api" id="api"></a>Bio-Formats C++ API
