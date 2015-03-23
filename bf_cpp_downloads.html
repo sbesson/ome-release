@@ -54,17 +54,21 @@
             <div class="entry-content" style="margin-left:20px;">
                 <h2>Bio-Formats C++ @VERSION@ Downloads</h2>
                 <div style="background-color: #F5A9A9; margin-left: 20px; margin-right: 20px; margin-bottom: 20px; margin-top: 20px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 8px;">
-                <b>WARNING</b><br/>
-                This is a developer-preview release <b>NOT INTENDED FOR
-                PRODUCTION USE</b>. It is provided for the purpose of
-                allowing developers to prepare their code for the future
-                public release and is <b>used at your own risk</b>. The Model
-                and API are still subject to change at this stage.
+                <b>NOTE</b><br/>
+                The following builds are provided for testing
+                purposes.  They were known to work when built for this
+                release against the current version of each platform
+                at that time.  It may be preferable to build the
+                Bio-Formats C++ libraries from source, or use the
+                distribution-provided builds for your platform (if
+                available) to ensure they remain binary-compatible
+                with your installation.
                 </div>
-                    <p><strong><a href="#support"
-                            >Supported platforms</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api"
+                    <p><strong><a href="#supported"
+                            >Supported builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#unsupported"
+                            >Unsupported builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api"
                             >API</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                            href="#code">Code</a><a
+                            href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                             href="#previous">Previous versions</a>
                     </strong></p>
                 <ul>
@@ -78,7 +82,7 @@
                                 href="@DOC_URL@/developers/cpp/overview.html">starting here</a>.</p>
                     </li>
                 </ul>
-                <h2><a name="supported" id="supported"></a>Supported platforms</h2>
+                <h2><a name="supported" id="supported"></a>Supported builds</h2>
                 <div class="alt-table">
                     <table width="800" border="0" cellpadding="5" summary="Supported versions">
                         <tbody>
@@ -90,7 +94,7 @@
                             </tr>
 		                     <tr>
                                 <td><a href="@UBUNTU1404_RELEASE@"><img
-                                        src="images/bf_c++_ubuntu_14_04.png"
+                                        src="images/bf_c++_ubuntu_14_04_release.png"
                                         alt="Ubuntu 14.04 C++ Release binaries"
                                      /></a></td>
                                 <td align="center">@UBUNTU1404_RELEASE_SIZE@</td>
@@ -100,7 +104,7 @@
                              </tr>
 		                     <tr>
                                 <td><a href="@UBUNTU1404_DEBUG@"><img
-                                        src="images/bf_c++_ubuntu_14_04.png"
+                                        src="images/bf_c++_ubuntu_14_04_debug.png"
                                         alt="Ubuntu 14.04 C++ Debug binaries"
                                      /></a></td>
                                 <td align="center">@UBUNTU1404_DEBUG_SIZE@</td>
@@ -118,17 +122,129 @@
                             always work with the specified platform
                             release.</p>
                     </li>
+                </ul>
+                <h2><a name="unsupported" id="unsupported"></a>Unsupported builds</h2>
+                <div class="alt-table">
+                    <table width="800" border="0" cellpadding="5" summary="Unsupported versions">
+                        <tbody>
+                            <tr>
+                                <th width="269">Downloads</th>
+                                <th width="85">Size</th>
+                                <th width="150">File Name</th>
+                                <th width="125">SHA1 Checksum</th>
+                            </tr>
+		            <tr>
+                                <td><a href="@CENTOS66_RELEASE@"><img
+                                        src="images/bf_c++_centos_6_6_release.png"
+                                        alt="CentOS 6.6 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@CENTOS66_RELEASE_SIZE@</td>
+                                <td>@CENTOS66_RELEASE_BASE@</td>
+                                <td align="center">@CENTOS66_RELEASE_SHA1@ (<a
+                                        href="@CENTOS66_RELEASE@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@CENTOS66_DEBUG@"><img
+                                        src="images/bf_c++_centos_6_6_debug.png"
+                                        alt="CentOS 6.6 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@CENTOS66_DEBUG_SIZE@</td>
+                                <td>@CENTOS66_DEBUG_BASE@</td>
+                                <td align="center">@CENTOS66_DEBUG_SHA1@ (<a
+                                        href="@CENTOS66_DEBUG@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@FREEBSD_RELEASE@"><img
+                                        src="images/bf_c++_freebsd_10_1_release.png"
+                                        alt="FreeBSD 10.1 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@FREEBSD_RELEASE_SIZE@</td>
+                                <td>@FREEBSD_RELEASE_BASE@</td>
+                                <td align="center">@FREEBSD_RELEASE_SHA1@ (<a
+                                        href="@FREEBSD_RELEASE@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@FREEBSD_DEBUG@"><img
+                                        src="images/bf_c++_freebsd_10_1_debug.png"
+                                        alt="FreeBSD 10.1 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@FREEBSD_DEBUG_SIZE@</td>
+                                <td>@FREEBSD_DEBUG_BASE@</td>
+                                <td align="center">@FREEBSD_DEBUG_SHA1@ (<a
+                                        href="@FREEBSD_DEBUG@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@OSX1010_RELEASE@"><img
+                                        src="images/bf_c++_mac_10_10_release.png"
+                                        alt="MacOS X 10.10 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@OSX1010_RELEASE_SIZE@</td>
+                                <td>@OSX1010_RELEASE_BASE@</td>
+                                <td align="center">@OSX1010_RELEASE_SHA1@ (<a
+                                        href="@OSX1010_RELEASE@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@OSX1010_DEBUG@"><img
+                                        src="images/bf_c++_mac_10_10_debug.png"
+                                        alt="MacOS X 10.10 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@OSX1010_DEBUG_SIZE@</td>
+                                <td>@OSX1010_DEBUG_BASE@</td>
+                                <td align="center">@OSX1010_DEBUG_SHA1@ (<a
+                                        href="@OSX1010_DEBUG@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@OSX109_RELEASE@"><img
+                                        src="images/bf_c++_mac_10_9_release.png"
+                                        alt="MacOS X 10.9 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@OSX109_RELEASE_SIZE@</td>
+                                <td>@OSX109_RELEASE_BASE@</td>
+                                <td align="center">@OSX109_RELEASE_SHA1@ (<a
+                                        href="@OSX109_RELEASE@.sha1">SHA1</a>)</td>
+                            </tr>
+		            <tr>
+                                <td><a href="@OSX109_DEBUG@"><img
+                                        src="images/bf_c++_mac_10_9_debug.png"
+                                        alt="MacOS X 10.9 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@OSX109_DEBUG_SIZE@</td>
+                                <td>@OSX109_DEBUG_BASE@</td>
+                                <td align="center">@OSX109_DEBUG_SHA1@ (<a
+                                        href="@OSX109_DEBUG@.sha1">SHA1</a>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul>
                     <li>
-                        <p>Unsupported binaries are available
-                            <a href="artifacts">here</a> for platforms which
-							may be updated such that the release build
-                            no longer works, or that rely on additional
-                            third-party packages. We cannot guarantee these
-                            specific binary builds will be usable in the
-                            future or on your particular set-up. However, you
-                            should be able to build your own binaries to work
-                            on operating systems which meet the requirements
-                            covered in the documentation.</p
+                        <p>Unsupported builds are available for
+                           rolling-release platforms (BSD ports, MacOS
+                           X homebrew). As the packages and libraries
+                           provided by the rolling release (and
+                           required by Bio-Formats) may be updated
+                           incompatibly, we cannot guarantee these
+                           specific binary builds will be usable in
+                           the future.</p>
+                    </li>
+                    <li>
+                        <p>We also provide builds for CentOS which
+			   rely on third-party libraries not provided
+			   by CentOS directly; you will need a
+			   compatible build of these libraries for our
+			   package to function correctly.  CentOS
+			   users may find building from source an
+			   easier alternative until we have a better
+			   solution in place.</p>
+                    </li>
+                    <li>
+                        <p>In all cases you should be able to build
+			   from source to work on operating systems
+			   which meet
+			   the <a href="@DOC_URL@/developers/cpp/overview.html">requirements</a>.
+			   This will ensure your build is compatible
+			   with the libraries available on the
+			   system.</p>
                     </li>
                 </ul>
                 <h2><a name="api" id="api"></a>Bio-Formats C++ API
