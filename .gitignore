@@ -2,3 +2,4 @@
 *.un~
 output
 content
+.DS_Store
