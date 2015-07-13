@@ -5,6 +5,8 @@ CONTENTDIR=$(BASEDIR)/content
 
 omero: gen
 
+omerova: omerovagen
+
 bf: bfgen
 
 bfcpp: bfcppgen
@@ -26,6 +28,11 @@ ice: icegen
 gen:
 	mkdir -p $(CONTENTDIR)
 	python gen.py $(RELEASE) $(OMERO_BUILD) > $(CONTENTDIR)/index.html
+	cp -r $(IMAGESDIR) $(CONTENTDIR)
+
+omerovagen:
+	mkdir -p $(CONTENTDIR)
+	python vagen.py $(RELEASE) $(OMERO_VA_BUILD) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 bfgen:

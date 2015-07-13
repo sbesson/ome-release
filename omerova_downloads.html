@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" href="images/plonematch.css" type="text/css" />
+
+        <style type="text/css">
+            [touch-action = "none"]{
+                -ms-touch-action:none;
+                touch-action:none;
+            }
+            [touch-action = "pan-x"]{
+                -ms-touch-action:pan-x;
+                touch-action:pan-x;
+            }
+            [touch-action = "pan-y"]{
+                -ms-touch-action:pan-y;
+                touch-action:pan-y;
+            }
+            [touch-action = "scroll"],
+            [touch-action = "pan-x pan-y"],
+            [touch-action = "pan-y pan-x"]{
+                -ms-touch-action:pan-x pan-y;
+                touch-action:pan-x pan-y;
+            }</style>
+        <title></title>
+    </head>
+
+    <body id="index" class="home">
+        <!-- OME Banner - START -->
+        <div id="portal-top">
+            <div id="portal-header">
+                <ul id="portal-siteactions">
+                    <li>
+                        <br />
+                    </li>
+                </ul><a id="portal-logo" accesskey="1"
+                    href="http://downloads.openmicroscopy.org/"
+                    name="portal-logo"><img src="images/logo.jpg" alt=""
+                        title="" height="73" width="450" /></a>
+                <div id="portal-globalnav">
+                    <br />
+                </div>
+            </div>
+            <div id="portal-personaltools-wrapper">
+                <ul id="portal-personaltools" class="visualInline">
+                    <li>
+                        <br />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="visualClear" id="clear-space-before-wrapper-table">
+            <!-- OME Banner - END -->
+            <div class="entry-content" style="margin-left:20px;">
+                <h2>OMERO @VERSION@ Virtual Appliance Downloads</h2>
+                    <p><strong>
+                        <a href="#va" >Virtual Appliance</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#previous">Previous versions</a>
+                    </strong></p>
+                <ul>
+                    <li>
+                        <p>Information on this release of OMERO is in the <a
+                                href="@ANNOUNCEMENT_URL@">release
+                                announcement</a></p>
+                    </li>
+                </ul>
+                <h2><a name="va" id="va"></a>OMERO Virtual Appliance
+                    download</h2>
+                <div class="alt-table">
+                    <table width="800" border="0" cellpadding="5" summary="OMERO Virtual Appliance downloads">
+                        <tbody>
+                            <tr>
+                                <th width="269">Virtual Appliance</th>
+                                <th width="91">Size</th>
+                                <th width="270">File Name</th>
+                                <th width="120">Checksum</th>
+                            </tr>
+                            <tr>
+                                <td><a href="@VM@"><img
+                                        src="images/virtual_app_download.png"
+                                        alt="Virtual Appliance Download"
+                                     /></a></td>
+                                <td align="center">@VM_SIZE@</td>
+                                <td>@VM_BASE@</td>
+                                <td align="center">@VM_SHA1@ (<a href="@VM@.sha1"
+                                        >SHA1</a>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul>
+                    <li>
+                        <p>The OMERO Virtual Appliance allows you to try out an
+                            OMERO server on your local machine </p>
+                    </li>
+                    <li>
+                        <p>Instructions for using the Virtual Appliance are at:
+                                <a href="@DOC_URL@/users/virtual-appliance.html"
+                                >Virtual Appliance</a></p>
+                    </li>
+                </ul>
+                <h2><a name="code" id="code"></a>Checking out the code</h2>
+
+                <div class="alt-table">
+                    <table width="278" border="0" cellpadding="5" summary="OMERO Code Links">
+                        <tbody>
+                            <tr>
+                                <th width="264">Source Code Links</th>
+                            </tr>
+                            <tr>
+                                <td><a
+                                        href="http://github.com/openmicroscopy/openmicroscopy"
+                                        target="_blank"><img
+                                        src="images/github_rep_link.png"
+                                        alt="GitHub Repository Link" /></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://git.openmicroscopy.org/"
+                                        target="_blank"><img
+                                        src="images/gitweb_int_link.png"
+                                        alt="Gitweb Interface Link" /></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@TAG_URL@" target="_blank"><img
+                                        src="images/git_tag.png"
+                                        alt="GitHub Tag" /></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2><a name="previous" id="previous"></a>Previous versions</h2>
+                <ul>
+                    <li>
+                        <p>We recommend that you always use the most recent
+                            release version of the OMERO software, but if you
+                            need to use a previous version, they are all
+                            available from the main <a
+                                href="http://downloads.openmicroscopy.org/omero-virtual-appliance/?C=M;O=D"
+                                >downloads folder</a></p>
+                    </li>
+                </ul>
+            </div><!-- /.entry-content -->
+
+            <!-- OME Footer - Start -->
+            <div class="visualClear" id="clear-space-before-footer"
+                ><!-- --></div>
+            <div id="portal-footer">
+                <p>
+                    <acronym title="Copyright">&copy;</acronym> 2000-2015
+                    University of Dundee &amp; Open Microscopy Environment. <a
+                        href="http://www.openmicroscopy.org/site/about/licensing-attribution/licensing"
+                        >Creative Commons Attribution 3.0 Unported License</a>
+                </p>
+                <p> OME source code is available under the <a
+                        href="http://www.openmicroscopy.org/site/about/licensing"
+                        >GNU General public license</a> or through commercial
+                    license from <a
+                        href="http://www.openmicroscopy.org/site/about/development-teams/glencoe-software"
+                        >Glencoe Software</a>
+                </p>
+            </div>
+            <div class="visualClear">
+                <!-- OME Footer - END -->
+            </div>
+        </div>
+    </body>
+</html>
