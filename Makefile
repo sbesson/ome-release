@@ -32,7 +32,7 @@ gen:
 
 omerovagen:
 	mkdir -p $(CONTENTDIR)
-	python vagen.py $(RELEASE) $(OMERO_VA_BUILD) > $(CONTENTDIR)/index.html
+	python omerovagen.py $(RELEASE) $(OMERO_VA_BUILD) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 bfgen:
