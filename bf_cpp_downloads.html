@@ -53,9 +53,9 @@
             <!-- OME Banner - END -->
             <div class="entry-content" style="margin-left:20px;">
                 <h2>Bio-Formats C++ @VERSION@ Downloads</h2>
-                    <p><strong><a href="#supported"
-                            >Supported builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#unsupported"
-                            >Unsupported builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api"
+                    <p><strong><a href="#superbuild"
+                            >Self-contained "super" builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#platform"
+                            >Platform builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#api"
                             >API</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                             href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                             href="#previous">Previous versions</a>
@@ -71,9 +71,10 @@
                                 href="@DOC_URL@/developers/cpp/overview.html">starting here</a>.</p>
                     </li>
                 </ul>
-                <h2><a name="supported" id="supported"></a>Supported builds</h2>
+                <h2><a name="superbuild"
+                id="superbuild"></a>Self-contained "super" builds</h2>
                 <div class="alt-table">
-                    <table width="800" border="0" cellpadding="5" summary="Supported versions">
+                    <table width="800" border="0" cellpadding="5" summary="Self-contained versions">
                         <tbody>
                             <tr>
                                 <th width="269">Downloads</th>
@@ -81,50 +82,9 @@
                                 <th width="150">File Name</th>
                                 <th width="125">SHA1 Checksum</th>
                             </tr>
-		                     <tr>
-                                <td><a href="@UBUNTU1404_RELEASE@"><img
-                                        src="images/bf_c++_ubuntu_14_04_release.png"
-                                        alt="Ubuntu 14.04 C++ Release binaries"
-                                     /></a></td>
-                                <td align="center">@UBUNTU1404_RELEASE_SIZE@</td>
-                                <td>@UBUNTU1404_RELEASE_BASE@</td>
-                                <td align="center">@UBUNTU1404_RELEASE_SHA1@ (<a
-                                        href="@UBUNTU1404_RELEASE@.sha1">SHA1</a>)</td>
-                             </tr>
-		                     <tr>
-                                <td><a href="@UBUNTU1404_DEBUG@"><img
-                                        src="images/bf_c++_ubuntu_14_04_debug.png"
-                                        alt="Ubuntu 14.04 C++ Debug binaries"
-                                     /></a></td>
-                                <td align="center">@UBUNTU1404_DEBUG_SIZE@</td>
-                                <td>@UBUNTU1404_DEBUG_BASE@</td>
-                                <td align="center">@UBUNTU1404_DEBUG_SHA1@ (<a
-                                        href="@UBUNTU1404_DEBUG@.sha1">SHA1</a>)</td>
-                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <ul>
-                    <li>
-                        <p>These releases are built against a specific
-                            platform release and therefore should
-                            always work with the specified platform
-                            release.</p>
-                    </li>
-                </ul>
-                <h2><a name="unsupported" id="unsupported"></a>Unsupported builds</h2>
-                <div class="alt-table">
-                    <table width="800" border="0" cellpadding="5" summary="Unsupported versions">
-                        <tbody>
                             <tr>
-                                <th width="269">Downloads</th>
-                                <th width="85">Size</th>
-                                <th width="150">File Name</th>
-                                <th width="125">SHA1 Checksum</th>
-                            </tr>
-		            <tr>
                                 <td><a href="@CENTOS66_RELEASE@"><img
-                                        src="images/bf_c++_centos_6_6_release.png"
+                                        src="images/bf_c++_centos_6_release.png"
                                         alt="CentOS 6.6 C++ Release binaries"
                                      /></a></td>
                                 <td align="center">@CENTOS66_RELEASE_SIZE@</td>
@@ -132,9 +92,9 @@
                                 <td align="center">@CENTOS66_RELEASE_SHA1@ (<a
                                         href="@CENTOS66_RELEASE@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <tr>
                                 <td><a href="@CENTOS66_DEBUG@"><img
-                                        src="images/bf_c++_centos_6_6_debug.png"
+                                        src="images/bf_c++_centos_6_debug.png"
                                         alt="CentOS 6.6 C++ Debug binaries"
                                      /></a></td>
                                 <td align="center">@CENTOS66_DEBUG_SIZE@</td>
@@ -142,9 +102,10 @@
                                 <td align="center">@CENTOS66_DEBUG_SHA1@ (<a
                                         href="@CENTOS66_DEBUG@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <!-- Broken zip unpack on BSD
+                            <tr>
                                 <td><a href="@FREEBSD_RELEASE@"><img
-                                        src="images/bf_c++_freebsd_10_1_release.png"
+                                        src="images/bf_c++_freebsd_10_release.png"
                                         alt="FreeBSD 10.1 C++ Release binaries"
                                      /></a></td>
                                 <td align="center">@FREEBSD_RELEASE_SIZE@</td>
@@ -152,9 +113,9 @@
                                 <td align="center">@FREEBSD_RELEASE_SHA1@ (<a
                                         href="@FREEBSD_RELEASE@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <tr>
                                 <td><a href="@FREEBSD_DEBUG@"><img
-                                        src="images/bf_c++_freebsd_10_1_debug.png"
+                                        src="images/bf_c++_freebsd_10_debug.png"
                                         alt="FreeBSD 10.1 C++ Debug binaries"
                                      /></a></td>
                                 <td align="center">@FREEBSD_DEBUG_SIZE@</td>
@@ -162,7 +123,8 @@
                                 <td align="center">@FREEBSD_DEBUG_SHA1@ (<a
                                         href="@FREEBSD_DEBUG@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            -->
+                            <tr>
                                 <td><a href="@OSX1010_RELEASE@"><img
                                         src="images/bf_c++_mac_10_10_release.png"
                                         alt="MacOS X 10.10 C++ Release binaries"
@@ -172,7 +134,7 @@
                                 <td align="center">@OSX1010_RELEASE_SHA1@ (<a
                                         href="@OSX1010_RELEASE@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <tr>
                                 <td><a href="@OSX1010_DEBUG@"><img
                                         src="images/bf_c++_mac_10_10_debug.png"
                                         alt="MacOS X 10.10 C++ Debug binaries"
@@ -182,7 +144,7 @@
                                 <td align="center">@OSX1010_DEBUG_SHA1@ (<a
                                         href="@OSX1010_DEBUG@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <tr>
                                 <td><a href="@OSX109_RELEASE@"><img
                                         src="images/bf_c++_mac_10_9_release.png"
                                         alt="MacOS X 10.9 C++ Release binaries"
@@ -192,7 +154,7 @@
                                 <td align="center">@OSX109_RELEASE_SHA1@ (<a
                                         href="@OSX109_RELEASE@.sha1">SHA1</a>)</td>
                             </tr>
-		            <tr>
+                            <tr>
                                 <td><a href="@OSX109_DEBUG@"><img
                                         src="images/bf_c++_mac_10_9_debug.png"
                                         alt="MacOS X 10.9 C++ Debug binaries"
@@ -202,38 +164,146 @@
                                 <td align="center">@OSX109_DEBUG_SHA1@ (<a
                                         href="@OSX109_DEBUG@.sha1">SHA1</a>)</td>
                             </tr>
+                            <tr>
+                                <td><a href="@UBUNTU1404_RELEASE@"><img
+                                        src="images/bf_c++_ubuntu_14_04_release.png"
+                                        alt="Ubuntu 14.04 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@UBUNTU1404_RELEASE_SIZE@</td>
+                                <td>@UBUNTU1404_RELEASE_BASE@</td>
+                                <td align="center">@UBUNTU1404_RELEASE_SHA1@ (<a
+                                        href="@UBUNTU1404_RELEASE@.sha1">SHA1</a>)</td>
+                             </tr>
+                             <tr>
+                                <td><a href="@UBUNTU1404_DEBUG@"><img
+                                        src="images/bf_c++_ubuntu_14_04_debug.png"
+                                        alt="Ubuntu 14.04 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@UBUNTU1404_DEBUG_SIZE@</td>
+                                <td>@UBUNTU1404_DEBUG_BASE@</td>
+                                <td align="center">@UBUNTU1404_DEBUG_SHA1@ (<a
+                                        href="@UBUNTU1404_DEBUG@.sha1">SHA1</a>)</td>
+                             </tr>
+                            <tr>
+                                <td><a href="@WINDOWSVC12X64_RELEASE@"><img
+                                        src="images/bf_c++_windows_VC12_64-bit_release.png"
+                                        alt="Windows Visual Studio 2013 (VC12) 64-bit C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@WINDOWSVC12X64_RELEASE_SIZE@</td>
+                                <td>@WINDOWSVC12X64_RELEASE_BASE@</td>
+                                <td align="center">@WINDOWSVC12X64_RELEASE_SHA1@ (<a
+                                        href="@WINDOWSVC12X64_RELEASE@.sha1">SHA1</a>)</td>
+                             </tr>
+                             <tr>
+                                <td><a href="@WINDOWSVC12X64_DEBUG@"><img
+                                        src="images/bf_c++_windows_VC12_64-bit_debug.png"
+                                        alt="Windows Visual Studio 2013 (VC12) 64-bit C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@WINDOWSVC12X64_DEBUG_SIZE@</td>
+                                <td>@WINDOWSVC12X64_DEBUG_BASE@</td>
+                                <td align="center">@WINDOWSVC12X64_DEBUG_SHA1@ (<a
+                                        href="@WINDOWSVC12X64_DEBUG@.sha1">SHA1</a>)</td>
+                             </tr>
+                            <tr>
+                                <td><a href="@WINDOWSVC12X86_RELEASE@"><img
+                                        src="images/bf_c++_windows_VC12_32-bit_release.png"
+                                        alt="Windows Visual Studio 2013 (VC12) 32-bit C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@WINDOWSVC12X86_RELEASE_SIZE@</td>
+                                <td>@WINDOWSVC12X86_RELEASE_BASE@</td>
+                                <td align="center">@WINDOWSVC12X86_RELEASE_SHA1@ (<a
+                                        href="@WINDOWSVC12X86_RELEASE@.sha1">SHA1</a>)</td>
+                             </tr>
+                             <tr>
+                                <td><a href="@WINDOWSVC12X86_DEBUG@"><img
+                                        src="images/bf_c++_windows_VC12_32-bit_debug.png"
+                                        alt="Windows Visual Studio 2013 (VC12) 32-bit C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@WINDOWSVC12X86_DEBUG_SIZE@</td>
+                                <td>@WINDOWSVC12X86_DEBUG_BASE@</td>
+                                <td align="center">@WINDOWSVC12X86_DEBUG_SHA1@ (<a
+                                        href="@WINDOWSVC12X86_DEBUG@.sha1">SHA1</a>)</td>
+                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <ul>
                     <li>
-                        <p>Unsupported builds are available for
+                        <p>Self-contained "super" builds provide all
+                           the libraries required and so are to some
+                           extent independent of the platform they run
+                           on.  For long-term support releases such as
+                           CentOS, this means that newer versions of
+                           the libraries than provided by the platform
+                           are included, which includes bugfixes and
+                           features which would otherwise be missing
+                           (such as BigTIFF support).  For
                            rolling-release platforms (BSD ports, MacOS
-                           X homebrew). As the packages and libraries
-                           provided by the rolling release (and
-                           required by Bio-Formats) may be updated
-                           incompatibly, we cannot guarantee these
-                           specific binary builds will be usable in
-                           the future.</p>
+                           X homebrew), this means that the build will
+                           not break when the underlying platform
+                           changes, for example by updating the
+                           versions of the libraries we require to an
+                           incompatible version.</p>
                     </li>
                     <li>
-                        <p>We also provide builds for CentOS which
-			   rely on third-party libraries not provided
-			   by CentOS directly; you will need a
-			   compatible build of these libraries for our
-			   package to function correctly.  CentOS
-			   users may find building from source an
-			   easier alternative until we have a better
-			   solution in place.</p>
+                        <p>The downside to the convenience of the
+                           "super" build is that system libraries you
+                           might want to link into your application
+                           may depend upon different versions of the
+                           libraries than provided here, which will
+                           make linking applications using such
+                           libraries difficult. In all cases you
+                           should be able to build from source to work
+                           on operating systems which meet
+                           the <a href="@DOC_URL@/developers/cpp/overview.html">requirements</a>.
+                           This will ensure your build is compatible
+                           with the libraries available on the
+                           system.</p>
                     </li>
+                </ul>
+                <h2><a name="platform" id="platform"></a>Platform builds</h2>
+                <div class="alt-table">
+                    <table width="800" border="0" cellpadding="5" summary="Platform versions">
+                        <tbody>
+                            <tr>
+                                <th width="269">Downloads</th>
+                                <th width="85">Size</th>
+                                <th width="150">File Name</th>
+                                <th width="125">SHA1 Checksum</th>
+                            </tr>
+                            <tr>
+                                <td><a href="@UBUNTU1404PLATFORM_RELEASE@"><img
+                                        src="images/bf_c++_ubuntu_14_04_release.png"
+                                        alt="Ubuntu 14.04 C++ Release binaries"
+                                     /></a></td>
+                                <td align="center">@UBUNTU1404PLATFORM_RELEASE_SIZE@</td>
+                                <td>@UBUNTU1404PLATFORM_RELEASE_BASE@</td>
+                                <td align="center">@UBUNTU1404PLATFORM_RELEASE_SHA1@ (<a
+                                        href="@UBUNTU1404PLATFORM_RELEASE@.sha1">SHA1</a>)</td>
+                             </tr>
+                             <tr>
+                                <td><a href="@UBUNTU1404PLATFORM_DEBUG@"><img
+                                        src="images/bf_c++_ubuntu_14_04_debug.png"
+                                        alt="Ubuntu 14.04 C++ Debug binaries"
+                                     /></a></td>
+                                <td align="center">@UBUNTU1404PLATFORM_DEBUG_SIZE@</td>
+                                <td>@UBUNTU1404PLATFORM_DEBUG_BASE@</td>
+                                <td align="center">@UBUNTU1404PLATFORM_DEBUG_SHA1@ (<a
+                                        href="@UBUNTU1404PLATFORM_DEBUG@.sha1">SHA1</a>)</td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul>
                     <li>
-                        <p>In all cases you should be able to build
-			   from source to work on operating systems
-			   which meet
-			   the <a href="@DOC_URL@/developers/cpp/overview.html">requirements</a>.
-			   This will ensure your build is compatible
-			   with the libraries available on the
-			   system.</p>
+                        <p>These releases are built against a specific
+                           platform release and therefore should
+                           always work with the shared libraries
+                           provided by the platform.  These releases
+                           are provided only for platforms with
+                           guaranteed ABI stability during their
+                           supported lifetime, and which also provide
+                           all of the needed build dependencies.</p>
                     </li>
                 </ul>
                 <h2><a name="api" id="api"></a>Bio-Formats C++ API
@@ -262,7 +332,7 @@
                     </table>
                 </div>
                 <ul>
-	                <li>
+                        <li>
                         <p>The Bio-Formats C++ Doxygen documentation is available
                             to read on the web <a href="api/">here</a>.</p>
                     </li>
@@ -280,11 +350,20 @@
                             <tr>
                                 <td><a href="@SOURCE_CODE@" target="_blank"><img
                                         src="images/bf_source_code.png"
-                                        alt="Zipped Source Code" /></a></td>
+                                        alt="Zipped Bio-Formats Source Code" /></a></td>
                                 <td align="center">@SOURCE_CODE_SIZE@</td>
                                 <td>@SOURCE_CODE_BASE@</td>
                                 <td align="center">@SOURCE_CODE_SHA1@ (<a
                                         href="@SOURCE_CODE@.sha1">SHA1</a>)</td>
+                            </tr>
+                            <tr>
+                                <td><a href="@SUPERBUILD_SOURCE_CODE@" target="_blank"><img
+                                        src="images/bf_source_code.png"
+                                        alt="Zipped CMake Super-Build Source Code" /></a></td>
+                                <td align="center">@SUPERBUILD_SOURCE_CODE_SIZE@</td>
+                                <td>@SUPERBUILD_SOURCE_CODE_BASE@</td>
+                                <td align="center">@SUPERBUILD_SOURCE_CODE_SHA1@ (<a
+                                        href="@SUPERBUILD_SOURCE_CODE@.sha1">SHA1</a>)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -300,7 +379,14 @@
                                         href="http://github.com/openmicroscopy/bioformats"
                                         target="_blank"><img
                                         src="images/bf_gh_repo.png"
-                                        alt="GitHub Repository Link" /></a></td>
+                                        alt="Bio-Formats GitHub Repository Link" /></a></td>
+                            </tr>
+                            <tr>
+                                <td><a
+                                        href="http://github.com/ome/ome-cmake-superbuild"
+                                        target="_blank"><img
+                                        src="images/bf_gh_repo.png"
+                                        alt="CMake Super-Build GitHub Repository Link" /></a></td>
                             </tr>
                             <tr>
                                 <td><a href="http://git.openmicroscopy.org/"
@@ -311,7 +397,12 @@
                             <tr>
                                 <td><a href="@TAG_URL@" target="_blank"><img
                                         src="images/bf_gh_tag.png"
-                                        alt="GitHub Tag" /></a></td>
+                                        alt="Bio-Formats GitHub Tag" /></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@SUPERBUILD_TAG_URL@" target="_blank"><img
+                                        src="images/bf_gh_tag.png"
+                                        alt="CMake Super-Build GitHub Tag" /></a></td>
                             </tr>
                         </tbody>
                     </table>
