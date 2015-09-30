@@ -3,7 +3,7 @@
 
 import os
 import re
-import github
+import scc.git
 
 RSYNC_PATH = os.environ.get(
     'RSYNC_PATH', '/ome/www/downloads.openmicroscopy.org')
@@ -24,7 +24,7 @@ def get_tag_url(repo_name, version, org="openmicroscopy",
     """Return URL of GitHub tag matching a version"""
 
     # Retrieve organization and fork repositories
-    gh = github.Github()
+    gh = scc.git.get_github(scc.git.get_token())
     org_repo = gh.get_organization(org).get_repo(repo_name)
     fork_repo = gh.get_user(fork).get_repo(repo_name)
 
