@@ -70,6 +70,48 @@
                         <p>Documentation for the native Bio-Formats C++ interface is available to read on the web <a
                                 href="@DOC_URL@/developers/cpp/overview.html">starting here</a>.</p>
                     </li>
+                    <li>
+                        <p>Self-contained "super" builds provide all
+                           the libraries required and so are to some
+                           extent independent of the platform they run
+                           on.  For long-term support releases such as
+                           CentOS, this means that newer versions of
+                           the libraries than provided by the platform
+                           are included, which includes bugfixes and
+                           features which would otherwise be missing
+                           (such as BigTIFF support).  For
+                           rolling-release platforms (BSD ports, MacOS
+                           X homebrew), this means that the build will
+                           not break when the underlying platform
+                           changes, for example by updating the
+                           versions of the libraries we require to an
+                           incompatible version.</p>
+                    </li>
+                    <li>
+                        <p>The downside to the convenience of the
+                           "super" build is that system libraries you
+                           might want to link into your application
+                           may depend upon different versions of the
+                           libraries than provided here, which will
+                           make linking applications using such
+                           libraries difficult. In all cases you
+                           should be able to build from source to work
+                           on operating systems which meet
+                           the <a href="@DOC_URL@/developers/cpp/overview.html">requirements</a>.
+                           This will ensure your build is compatible
+                           with the libraries available on the
+                           system.</p>
+                    </li>
+                    <li>
+                        <p>Platform builds are built against a specific
+                           platform release and therefore should
+                           always work with the shared libraries
+                           provided by the platform.  These releases
+                           are provided only for platforms with
+                           guaranteed ABI stability during their
+                           supported lifetime, and which also provide
+                           all of the needed build dependencies.</p>
+                    </li>
                 </ul>
                 <h2><a name="superbuild"
                 id="superbuild"></a>Self-contained "super" builds</h2>
@@ -227,40 +269,6 @@
                         </tbody>
                     </table>
                 </div>
-                <ul>
-                    <li>
-                        <p>Self-contained "super" builds provide all
-                           the libraries required and so are to some
-                           extent independent of the platform they run
-                           on.  For long-term support releases such as
-                           CentOS, this means that newer versions of
-                           the libraries than provided by the platform
-                           are included, which includes bugfixes and
-                           features which would otherwise be missing
-                           (such as BigTIFF support).  For
-                           rolling-release platforms (BSD ports, MacOS
-                           X homebrew), this means that the build will
-                           not break when the underlying platform
-                           changes, for example by updating the
-                           versions of the libraries we require to an
-                           incompatible version.</p>
-                    </li>
-                    <li>
-                        <p>The downside to the convenience of the
-                           "super" build is that system libraries you
-                           might want to link into your application
-                           may depend upon different versions of the
-                           libraries than provided here, which will
-                           make linking applications using such
-                           libraries difficult. In all cases you
-                           should be able to build from source to work
-                           on operating systems which meet
-                           the <a href="@DOC_URL@/developers/cpp/overview.html">requirements</a>.
-                           This will ensure your build is compatible
-                           with the libraries available on the
-                           system.</p>
-                    </li>
-                </ul>
                 <h2><a name="platform" id="platform"></a>Platform builds</h2>
                 <div class="alt-table">
                     <table width="800" border="0" cellpadding="5" summary="Platform versions">
@@ -294,18 +302,6 @@
                         </tbody>
                     </table>
                 </div>
-                <ul>
-                    <li>
-                        <p>These releases are built against a specific
-                           platform release and therefore should
-                           always work with the shared libraries
-                           provided by the platform.  These releases
-                           are provided only for platforms with
-                           guaranteed ABI stability during their
-                           supported lifetime, and which also provide
-                           all of the needed build dependencies.</p>
-                    </li>
-                </ul>
                 <h2><a name="api" id="api"></a>Bio-Formats C++ API
                     documentation</h2>
                 <div class="alt-table">
@@ -358,7 +354,7 @@
                             </tr>
                             <tr>
                                 <td><a href="@SUPERBUILD_SOURCE_CODE@" target="_blank"><img
-                                        src="images/bf_super-build_source_code.png"
+                                        src="images/bf_superbuild_source_code.png"
                                         alt="Zipped CMake Super-Build Source Code" /></a></td>
                                 <td align="center">@SUPERBUILD_SOURCE_CODE_SIZE@</td>
                                 <td>@SUPERBUILD_SOURCE_CODE_BASE@</td>
