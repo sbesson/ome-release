@@ -45,6 +45,7 @@ bf_artifacts = [
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1010':    'MacOSX10.10',
              'OSX109':     'MacOSX10.9',
+             'FREEBSD102': 'FreeBSD10.2-x86_64',
              'CENTOS66':   'CentOS6.6-x86_64'}
 
 win_platforms = {'WINDOWSVC12X64': 'WindowsVC12-x64',
