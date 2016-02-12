@@ -39,7 +39,7 @@ BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 for x, y in (
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
-        ("OCTAVE_PACKAGE", "artifacts/bf-octave-@VERSION@.tar.gz"),
+        ("OCTAVE_PACKAGE", "artifacts/bioformats-octave-@VERSION@.tar.gz"),
         ("DOC", "artifacts/Bio-Formats-@VERSION@.pdf"),
         ("JAVADOCS", "artifacts/bio-formats-javadocs.zip"),
         ("SOURCE_CODE_ZIP", "artifacts/bioformats-@VERSION@.zip"),
