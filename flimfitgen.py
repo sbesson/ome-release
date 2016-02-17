@@ -27,11 +27,11 @@ PREFIX = os.environ.get('PREFIX', 'flimfit')
 FLIMFIT_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 # Links to the MCR downloads
-repl["@MCR_WIN@"] = "http://www.mathworks.com/supportfiles/downloads/R2014b" \
-    "/deployment_files/R2014b/installers/win64/MCR_R2014b_win64_installer.exe"
-repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2014b" \
-    "/deployment_files/R2014b/installers/maci64" \
-    "/MCR_R2014b_maci64_installer.zip"
+repl["@MCR_WIN@"] = "http://www.mathworks.com/supportfiles/downloads/R2015b" \
+    "/deployment_files/R2015b/installers/win64/MCR_R2015b_win64_installer.exe"
+repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2015b" \
+    "/deployment_files/R2015b/installers/maci64" \
+    "/MCR_R2015b_maci64_installer.zip"
 
 for x, y in (
         ("FLIMFIT_51_WIN", "artifacts/FLIMfit_@VERSION@_x64.zip"),
