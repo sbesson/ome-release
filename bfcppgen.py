@@ -39,15 +39,16 @@ BFCPP_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 BF_RELATIVE_PATH = '../../bio-formats/@VERSION@/artifacts/'
 bf_artifacts = [
     ("DOC", BF_RELATIVE_PATH + "/Bio-Formats-@VERSION@.pdf"),
-    ("SOURCE_CODE_TXZ", BF_RELATIVE_PATH + "bioformats-dfsg-@VERSION@.tar.xz"),
-    ("SOURCE_CODE_ZIP", BF_RELATIVE_PATH + "bioformats-dfsg-@VERSION@.zip")]
+    ("SOURCE_CODE", BF_RELATIVE_PATH + "bioformats-dfsg-@VERSION@.tar.xz")]
 
 # Links to Bio-Formats C++ artifacts
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
-             'OSX1010':    'MacOSX10.10',
-             'OSX109':     'MacOSX10.9',
-             'FREEBSD102': 'FreeBSD10.2-x86_64',
-             'CENTOS66':   'CentOS6.6-x86_64'}
+             'OSX1011':    'MacOSX10.11-x86_64',
+             'OSX1010':    'MacOSX10.10-x86_64',
+             'OSX109':     'MacOSX10.9-x86_64',
+             'CENTOS66':   'CentOS6.6-x86_64',
+             'CENTOS71':   'CentOS7.1-x86_64',
+             'FREEBSD102': 'FreeBSD10.2-amd64'}
 
 win_platforms = {'WINDOWSVC12X64': 'WindowsVC12-x64',
                  'WINDOWSVC12X86': 'WindowsVC12-x86'}
