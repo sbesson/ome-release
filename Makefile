@@ -7,7 +7,7 @@ omero: gen
 
 bf: bfgen
 
-bfcpp: bfcppgen
+filescpp: filescppgen
 
 figure: figuregen
 
@@ -33,9 +33,9 @@ bfgen:
 	python bfgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
-bfcppgen:
+filescppgen:
 	mkdir -p $(CONTENTDIR)
-	python bfcppgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	python filescppgen.py $(RELEASE) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 figuregen:
