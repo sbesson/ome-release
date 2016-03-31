@@ -35,7 +35,7 @@ bfgen:
 
 filescppgen:
 	mkdir -p $(CONTENTDIR)
-	python filescppgen.py $(RELEASE) > $(CONTENTDIR)/index.html
+	python filescppgen.py $(RELEASE) $(BUILDID) > $(CONTENTDIR)/index.html
 	cp -r $(IMAGESDIR) $(CONTENTDIR)
 
 figuregen:
