@@ -346,10 +346,10 @@ div.alt-table tr:nth-child(even) {
     background-color: #FFFFFF;
 }
 
-div.split-table tr:nth-child(4n-2), tr:nth-child(4n-3) {
-    background-color: #EBEBFA;
+div.split-table tr:nth-child(4n-0) {
+    background-color: #FFFFFF;
 }
-div.split-table tr:nth-child(4n), tr:nth-child(4n-1) {
+div.split-table tr:nth-child(4n-1) {
     background-color: #FFFFFF;
 }
 
