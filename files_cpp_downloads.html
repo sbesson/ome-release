@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link rel="stylesheet" href="images/plonematch.css" type="text/css" />
+        <style type="text/css">
+            [touch-action = "none"]{
+                -ms-touch-action:none;
+                touch-action:none;
+            }
+            [touch-action = "pan-x"]{
+                -ms-touch-action:pan-x;
+                touch-action:pan-x;
+            }
+            [touch-action = "pan-y"]{
+                -ms-touch-action:pan-y;
+                touch-action:pan-y;
+            }
+            [touch-action = "scroll"],
+            [touch-action = "pan-x pan-y"],
+            [touch-action = "pan-y pan-x"]{
+                -ms-touch-action:pan-x pan-y;
+                touch-action:pan-x pan-y;
+            }</style>
+        <title></title>
+    </head>
+    <body id="index" class="home">
+        <!-- OME Banner - START -->
+        <div id="portal-top">
+            <div id="portal-header">
+                <ul id="portal-siteactions">
+                    <li>
+                        <br />
+                    </li>
+                </ul><a id="portal-logo" accesskey="1"
+                    href="http://downloads.openmicroscopy.org/"
+                    name="portal-logo"><img src="images/logo.jpg" alt=""
+                        title="" height="73" width="450" /></a>
+                <div id="portal-globalnav">
+                    <br />
+                </div>
+            </div>
+            <div id="portal-personaltools-wrapper">
+                <ul id="portal-personaltools" class="visualInline">
+                    <li>
+                        <br />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="visualClear" id="clear-space-before-wrapper-table">
+            <!-- OME Banner - END -->
+            <div class="entry-content" style="margin-left:20px;">
+                <h2>OME Files C++ @VERSION@ Downloads</h2>
+                    <p><strong><a href="#superbuild"
+                            >Self-contained "super" builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#platform"
+                            >Platform builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#docs"
+                            >Documentation</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="#previous">Previous versions</a>
+                    </strong></p>
+                <ul>
+                    <li>
+                        <p>Full OME Files documentation is available <a
+                                href="@DOC_URL@">here</a>.</p>
+                    </li>
+                    <li>
+                        <p>Documentation for the native OME Files C++ interface is available to read on the web <a
+                                href="@DOC_URL@/overview.html">starting here</a>.</p>
+                    </li>
+                    <li>
+                        <p>Standalone "super" builds are
+                           self-contained, providing all the libraries
+                           required and so are to some extent
+                           independent of the platform they run on.
+                           For long-term support releases such as
+                           CentOS, this means that newer versions of
+                           the libraries than provided by the platform
+                           are included, which includes bugfixes and
+                           features which would otherwise be missing
+                           (such as BigTIFF support).  For
+                           rolling-release platforms (BSD ports, MacOS
+                           X homebrew), this means that the build will
+                           not break when the underlying platform
+                           changes, for example by updating the
+                           versions of the libraries we require to an
+                           incompatible version.</p>
+                    </li>
+                    <li>
+                        <p>The downside to the convenience of the
+                           "super" build is that system libraries you
+                           might want to link into your application
+                           may depend upon different versions of the
+                           libraries than provided here, which will
+                           make linking applications using such
+                           libraries difficult. In all cases you
+                           should be able to build from source to work
+                           on operating systems which meet
+                           the <a href="@DOC_URL@/overview.html">requirements</a>.
+                           This will ensure your build is compatible
+                           with the libraries available on the
+                           system.</p>
+                    </li>
+                    <li>
+                        <p>Platform builds are built against a specific
+                           platform release and therefore should
+                           always work with the shared libraries
+                           provided by the platform.  These releases
+                           are provided only for platforms with
+                           guaranteed ABI stability during their
+                           supported lifetime, and which also provide
+                           all of the needed build dependencies.</p>
+                    </li>
+                </ul>
+                <h2><a name="superbuild"
+                id="superbuild"></a>Self-contained "super" builds</h2>
+                <div class="split-table">
+                    <table border="0" cellpadding="5" summary="Standalone bundle downloads">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" rowspan="2">Platform</th>
+                                <th rowspan="2">Configuration</th>
+                                <th colspan="3">Download</th>
+                            </tr>
+                            <tr>
+                                <th>File</th>
+                                <th>Size</th>
+                                <th>SHA1</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_centos.png"
+                                                     alt="CentOS"/></td>
+                                <td rowspan="2">CentOS&nbsp;7.2</td>
+                                <td>Release</td>
+                                <td><a href="@CENTOS72_RELEASE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@CENTOS72_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@CENTOS72_RELEASE@.sha1">@CENTOS72_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@CENTOS72_DEBUG@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@CENTOS72_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@CENTOS72_DEBUG@.sha1">@CENTOS72_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_centos.png"
+                                                     alt="CentOS"/></td>
+                                <td rowspan="2">CentOS&nbsp;6.7</td>
+                                <td>Release</td>
+                                <td><a href="@CENTOS67_RELEASE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@CENTOS67_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@CENTOS67_RELEASE@.sha1">@CENTOS67_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@CENTOS67_DEBUG@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@CENTOS67_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@CENTOS67_DEBUG@.sha1">@CENTOS67_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_mac.png"
+                                                     alt="MacOS X"/></td>
+                                <td rowspan="2">MacOS&nbsp;X&nbsp;10.11</td>
+                                <td>Release</td>
+                                <td><a href="@OSX1011_RELEASE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@OSX1011_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@OSX1011_RELEASE@.sha1">@OSX1011_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@OSX1011_DEBUG@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@OSX1011_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@OSX1011_DEBUG@.sha1">@OSX1011_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_ubuntu.png"
+                                                     alt="Ubuntu"/></td>
+                                <td rowspan="2">Ubuntu&nbsp;14.04&nbsp;LTS</td>
+                                <td>Release</td>
+                                <td><a href="@UBUNTU1404_RELEASE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@UBUNTU1404_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@UBUNTU1404_RELEASE@.sha1">@UBUNTU1404_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@UBUNTU1404_DEBUG@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@UBUNTU1404_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@UBUNTU1404_DEBUG@.sha1">@UBUNTU1404_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_windows.png"
+                                                     alt="Windows"/></td>
+                                <td rowspan="2">Windows&nbsp;VC12&nbsp;64&#8209;bit (VS2013)</td>
+                                <td>Release</td>
+                                <td><a href="@WINDOWSVC12X64_RELEASE@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC12X64_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC12X64_RELEASE@.sha1">@WINDOWSVC12X64_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@WINDOWSVC12X64_DEBUG@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC12X64_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC12X64_DEBUG@.sha1">@WINDOWSVC12X64_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_windows.png"
+                                                     alt="Windows"/></td>
+                                <td rowspan="2">Windows&nbsp;VC12&nbsp;32&#8209;bit (VS2013)</td>
+                                <td>Release</td>
+                                <td><a href="@WINDOWSVC12X86_RELEASE@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC12X86_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC12X86_RELEASE@.sha1">@WINDOWSVC12X86_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@WINDOWSVC12X86_DEBUG@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC12X86_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC12X86_DEBUG@.sha1">@WINDOWSVC12X86_DEBUG_SHA1@</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2><a name="platform" id="platform"></a>Platform builds</h2>
+                <div class="split-table">
+                    <table border="0" cellpadding="5" summary="Platform bundle downloads">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" rowspan="2">Platform</th>
+                                <th rowspan="2">Configuration</th>
+                                <th colspan="3">Download</th>
+                            </tr>
+                            <tr>
+                                <th>File</th>
+                                <th>Size</th>
+                                <th>SHA1</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_ubuntu.png"
+                                                     alt="Ubuntu"/></td>
+                                <td rowspan="2">Ubuntu&nbsp;14.04&nbsp;LTS</td>
+                                <td>Release</td>
+                                <td><a href="@UBUNTU1404PLATFORM_RELEASE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@UBUNTU1404PLATFORM_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@UBUNTU1404PLATFORM_RELEASE@.sha1">@UBUNTU1404PLATFORM_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@UBUNTU1404PLATFORM_DEBUG@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@UBUNTU1404PLATFORM_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@UBUNTU1404PLATFORM_DEBUG@.sha1">@UBUNTU1404PLATFORM_DEBUG_SHA1@</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2><a name="docs" id="docs"></a>Documentation</h2>
+                <div class="split-header">
+                    <table border="0" cellpadding="5" summary="Documentation downloads">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" rowspan="2" >Documentation</th>
+                                <th colspan="3">Download</th>
+                            </tr>
+                            <tr>
+                                <th>File</th>
+                                <th>Size</th>
+                                <th>SHA1</th>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                         alt="Documentation"/></td>
+                                <td>API&nbsp;reference</td>
+                                <td><a href="@DOXYGEN@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@DOXYGEN_SIZE@</td>
+                                <td align="center"><a href="@DOXYGEN@.sha1">@DOXYGEN_SHA1@</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                        <p>Online documentation:
+                <div class="alt-table">
+                    <table border="0" cellpadding="5" summary="On-line documentation">
+                        <tbody>
+                            <tr>
+                                <th colspan="2">Documentation</th>
+                                <th>Link</th>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td>Manual</td>
+                                <td><a href="@DOC_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td>OME&nbsp;Common&nbsp;API&nbsp;reference</td>
+                                <td><a href="@COMMON_API_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td>OME&nbsp;XML&nbsp;API&nbsp;reference</td>
+                                <td><a href="@XML_API_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td>OME&nbsp;Files&nbsp;API&nbsp;reference</td>
+                                <td><a href="@FILES_API_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td>OME&nbsp;QtWidgets&nbsp;API&nbsp;reference</td>
+                                <td><a href="@QTWIDGETS_API_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2><a name="code" id="code"></a>Source code</h2>
+                <p>OME components:</p>
+                <div class="split-table">
+                    <table border="0" cellpadding="5" summary="Source code downloads">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" rowspan="2">Component</th>
+                                <th colspan="2">Git</th>
+                                <th colspan="3">Download</th>
+                            </tr>
+                            <tr>
+                                <th>Repo</th>
+                                <th>Tag</th>
+                                <th>File</th>
+                                <th>Size</th>
+                                <th>SHA1</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td rowspan="2">OME&nbsp;Common</td>
+                                <td rowspan="2"><a href="http://github.com/ome/ome-common-cpp"><img src="images/square_github.png" alt="zip"/></a></td>
+                                <td rowspan="2"><a href="@COMMON_TAG_URL@">v@COMMON_VERSION@</a></td>
+                                <td><a href="@COMMON_SOURCE_TXZ@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@COMMON_SOURCE_TXZ_SIZE@</td>
+                                <td align="center"><a href="@COMMON_SOURCE_TXZ@.sha1">@COMMON_SOURCE_TXZ_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@COMMON_SOURCE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@COMMON_SOURCE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@COMMON_SOURCE_ZIP@.sha1">@COMMON_SOURCE_ZIP_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td rowspan="2">OME&nbsp;XML</td>
+                                <td rowspan="2"><a href="http://github.com/openmicroscopy/bioformats"><img src="images/square_github.png" alt="zip"/></a></td>
+                                <td rowspan="2"><a href="@XML_TAG_URL@">v@XML_VERSION@</a></td>
+                                <td><a href="@BF_SOURCE_TXZ@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@BF_SOURCE_TXZ_SIZE@</td>
+                                <td align="center"><a href="@BF_SOURCE_TXZ@.sha1">@BF_SOURCE_TXZ_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@BF_SOURCE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@BF_SOURCE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@BF_SOURCE_ZIP@.sha1">@BF_SOURCE_ZIP_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td rowspan="2">OME&nbsp;Files</td>
+                                <td rowspan="2"><a href="http://github.com/ome/ome-files-cpp"><img src="images/square_github.png" alt="zip"/></a></td>
+                                <td rowspan="2"><a href="@FILES_TAG_URL@">v@FILES_VERSION@</a></td>
+                                <td><a href="@FILES_SOURCE_TXZ@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@FILES_SOURCE_TXZ_SIZE@</td>
+                                <td align="center"><a href="@FILES_SOURCE_TXZ@.sha1">@FILES_SOURCE_TXZ_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@FILES_SOURCE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@FILES_SOURCE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@FILES_SOURCE_ZIP@.sha1">@FILES_SOURCE_ZIP_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td rowspan="2">OME&nbsp;QtWidgets</td>
+                                <td rowspan="2"><a href="http://github.com/ome/ome-qtwidgets"><img src="images/square_github.png" alt="zip"/></a></td>
+                                <td rowspan="2"><a href="@QTWIDGETS_TAG_URL@">v@QTWIDGETS_VERSION@</a></td>
+                                <td><a href="@QTWIDGETS_SOURCE_TXZ@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@QTWIDGETS_SOURCE_TXZ_SIZE@</td>
+                                <td align="center"><a href="@QTWIDGETS_SOURCE_TXZ@.sha1">@QTWIDGETS_SOURCE_TXZ_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@QTWIDGETS_SOURCE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@QTWIDGETS_SOURCE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@QTWIDGETS_SOURCE_ZIP@.sha1">@QTWIDGETS_SOURCE_ZIP_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_cmake.png"
+                                                     alt="CMake source"/></td>
+                                <td rowspan="2">OME&nbsp;Super-Build</td>
+                                <td rowspan="2"><a href="http://github.com/ome/ome-cmake-superbuild"><img src="images/square_github.png" alt="zip"/></a></td>
+                                <td rowspan="2"><a href="@SUPERBUILD_TAG_URL@">v@SUPERBUILD_VERSION@</a></td>
+                                <td><a href="@SUPERBUILD_SOURCE_TXZ@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@SUPERBUILD_SOURCE_TXZ_SIZE@</td>
+                                <td align="center"><a href="@SUPERBUILD_SOURCE_TXZ@.sha1">@SUPERBUILD_SOURCE_TXZ_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@SUPERBUILD_SOURCE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@SUPERBUILD_SOURCE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@SUPERBUILD_SOURCE_ZIP@.sha1">@SUPERBUILD_SOURCE_ZIP_SHA1@</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Third-party components:</p>
+                <div class="split-header">
+                    <table border="0" cellpadding="5" summary="Third-party source code downloads">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" rowspan="2">Component</th>
+                                <th colspan="3">Download</th>
+                            </tr>
+                            <tr>
+                                <th>File</th>
+                                <th>Size</th>
+                                <th>SHA1</th>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td>Boost</td>
+                                <td><a href="@BOOST_SOURCE@"><img src="images/square_tbz.png" alt="tbz"/></a></td>
+                                <td align="right">@BOOST_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@BOOST_SOURCE@.sha1">@BOOST_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c.png"
+                                                     alt="C++ source"/></td>
+                                <td>Bzip2</td>
+                                <td><a href="@BZIP2_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@BZIP2_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@BZIP2_SOURCE@.sha1">@BZIP2_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td>Google test</td>
+                                <td><a href="@GTEST_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@GTEST_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@GTEST_SOURCE@.sha1">@GTEST_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td>ICU</td>
+                                <td><a href="@ICU_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@ICU_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@ICU_SOURCE@.sha1">@ICU_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c.png"
+                                                     alt="C++ source"/></td>
+                                <td>PNG</td>
+                                <td><a href="@PNG_SOURCE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@PNG_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PNG_SOURCE@.sha1">@PNG_SOURCE_SHA1@</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Docutils</td>
+                                <td><a href="@PY_DOCUTILS_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_DOCUTILS_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_DOCUTILS_SOURCE@.sha1">@PY_DOCUTILS_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Genshi</td>
+                                <td><a href="@PY_GENSHI_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_GENSHI_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_GENSHI_SOURCE@.sha1">@PY_GENSHI_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Jinja2</td>
+                                <td><a href="@PY_JINJA2_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_JINJA2_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_JINJA2_SOURCE@.sha1">@PY_JINJA2_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Markupsafe</td>
+                                <td><a href="@PY_MARKUPSAFE_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_MARKUPSAFE_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_MARKUPSAFE_SOURCE@.sha1">@PY_MARKUPSAFE_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Pygments</td>
+                                <td><a href="@PY_PYGMENTS_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_PYGMENTS_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_PYGMENTS_SOURCE@.sha1">@PY_PYGMENTS_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Setuptools</td>
+                                <td><a href="@PY_SETUPTOOLS_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_SETUPTOOLS_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_SETUPTOOLS_SOURCE@.sha1">@PY_SETUPTOOLS_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_python.png"
+                                                     alt="C++ source"/></td>
+                                <td>Python Sphinx</td>
+                                <td><a href="@PY_SPHINX_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@PY_SPHINX_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@PY_SPHINX_SOURCE@.sha1">@PY_SPHINX_SOURCE_SHA1@</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><img src="images/square_c.png"
+                                                     alt="C++ source"/></td>
+                                <td>TIFF</td>
+                                <td><a href="@TIFF_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@TIFF_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@TIFF_SOURCE@.sha1">@TIFF_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td>Xalan</td>
+                                <td><a href="@XALAN_SOURCE@"><img src="images/square_tgz.png" alt="tgz"/></a></td>
+                                <td align="right">@XALAN_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@XALAN_SOURCE@.sha1">@XALAN_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c++.png"
+                                                     alt="C++ source"/></td>
+                                <td>Xerces</td>
+                                <td><a href="@XERCES_SOURCE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@XERCES_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@XERCES_SOURCE@.sha1">@XERCES_SOURCE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_c.png"
+                                                     alt="C++ source"/></td>
+                                <td>Zlib</td>
+                                <td><a href="@ZLIB_SOURCE@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@ZLIB_SOURCE_SIZE@</td>
+                                <td align="center"><a href="@ZLIB_SOURCE@.sha1">@ZLIB_SOURCE_SHA1@</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2><a name="previous" id="previous"></a>Previous versions</h2>
+                    <p>
+                        Previous versions of OME Files C++ (formerly
+                        named "Bio-Formats C++") can be found on the
+                        <a href="http://downloads.openmicroscopy.org/bio-formats-cpp/?C=M;O=D"
+                           >Bio-Formats C++ archive</a> page.
+                    </p>
+            </div><!-- /.entry-content -->
+
+            <!-- OME Footer - Start -->
+            <div class="visualClear" id="clear-space-before-footer"
+                ><!-- --></div>
+            <div id="portal-footer">
+                <p>
+                    <acronym title="Copyright">&copy;</acronym> 2000-2014
+                    University of Dundee &amp; Open Microscopy Environment. <a
+                        href="http://www.openmicroscopy.org/site/about/licensing-attribution/licensing"
+                        >Creative Commons Attribution 3.0 Unported License</a>
+                </p>
+                <p> OME source code is available under the <a
+                        href="http://www.openmicroscopy.org/site/about/licensing"
+                        >GNU General public license</a> or through commercial
+                    license from <a
+                        href="http://www.openmicroscopy.org/site/about/development-teams/glencoe-software"
+                        >Glencoe Software</a>
+                </p>
+            </div>
+            <div class="visualClear">
+                <!-- OME Footer - END -->
+            </div>
+        </div>
+    </body>
+</html>

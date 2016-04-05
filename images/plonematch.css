@@ -346,6 +346,21 @@ div.alt-table tr:nth-child(even) {
     background-color: #FFFFFF;
 }
 
+div.split-table tr:nth-child(4n-0) {
+    background-color: #FFFFFF;
+}
+div.split-table tr:nth-child(4n-1) {
+    background-color: #FFFFFF;
+}
+
+div.split-header tr:nth-child(2n), tr:nth-child(1n) {
+    background-color: #EBEBFA;
+}
+div.split-header tr:nth-child(2n+3) {
+    background-color: #FFFFFF;
+}
+
+
 #content a[href^="http://cvs.openmicroscopy.org.uk"], #content a.link-external {
 background:none;
 padding:0;
