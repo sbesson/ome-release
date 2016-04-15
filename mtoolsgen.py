@@ -20,7 +20,8 @@ except:
     usage()
 
 repl = {"@VERSION@": version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 PREFIX = os.environ.get('PREFIX', 'mtools')
 UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)

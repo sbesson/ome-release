@@ -37,7 +37,8 @@ repl = {"@VERSION@": files_version,
         "@FILES_VERSION@": files_version,
         "@QTWIDGETS_VERSION@": qtwidgets_version,
         "@SUPERBUILD_VERSION@": superbuild_version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 repl["@SUPERBUILD_TAG_URL@"] = get_tag_url("ome-cmake-superbuild",
                                            superbuild_version,
