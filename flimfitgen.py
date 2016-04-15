@@ -20,7 +20,8 @@ except:
     usage()
 
 repl = {"@VERSION@": version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'flimfit')
