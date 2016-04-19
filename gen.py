@@ -22,7 +22,8 @@ except:
 
 repl = {"@VERSION@": version,
         "@BUILD@": build,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 major_version, minor_version = get_version(version)
 

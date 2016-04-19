@@ -28,7 +28,8 @@ except:
 repl = {"@VERSION@": version,
         "@BUILD@": build,
         "@SOURCE_SUFFIX@": source_suffix,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 PREFIX = os.environ.get('PREFIX', 'ice')
 ICE_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
