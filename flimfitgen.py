@@ -35,7 +35,7 @@ repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2015b" \
     "/MCR_R2015b_maci64_installer.zip"
 
 for x, y in (
-        ("FLIMFIT_52_WIN", "artifacts/FLIMfit_@VERSION@_x64.zip"),
+        ("FLIMFIT_52_WIN", "artifacts/FLIMfit\ @VERSION@\ Setup\ x64.exe"),
         ("FLIMFIT_52_MAC", "artifacts/FLIMfit_@VERSION@_MACI64.zip"),
         ):
 
