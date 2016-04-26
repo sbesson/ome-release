@@ -23,9 +23,9 @@ except:
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.1.0'
-common_version = '5.2.0-m2'
-bf_version = '5.2.0-m2.5'
+superbuild_version = '0.1.1'
+common_version = '5.2.0'
+bf_version = '5.2.0-m3'
 bf_major_version, bf_minor_version = get_version(bf_version)
 qtwidgets_version = '5.2.0-m2'
 
@@ -116,26 +116,30 @@ ome_sources = [
           superbuild_version, superbuild_version))]
 
 thirdparty_sources = {
-    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.0-m2.5.tar.xz',
     'BOOST_SOURCE': 'boost_1_60_0.tar.bz2',
     'BZIP2_SOURCE': 'bzip2-1.0.6.tar.gz',
-    'PY_DOCUTILS_SOURCE': 'docutils-0.12.tar.gz',
-    'PY_GENSHI_SOURCE': 'Genshi-0.7.tar.gz',
-    'ICU_SOURCE': 'icu4c-55_1-src.tgz',
-    'PY_JINJA2_SOURCE': 'Jinja2-2.7.3.tar.gz',
-    'PNG_SOURCE': 'libpng-1.6.21.tar.xz',
-    'PY_MARKUPSAFE_SOURCE': 'MarkupSafe-0.23.tar.gz',
-    'TP_COMMON_SOURCE': 'ome-common-cpp-5.2.0-m2.tar.xz',
-    'TP_FILES_SOURCE': 'ome-files-cpp-0.1.0.tar.xz',
-    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.2.0-m2.tar.xz',
-    'PY_PYGMENTS_SOURCE': 'Pygments-2.0.2.tar.gz',
     'GTEST_SOURCE': 'release-1.7.0.tar.gz',
-    'PY_SETUPTOOLS_SOURCE': 'setuptools-18.3.2.tar.gz',
-    'PY_SPHINX_SOURCE': 'Sphinx-1.2.3.tar.gz',
+    'ICU_SOURCE': 'icu4c-56_1-src.tgz',
+    'PNG_SOURCE': 'libpng-1.6.21.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
+    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.0-m3.tar.xz',
+    'TP_COMMON_SOURCE': 'ome-common-cpp-5.2.0.tar.xz',
+    'TP_FILES_SOURCE': 'ome-files-cpp-0.1.1.tar.xz',
+    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.2.0-m2.tar.xz',
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.3.tar.xz',
     'ZLIB_SOURCE': 'zlib-1.2.8.tar.xz'}
+
+thirdparty_tools = {
+    'PATCH_SOURCE': 'patch-2.5.9-7-bin.zip',
+    'PY_DOCUTILS_SOURCE': 'docutils-0.12.tar.gz',
+    'PY_GENSHI_SOURCE': 'Genshi-0.7.tar.gz',
+    'PY_JINJA2_SOURCE': 'Jinja2-2.7.3.tar.gz',
+    'PY_MARKUPSAFE_SOURCE': 'MarkupSafe-0.23.tar.gz',
+    'PY_PYGMENTS_SOURCE': 'Pygments-2.0.2.tar.gz',
+    'PY_SETUPTOOLS_SOURCE': 'setuptools-18.3.2.tar.gz',
+    'PY_SPHINX_SOURCE': 'Sphinx-1.2.3.tar.gz',
+    'TOFRODOS_SOURCE': 'tfd1713.zip'}
 
 # Links to Bio-Formats C++ artifacts
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
@@ -185,6 +189,10 @@ for src in thirdparty_sources.keys():
     files_cpp_artifacts.append(
         (src,
          'sources/%s' % (thirdparty_sources[src])))
+for src in thirdparty_tools.keys():
+    files_cpp_artifacts.append(
+        (src,
+         'tools/%s' % (thirdparty_tools[src])))
 
 for x, y in ome_sources + files_cpp_artifacts:
     find_pkg(repl, FILESCPP_RSYNC_PATH, x, y)
