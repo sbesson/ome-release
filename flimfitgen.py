@@ -20,7 +20,8 @@ except:
     usage()
 
 repl = {"@VERSION@": version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y")}
+        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
+        "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 RSYNC_PATH = os.environ.get('RSYNC_PATH', '/ome/data_repo/public/')
 PREFIX = os.environ.get('PREFIX', 'flimfit')
@@ -34,8 +35,8 @@ repl["@MCR_MAC@"] = "http://www.mathworks.com/supportfiles/downloads/R2015b" \
     "/MCR_R2015b_maci64_installer.zip"
 
 for x, y in (
-        ("FLIMFIT_51_WIN", "artifacts/FLIMfit_@VERSION@_x64.zip"),
-        ("FLIMFIT_51_MAC", "artifacts/FLIMfit_@VERSION@_MACI64.zip"),
+        ("FLIMFIT_52_WIN", "artifacts/FLIMfit @VERSION@ Setup x64.exe"),
+        ("FLIMFIT_52_MAC", "artifacts/FLIMfit_@VERSION@_MACI64.zip"),
         ):
 
     find_pkg(repl, FLIMFIT_RSYNC_PATH, x, y)
