@@ -57,17 +57,17 @@
                             >Self-contained "super" builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#platform"
                             >Platform builds</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#docs"
                             >Documentation</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                            href="#code">Code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="#code">Source code</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                             href="#previous">Previous versions</a>
                     </strong></p>
                 <ul>
                     <li>
                         <p>Full OME Files documentation is available <a
-                                href="@DOC_URL@">here</a>.</p>
+                                href="@DOC_FILES_URL@">here</a>.</p>
                     </li>
                     <li>
-                        <p>Documentation for the native OME Files C++ interface is available to read on the web <a
-                                href="@DOC_URL@/overview.html">starting here</a>.</p>
+                        <p>Documentation for the native OME Files C++ API is available to read on the web <a
+                                href="@FILES_API_URL@">starting here</a>.</p>
                     </li>
                     <li>
                         <p>Standalone "super" builds are
@@ -97,7 +97,7 @@
                            libraries difficult. In all cases you
                            should be able to build from source to work
                            on operating systems which meet
-                           the <a href="@DOC_URL@/overview.html">requirements</a>.
+                           the <a href="@DOC_SUPERBUILD_URL@prerequisites.html">requirements</a>.
                            This will ensure your build is compatible
                            with the libraries available on the
                            system.</p>
@@ -218,6 +218,36 @@
                                 <td align="right">@WINDOWSVC12X86_DEBUG_SIZE@</td>
                                 <td align="center"><a href="@WINDOWSVC12X86_DEBUG@.sha1">@WINDOWSVC12X86_DEBUG_SHA1@</a></td>
                             </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_windows.png"
+                                                     alt="Windows"/></td>
+                                <td rowspan="2">Windows&nbsp;VC14&nbsp;64&#8209;bit (VS2015)</td>
+                                <td>Release</td>
+                                <td><a href="@WINDOWSVC14X64_RELEASE@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC14X64_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC14X64_RELEASE@.sha1">@WINDOWSVC14X64_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@WINDOWSVC14X64_DEBUG@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC14X64_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC14X64_DEBUG@.sha1">@WINDOWSVC14X64_DEBUG_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><img src="images/square_windows.png"
+                                                     alt="Windows"/></td>
+                                <td rowspan="2">Windows&nbsp;VC14&nbsp;32&#8209;bit (VS2015)</td>
+                                <td>Release</td>
+                                <td><a href="@WINDOWSVC14X86_RELEASE@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC14X86_RELEASE_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC14X86_RELEASE@.sha1">@WINDOWSVC14X86_RELEASE_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td>Debug</td>
+                                <td><a href="@WINDOWSVC14X86_DEBUG@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@WINDOWSVC14X86_DEBUG_SIZE@</td>
+                                <td align="center"><a href="@WINDOWSVC14X86_DEBUG@.sha1">@WINDOWSVC14X86_DEBUG_SHA1@</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -267,12 +297,17 @@
                                 <th>SHA1</th>
                             </tr>
                             <tr>
-                                <td><img src="images/square_docs.png"
-                                         alt="Documentation"/></td>
-                                <td>API&nbsp;reference</td>
-                                <td><a href="@DOXYGEN@"><img src="images/square_txz.png" alt="txz"/></a></td>
-                                <td align="right">@DOXYGEN_SIZE@</td>
-                                <td align="center"><a href="@DOXYGEN@.sha1">@DOXYGEN_SHA1@</a></td>
+                                <td rowspan="2"><img src="images/square_docs.png"
+                                                     alt="Documentation"/></td>
+                                <td rowspan="2">API&nbsp;reference</td>
+                                <td><a href="@DOCS_BUNDLE_TAR@"><img src="images/square_txz.png" alt="txz"/></a></td>
+                                <td align="right">@DOCS_BUNDLE_TAR_SIZE@</td>
+                                <td align="center"><a href="@DOCS_BUNDLE_TAR@.sha1">@DOCS_BUNDLE_TAR_SHA1@</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="@DOCS_BUNDLE_ZIP@"><img src="images/square_zip.png" alt="zip"/></a></td>
+                                <td align="right">@DOCS_BUNDLE_ZIP_SIZE@</td>
+                                <td align="center"><a href="@DOCS_BUNDLE_ZIP@.sha1">@DOCS_BUNDLE_ZIP_SHA1@</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -287,9 +322,15 @@
                             </tr>
                             <tr>
                                 <td><img src="images/square_docs.png"
-                                                     alt="Documentation"/></td>
-                                <td>Manual</td>
-                                <td><a href="@DOC_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                                                     alt="OME Files C++ Documentation"/></td>
+                                <td>OME Files C++ Manual</td>
+                                <td><a href="@DOC_FILES_URL@"><img src="images/square_link.png" alt="link"/></a></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/square_docs.png"
+                                                     alt="OME CMake Super-Build Documentation"/></td>
+                                <td>OME CMake Super-Build Manual</td>
+                                <td><a href="@DOC_SUPERBUILD_URL@"><img src="images/square_link.png" alt="link"/></a></td>
                             </tr>
                             <tr>
                                 <td><img src="images/square_docs.png"
@@ -609,9 +650,9 @@
                         href="http://www.openmicroscopy.org/site/about/licensing-attribution/licensing"
                         >Creative Commons Attribution 3.0 Unported License</a>
                 </p>
-                <p> OME source code is available under the <a
+                <p> OME Files C++ source code is available under the <a
                         href="http://www.openmicroscopy.org/site/about/licensing"
-                        >GNU General public license</a> or through commercial
+                        >2-clause BSD license</a> or through commercial
                     license from <a
                         href="http://www.openmicroscopy.org/site/about/development-teams/glencoe-software"
                         >Glencoe Software</a>
