@@ -9,9 +9,6 @@ import fileinput
 from utils import RSYNC_PATH, get_version, get_tag_url
 from doc_generator import find_pkg, repl_all
 
-latest_url = ("http://ci.openmicroscopy.org/job/BIOFORMATS-5.1-latest/"
-              "lastSuccessfulBuild/artifact/artifacts")
-
 
 def usage():
     print "bfgen.py version"
@@ -66,8 +63,6 @@ for x, y in (
         ):
 
     find_pkg(repl, BF_RSYNC_PATH, x, y)
-
-    repl["@LATEST_%s@" % x] = "%s/%s" % (latest_url, x)
 
 for line in fileinput.input(["bf_downloads.html"]):
     print repl_all(repl, line, check_http=True),
