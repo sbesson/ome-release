@@ -23,11 +23,11 @@ except:
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.2.0'
-common_version = '5.3.0'
-bf_version = '5.2.0-m5'
+superbuild_version = '0.2.1'
+common_version = '5.3.1'
+bf_version = '5.2.2'
 bf_major_version, bf_minor_version = get_version(bf_version)
-qtwidgets_version = '5.3.0'
+qtwidgets_version = '5.3.1'
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
@@ -51,6 +51,9 @@ repl["@FILES_TAG_URL@"] = get_tag_url("ome-files-cpp",
 repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets",
                                           qtwidgets_version, org="ome")
 
+repl["@DOC_URL@"] = (
+    "docs/ome-files-bundle-docs-%s-b%s/" %
+    (files_version, buildid))
 repl["@DOC_FILES_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/ome-files/manual/html/" %
     (files_version, buildid))
@@ -123,12 +126,12 @@ thirdparty_sources = {
     'BZIP2_SOURCE': 'bzip2-1.0.6.tar.gz',
     'GTEST_SOURCE': 'release-1.7.0.tar.gz',
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
-    'PNG_SOURCE': 'libpng-1.6.23.tar.xz',
+    'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
-    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.0-m5.tar.xz',
-    'TP_COMMON_SOURCE': 'ome-common-cpp-5.3.0.tar.xz',
-    'TP_FILES_SOURCE': 'ome-files-cpp-0.2.0.tar.xz',
-    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.3.0.tar.xz',
+    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.2.tar.xz',
+    'TP_COMMON_SOURCE': 'ome-common-cpp-5.3.1.tar.xz',
+    'TP_FILES_SOURCE': 'ome-files-cpp-0.2.1.tar.xz',
+    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.3.1.tar.xz',
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.4.tar.xz',
     'ZLIB_SOURCE': 'zlib-1.2.8.tar.xz'}
@@ -147,6 +150,7 @@ thirdparty_tools = {
 # Links to Bio-Formats C++ binaries
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1011':    'MacOSX10.11-x86_64',
+             'FREEBSD11':  'FreeBSD11.0-amd64',
              'CENTOS67':   'CentOS6.7-x86_64',
              'CENTOS72':   'CentOS7.2-x86_64'}
 
