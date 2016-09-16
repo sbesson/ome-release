@@ -51,6 +51,9 @@ repl["@FILES_TAG_URL@"] = get_tag_url("ome-files-cpp",
 repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets",
                                           qtwidgets_version, org="ome")
 
+repl["@DOC_URL@"] = (
+    "docs/ome-files-bundle-docs-%s-b%s/" %
+    (files_version, buildid))
 repl["@DOC_FILES_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/ome-files/manual/html/" %
     (files_version, buildid))
