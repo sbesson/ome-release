@@ -150,6 +150,7 @@ thirdparty_tools = {
 # Links to Bio-Formats C++ binaries
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1011':    'MacOSX10.11-x86_64',
+             'FREEBSD11':  'FreeBSD11.0-amd64',
              'CENTOS67':   'CentOS6.7-x86_64',
              'CENTOS72':   'CentOS7.2-x86_64'}
 
