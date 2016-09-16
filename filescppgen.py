@@ -23,11 +23,11 @@ except:
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.2.0'
-common_version = '5.3.0'
-bf_version = '5.2.0-m5'
+superbuild_version = '0.2.1'
+common_version = '5.3.1'
+bf_version = '5.2.2'
 bf_major_version, bf_minor_version = get_version(bf_version)
-qtwidgets_version = '5.3.0'
+qtwidgets_version = '5.3.1'
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
