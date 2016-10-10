@@ -23,11 +23,11 @@ except:
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.2.1'
-common_version = '5.3.1'
-bf_version = '5.2.2'
+superbuild_version = '0.2.2'
+common_version = '5.3.2'
+bf_version = '5.2.3'
 bf_major_version, bf_minor_version = get_version(bf_version)
-qtwidgets_version = '5.3.1'
+qtwidgets_version = '5.3.2'
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
@@ -122,9 +122,9 @@ ome_sources = [
           superbuild_version, superbuild_version))]
 
 thirdparty_sources = {
-    'BOOST_SOURCE': 'boost_1_61_0.tar.bz2',
+    'BOOST_SOURCE': 'boost_1_62_0.tar.bz2',
     'BZIP2_SOURCE': 'bzip2-1.0.6.tar.gz',
-    'GTEST_SOURCE': 'release-1.7.0.tar.gz',
+    'GTEST_SOURCE': 'release-1.8.0.tar.gz',
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
     'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
