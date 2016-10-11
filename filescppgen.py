@@ -128,7 +128,7 @@ thirdparty_sources = {
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
     'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
-    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.2.tar.xz',
+    'TP_BF_SOURCE': 'bioformats-dfsg-5.2.3.tar.xz',
     'TP_COMMON_SOURCE': 'ome-common-cpp-5.3.1.tar.xz',
     'TP_FILES_SOURCE': 'ome-files-cpp-0.2.1.tar.xz',
     'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.3.1.tar.xz',
