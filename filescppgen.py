@@ -129,9 +129,9 @@ thirdparty_sources = {
     'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
     'TP_BF_SOURCE': 'bioformats-dfsg-5.2.3.tar.xz',
-    'TP_COMMON_SOURCE': 'ome-common-cpp-5.3.1.tar.xz',
-    'TP_FILES_SOURCE': 'ome-files-cpp-0.2.1.tar.xz',
-    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.3.1.tar.xz',
+    'TP_COMMON_SOURCE': 'ome-common-cpp-5.3.2.tar.xz',
+    'TP_FILES_SOURCE': 'ome-files-cpp-0.2.2.tar.xz',
+    'TP_QTWIDGETS_SOURCE': 'ome-qtwidgets-5.3.2.tar.xz',
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.4.tar.xz',
     'ZLIB_SOURCE': 'zlib-1.2.8.tar.xz'}
