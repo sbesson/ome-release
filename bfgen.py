@@ -38,7 +38,7 @@ for x, y in (
         ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
         ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
         ("OCTAVE_PACKAGE", "artifacts/bioformats-octave-@VERSION@.tar.gz"),
-        ("DOC", "artifacts/Bio-Formats-@VERSION@.zip"),
+        ("DOC", "artifacts/bio-formats-doc-@VERSION@.zip"),
         ("JAVADOCS", "artifacts/bio-formats-javadocs-@VERSION@.zip"),
         ("SOURCE_CODE_ZIP", "artifacts/bioformats-@VERSION@.zip"),
         ("SOURCE_CODE_TXZ", "artifacts/bioformats-@VERSION@.tar.xz"),
