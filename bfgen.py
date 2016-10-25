@@ -53,11 +53,7 @@ for x, y in (
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("loci_tools.jar", "artifacts/loci_tools.jar"),
         ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
-        ("mdbtools-java.jar", "artifacts/mdbtools-java.jar"),
         ("metakit.jar", "artifacts/metakit.jar"),
-        ("ome-xml.jar", "artifacts/ome-xml.jar"),
-        ("ome-poi.jar", "artifacts/ome-poi.jar"),
-        ("specification.jar", "artifacts/specification.jar"),
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ):
 
