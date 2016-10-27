@@ -48,7 +48,6 @@ for x, y in (
          "artifacts/bio-formats-testing-framework.jar"),
         ("formats-api.jar", "artifacts/formats-api.jar"),
         ("formats-bsd.jar", "artifacts/formats-bsd.jar"),
-        ("formats-bsd-test.jar", "artifacts/formats-bsd-test.jar"),
         ("formats-gpl.jar", "artifacts/formats-gpl.jar"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("loci_tools.jar", "artifacts/loci_tools.jar"),
