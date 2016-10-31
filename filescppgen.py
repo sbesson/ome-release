@@ -152,7 +152,7 @@ thirdparty_tools = {
 platforms = {'UBUNTU1404': 'Ubuntu14.04-x86_64',
              'OSX1012':    'MacOSX10.12-x86_64',
              'FREEBSD11':  'FreeBSD11.0-amd64',
-             'CENTOS67':   'CentOS6.7-x86_64',
+             'CENTOS68':   'CentOS6.8-x86_64',
              'CENTOS72':   'CentOS7.2-x86_64'}
 
 win_platforms = {'WINDOWSVC12X64': 'VC12-x64',
