@@ -51,8 +51,6 @@ for x, y in (
         ("formats-gpl.jar", "artifacts/formats-gpl.jar"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
         ("loci_tools.jar", "artifacts/loci_tools.jar"),
-        ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
-        ("metakit.jar", "artifacts/metakit.jar"),
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ):
 
