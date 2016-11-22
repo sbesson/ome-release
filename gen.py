@@ -14,6 +14,7 @@ def usage():
     print "gen.py version build"
     sys.exit(1)
 
+
 try:
     version = sys.argv[1]
     build = sys.argv[2]

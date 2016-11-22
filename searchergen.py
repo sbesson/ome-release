@@ -15,6 +15,7 @@ def usage():
     print "searchergen.py version pyslidversion ricercaversion buildnum"
     sys.exit(1)
 
+
 try:
     version = sys.argv[1]
     pyslidversion = sys.argv[2]

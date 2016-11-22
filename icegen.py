@@ -15,6 +15,7 @@ def usage():
     print "icegen.py version build [source_suffix]"
     sys.exit(1)
 
+
 try:
     version = sys.argv[1]
     build = sys.argv[2]

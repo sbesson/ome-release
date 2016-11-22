@@ -14,6 +14,7 @@ def usage():
     print "utrackgen.py version"
     sys.exit(1)
 
+
 try:
     version = sys.argv[1]
 except:
