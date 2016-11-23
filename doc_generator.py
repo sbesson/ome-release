@@ -16,6 +16,7 @@ class HeadRequest(Request):
     def get_method(self):
         return 'HEAD'
 
+
 # create an opener that will simulate a browser user-agent
 opener = build_opener()
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
@@ -106,6 +107,7 @@ def repl_all(repl, line, check_http=False):
                 if not status == 'working' and not status == 'redirected':
                     raise Exception("%s: %s" % (url, info))
     return line
+
 
 suffixes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
