@@ -51,9 +51,7 @@ for x, y in (
         ("formats-bsd.jar", "artifacts/formats-bsd.jar"),
         ("formats-gpl.jar", "artifacts/formats-gpl.jar"),
         ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
-        ("loci-tools.jar", "artifacts/loci-tools.jar"),
-        ("lwf-stubs.jar", "artifacts/lwf-stubs.jar"),
-        ("metakit.jar", "artifacts/metakit.jar"),
+        ("loci_tools.jar", "artifacts/loci_tools.jar"),
         ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
         ):
 
