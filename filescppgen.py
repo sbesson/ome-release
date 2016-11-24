@@ -24,7 +24,7 @@ except:
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.2.3'
+superbuild_version = '0.2.4'
 common_version = '5.3.2'
 bf_version = '5.2.4'
 bf_major_version, bf_minor_version = get_version(bf_version)
@@ -128,7 +128,7 @@ thirdparty_sources = {
     'GTEST_SOURCE': 'release-1.8.0.tar.gz',
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
     'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
-    'TIFF_SOURCE': 'tiff-4.0.6.tar.gz',
+    'TIFF_SOURCE': 'tiff-4.0.7.tar.gz',
     'TP_BF_SOURCE': 'bioformats-dfsg-%s.tar.xz' % (bf_version),
     'TP_COMMON_SOURCE': 'ome-common-cpp-%s.tar.xz' % (common_version),
     'TP_FILES_SOURCE': 'ome-files-cpp-%s.tar.xz' % (files_version),
