@@ -28,7 +28,6 @@ superbuild_version = '0.2.4'
 common_version = '5.3.2'
 bf_version = '5.2.4'
 bf_major_version, bf_minor_version = get_version(bf_version)
-qtwidgets_version = '5.3.2'
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
@@ -36,7 +35,6 @@ repl = {"@VERSION@": files_version,
         "@XML_VERSION@": bf_version,
         "@COMMON_VERSION@": common_version,
         "@FILES_VERSION@": files_version,
-        "@QTWIDGETS_VERSION@": qtwidgets_version,
         "@SUPERBUILD_VERSION@": superbuild_version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
         "@YEAR@": datetime.datetime.now().strftime("%Y")}
@@ -49,8 +47,6 @@ repl["@COMMON_TAG_URL@"] = get_tag_url("ome-common-cpp",
 repl["@XML_TAG_URL@"] = get_tag_url("bioformats", bf_version)
 repl["@FILES_TAG_URL@"] = get_tag_url("ome-files-cpp",
                                       files_version, org="ome")
-repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets",
-                                          qtwidgets_version, org="ome")
 
 repl["@DOC_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/" %
@@ -69,9 +65,6 @@ repl["@XML_API_URL@"] = (
     (files_version, buildid))
 repl["@FILES_API_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/ome-files/api/html/" %
-    (files_version, buildid))
-repl["@QTWIDGETS_API_URL@"] = (
-    "docs/ome-files-bundle-docs-%s-b%s/ome-qtwidgets/api/html/" %
     (files_version, buildid))
 
 PREFIX = os.environ.get('PREFIX', 'ome-files-cpp')
@@ -105,14 +98,6 @@ ome_sources = [
      ("ome-files-cpp/%s/source/" +
       "ome-files-cpp-%s.zip") % (
           files_version, files_version)),
-    ("QTWIDGETS_SOURCE_TXZ", RELATIVE_PATH +
-     ("ome-qtwidgets/%s/source/" +
-      "ome-qtwidgets-%s.tar.xz") % (
-          qtwidgets_version, qtwidgets_version)),
-    ("QTWIDGETS_SOURCE_ZIP", RELATIVE_PATH +
-     ("ome-qtwidgets/%s/source/" +
-      "ome-qtwidgets-%s.zip") % (
-          qtwidgets_version, qtwidgets_version)),
     ("SUPERBUILD_SOURCE_TXZ", RELATIVE_PATH +
      ("ome-cmake-superbuild/%s/source/" +
       "ome-cmake-superbuild-%s.tar.xz") % (
@@ -132,8 +117,6 @@ thirdparty_sources = {
     'TP_BF_SOURCE': 'bioformats-dfsg-%s.tar.xz' % (bf_version),
     'TP_COMMON_SOURCE': 'ome-common-cpp-%s.tar.xz' % (common_version),
     'TP_FILES_SOURCE': 'ome-files-cpp-%s.tar.xz' % (files_version),
-    'TP_QTWIDGETS_SOURCE':
-        'ome-qtwidgets-%s.tar.xz' % (qtwidgets_version),
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.4.tar.xz',
     'ZLIB_SOURCE': 'zlib-1.2.8.tar.xz'}
