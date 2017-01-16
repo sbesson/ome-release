@@ -59,7 +59,6 @@ for x, y in (
         ("JAVA35", "artifacts/OMERO.java-@VERSION@-ice35-@BUILD@.zip"),
         ("JAVA36", "artifacts/OMERO.java-@VERSION@-ice36-@BUILD@.zip"),
         ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice35-@BUILD@.zip"),
-        ("DOC", "artifacts/OMERO-@VERSION@.pdf"),
         ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
         ):
 
