@@ -43,22 +43,22 @@ repl["@MILESTONE@"] = os.environ.get('MILESTONE', "OMERO-%s" % version)
 
 for x, y in (
         ("LINUX_INSIGHT",
-         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-linux.zip"),
+         "artifacts/OMERO.insight-@VERSION@-ice36-@BUILD@-linux.zip"),
         ("MAC_INSIGHT",
-         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-mac.zip"),
+         "artifacts/OMERO.insight-@VERSION@-ice36-@BUILD@-mac.zip"),
         ("WIN_INSIGHT",
-         "artifacts/OMERO.insight-@VERSION@-ice35-@BUILD@-win.zip"),
+         "artifacts/OMERO.insight-@VERSION@-ice36-@BUILD@-win.zip"),
         ("IJ_CLIENTS",
-         "artifacts/OMERO.insight-ij-@VERSION@-ice35-@BUILD@.zip"),
+         "artifacts/OMERO.insight-ij-@VERSION@-ice36-@BUILD@.zip"),
         ("MATLAB_CLIENTS",
-         "artifacts/OMERO.matlab-@VERSION@-ice35-@BUILD@.zip"),
+         "artifacts/OMERO.matlab-@VERSION@-ice36-@BUILD@.zip"),
         ("SERVER35", "artifacts/OMERO.server-@VERSION@-ice35-@BUILD@.zip"),
         ("SERVER36", "artifacts/OMERO.server-@VERSION@-ice36-@BUILD@.zip"),
         ("PYTHON35", "artifacts/OMERO.py-@VERSION@-ice35-@BUILD@.zip"),
         ("PYTHON36", "artifacts/OMERO.py-@VERSION@-ice36-@BUILD@.zip"),
         ("JAVA35", "artifacts/OMERO.java-@VERSION@-ice35-@BUILD@.zip"),
         ("JAVA36", "artifacts/OMERO.java-@VERSION@-ice36-@BUILD@.zip"),
-        ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice35-@BUILD@.zip"),
+        ("DOCS", "artifacts/OMERO.docs-@VERSION@-ice36-@BUILD@.zip"),
         ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
         ):
 
