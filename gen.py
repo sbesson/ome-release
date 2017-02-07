@@ -56,7 +56,7 @@ for x, y in (
         ("PYTHON36", "artifacts/OMERO.py-@VERSION@-ice36-@BUILD@.zip"),
         ("JAVA36", "artifacts/OMERO.java-@VERSION@-ice36-@BUILD@.zip"),
         ("DOCS", "artifacts/OMERO.apidoc-@VERSION@-ice36-@BUILD@.zip"),
-        ("DOC", "artifacts/OMERO-doc-@VERSION@.zip"),
+        ("DOC", "artifacts/OMERO.doc-@VERSION@.zip"),
         ("SOURCE_CODE", "artifacts/openmicroscopy-@VERSION@.zip"),
         ):
 
