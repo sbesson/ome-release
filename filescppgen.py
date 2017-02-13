@@ -16,25 +16,25 @@ def usage():
 
 
 try:
-    files_version = sys.argv[1]
-    buildid = sys.argv[2]
+    buildid = sys.argv[1]
 except:
     usage()
 
 # Read major and minor version from input version
 major_version, minor_version = get_version(files_version)
 
-superbuild_version = '0.2.4'
-common_version = '5.3.2'
-bf_version = '5.2.4'
-bf_major_version, bf_minor_version = get_version(bf_version)
+superbuild_version = '0.3.0'
+common_version = '5.4.0'
+model_version = '5.5.0'
+files_version = '0.3.0'
+qtwidgets_version = '5.4.0'
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
-        "@BF_VERSION@": bf_version,
-        "@XML_VERSION@": bf_version,
+        "@MODEL_VERSION@": model_version,
         "@COMMON_VERSION@": common_version,
         "@FILES_VERSION@": files_version,
+        "@QTWIDGETS_VERSION@": qtwidgets_version,
         "@SUPERBUILD_VERSION@": superbuild_version,
         "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
         "@YEAR@": datetime.datetime.now().strftime("%Y")}
@@ -44,9 +44,10 @@ repl["@SUPERBUILD_TAG_URL@"] = get_tag_url("ome-cmake-superbuild",
                                            org="ome")
 repl["@COMMON_TAG_URL@"] = get_tag_url("ome-common-cpp",
                                        common_version, org="ome")
-repl["@XML_TAG_URL@"] = get_tag_url("bioformats", bf_version)
+repl["@MODEL_TAG_URL@"] = get_tag_url("ome-model", model_version)
 repl["@FILES_TAG_URL@"] = get_tag_url("ome-files-cpp",
                                       files_version, org="ome")
+repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets", qtwidgets_version)
 
 repl["@DOC_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/" %
@@ -82,14 +83,14 @@ ome_sources = [
      ("ome-common-cpp/%s/source/" +
       "ome-common-cpp-%s.zip") % (
           common_version, common_version)),
-    ("BF_SOURCE_TXZ", RELATIVE_PATH +
-     ("bio-formats/%s/artifacts/" +
-      "bioformats-dfsg-%s.tar.xz") % (
-          bf_version, bf_version)),
-    ("BF_SOURCE_ZIP", RELATIVE_PATH +
-     ("bio-formats/%s/artifacts/" +
-      "bioformats-dfsg-%s.zip") % (
-          bf_version, bf_version)),
+    ("MODEL_SOURCE_TXZ", RELATIVE_PATH +
+     ("ome-model/%s/artifacts/" +
+      "ome-model-%s.tar.xz") % (
+          model_version, model_version)),
+    ("MODEL_SOURCE_ZIP", RELATIVE_PATH +
+     ("ome-model/%s/artifacts/" +
+      "ome-model-%s.zip") % (
+          model_version, model_version)),
     ("FILES_SOURCE_TXZ", RELATIVE_PATH +
      ("ome-files-cpp/%s/source/" +
       "ome-files-cpp-%s.tar.xz") % (
@@ -98,6 +99,14 @@ ome_sources = [
      ("ome-files-cpp/%s/source/" +
       "ome-files-cpp-%s.zip") % (
           files_version, files_version)),
+    ("QTWIDGETS_SOURCE_TXZ", RELATIVE_PATH +
+     ("ome-qtwidgets-cpp/%s/source/" +
+      "ome-qtwidgets-cpp-%s.tar.xz") % (
+          qtwidgets_version, qtwidgets_version)),
+    ("QTWIDGETS_SOURCE_ZIP", RELATIVE_PATH +
+     ("ome-qtwidgets-cpp/%s/source/" +
+      "ome-qtwidgets-cpp-%s.zip") % (
+          qtwidgets_version, qtwidgets_version)),
     ("SUPERBUILD_SOURCE_TXZ", RELATIVE_PATH +
      ("ome-cmake-superbuild/%s/source/" +
       "ome-cmake-superbuild-%s.tar.xz") % (
@@ -108,22 +117,18 @@ ome_sources = [
           superbuild_version, superbuild_version))]
 
 thirdparty_sources = {
-    'BOOST_SOURCE': 'boost_1_62_0.tar.bz2',
+    'BOOST_SOURCE': 'boost_1_63_0.tar.bz2',
     'BZIP2_SOURCE': 'bzip2-1.0.6.tar.gz',
     'GTEST_SOURCE': 'release-1.8.0.tar.gz',
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
-    'PNG_SOURCE': 'libpng-1.6.25.tar.xz',
+    'PNG_SOURCE': 'libpng-1.6.28.tar.xz',
     'TIFF_SOURCE': 'tiff-4.0.7.tar.gz',
-    'TP_BF_SOURCE': 'bioformats-dfsg-%s.tar.xz' % (bf_version),
-    'TP_COMMON_SOURCE': 'ome-common-cpp-%s.tar.xz' % (common_version),
-    'TP_FILES_SOURCE': 'ome-files-cpp-%s.tar.xz' % (files_version),
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.4.tar.xz',
-    'ZLIB_SOURCE': 'zlib-1.2.8.tar.xz'}
+    'ZLIB_SOURCE': 'zlib-1.2.10.tar.xz'}
 
 thirdparty_tools = {
     'PATCH_SOURCE': 'patch-2.5.9-7-bin.zip',
-    'PY_DOCUTILS_SOURCE': 'docutils-0.12.tar.gz',
     'PY_GENSHI_SOURCE': 'Genshi-0.7.tar.gz',
     'PY_JINJA2_SOURCE': 'Jinja2-2.7.3.tar.gz',
     'PY_MARKUPSAFE_SOURCE': 'MarkupSafe-0.23.tar.gz',
