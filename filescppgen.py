@@ -11,7 +11,7 @@ from doc_generator import find_pkg, repl_all
 
 
 def usage():
-    print "filescppgen.py version buildid"
+    print "filescppgen.py buildid"
     sys.exit(1)
 
 
