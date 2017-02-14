@@ -11,12 +11,13 @@ from doc_generator import find_pkg, repl_all
 
 
 def usage():
-    print "filescppgen.py buildid"
+    print "filescppgen.py files_version buildid"
     sys.exit(1)
 
 
 try:
-    buildid = sys.argv[1]
+    files_job_version = sys.argv[1]
+    buildid = sys.argv[2]
 except:
     usage()
 
@@ -25,6 +26,10 @@ common_version = '5.4.0'
 model_version = '5.5.0'
 files_version = '0.3.0'
 qtwidgets_version = '5.4.0'
+
+if files_job_version != files_version:
+    print "files version mismatch"
+    sys.exit(1)
 
 repl = {"@VERSION@": files_version,
         "@BUILDID@": buildid,
