@@ -41,10 +41,13 @@ repl["@SUPERBUILD_TAG_URL@"] = get_tag_url("ome-cmake-superbuild",
                                            org="ome")
 repl["@COMMON_TAG_URL@"] = get_tag_url("ome-common-cpp",
                                        common_version, org="ome")
-repl["@MODEL_TAG_URL@"] = get_tag_url("ome-model", model_version)
+repl["@MODEL_TAG_URL@"] = get_tag_url("ome-model", model_version,
+                                      org="ome")
 repl["@FILES_TAG_URL@"] = get_tag_url("ome-files-cpp",
                                       files_version, org="ome")
-repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets", qtwidgets_version)
+repl["@QTWIDGETS_TAG_URL@"] = get_tag_url("ome-qtwidgets",
+                                          qtwidgets_version,
+                                          org="ome")
 
 repl["@DOC_URL@"] = (
     "docs/ome-files-bundle-docs-%s-b%s/" %
