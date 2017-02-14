@@ -20,9 +20,6 @@ try:
 except:
     usage()
 
-# Read major and minor version from input version
-major_version, minor_version = get_version(files_version)
-
 superbuild_version = '0.3.0'
 common_version = '5.4.0'
 model_version = '5.5.0'
