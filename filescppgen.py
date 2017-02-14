@@ -105,12 +105,12 @@ ome_sources = [
       "ome-files-cpp-%s.zip") % (
           files_version, files_version)),
     ("QTWIDGETS_SOURCE_TXZ", RELATIVE_PATH +
-     ("ome-qtwidgets-cpp/%s/source/" +
-      "ome-qtwidgets-cpp-%s.tar.xz") % (
+     ("ome-qtwidgets/%s/source/" +
+      "ome-qtwidgets-%s.tar.xz") % (
           qtwidgets_version, qtwidgets_version)),
     ("QTWIDGETS_SOURCE_ZIP", RELATIVE_PATH +
-     ("ome-qtwidgets-cpp/%s/source/" +
-      "ome-qtwidgets-cpp-%s.zip") % (
+     ("ome-qtwidgets/%s/source/" +
+      "ome-qtwidgets-%s.zip") % (
           qtwidgets_version, qtwidgets_version)),
     ("SUPERBUILD_SOURCE_TXZ", RELATIVE_PATH +
      ("ome-cmake-superbuild/%s/source/" +
