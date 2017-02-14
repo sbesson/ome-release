@@ -89,11 +89,11 @@ ome_sources = [
       "ome-common-cpp-%s.zip") % (
           common_version, common_version)),
     ("MODEL_SOURCE_TXZ", RELATIVE_PATH +
-     ("ome-model/%s/artifacts/" +
+     ("ome-model/%s/source/" +
       "ome-model-%s.tar.xz") % (
           model_version, model_version)),
     ("MODEL_SOURCE_ZIP", RELATIVE_PATH +
-     ("ome-model/%s/artifacts/" +
+     ("ome-model/%s/source/" +
       "ome-model-%s.zip") % (
           model_version, model_version)),
     ("FILES_SOURCE_TXZ", RELATIVE_PATH +
