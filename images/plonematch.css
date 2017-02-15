@@ -450,8 +450,6 @@ blockquote {
     background-color: #000066;
     border-top: 14px solid #E6E7E8;
     border-bottom: 0px solid #B3B3E6;
-    background-image:  url(corner-cell.gif); 
-    layer-background-image: url(corner-cell.gif); 
     background-position: center right; 
     background-repeat: no-repeat;
 }
