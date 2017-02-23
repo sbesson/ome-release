@@ -21,10 +21,10 @@ try:
 except:
     usage()
 
-superbuild_version = '0.3.1'
+superbuild_version = '0.3.2'
 common_version = '5.4.0'
 model_version = '5.5.1'
-files_version = '0.3.1'
+files_version = '0.3.2'
 qtwidgets_version = '5.4.0'
 
 if files_job_version != files_version:
