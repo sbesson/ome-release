@@ -11,7 +11,7 @@ They are also used for each release of the following partner projects:
 - [u-track](http://downloads.openmicroscopy.org/u-track)
 - [OMERO.webtagging](http://downloads.openmicroscopy.org/webtagging)
 - [OMERO.searcher](http://downloads.openmicroscopy.org/searcher)
-- [OMERO.figure](http://downloads.openmicroscopy.org/figure)
+- [OMERO.figure](http://downloads.openmicroscopy.org/figure) (legacy versions)
 - [OMERO.mtools](http://downloads.openmicroscopy.org/mtools)
 
 and some custom third-party packages:
