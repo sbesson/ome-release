@@ -25,14 +25,14 @@ repl = {"@VERSION@": version,
         "@YEAR@": datetime.datetime.now().strftime("%Y")}
 
 PREFIX = os.environ.get('PREFIX', 'mtools')
-UTRACK_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
+MTOOLS_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
 for x, y in (
         ("MTOOLS_WIN", "OMERO.mtools_@VERSION@_win.zip"),
         ("MTOOLS_MAC", "OMERO.mtools_@VERSION@_mac.zip"),
         ):
 
-    find_pkg(repl, UTRACK_RSYNC_PATH, x, y)
+    find_pkg(repl, MTOOLS_RSYNC_PATH, x, y)
 
 for line in fileinput.input(["mtools_downloads.html"]):
     print repl_all(repl, line, check_http=True),
