@@ -19,8 +19,8 @@ def get_version(version):
     return (major_version, minor_version)
 
 
-def get_tag_url(repo_name, version, org="openmicroscopy",
-                fork="snoopycrimecop", prefix="v"):
+def get_tag(repo_name, version, org="openmicroscopy",
+            fork="snoopycrimecop", prefix="v"):
     """Return URL of GitHub tag matching a version"""
 
     # Retrieve organization and fork repositories
@@ -31,6 +31,29 @@ def get_tag_url(repo_name, version, org="openmicroscopy",
     for repo in (org_repo, fork_repo):
         for tag in repo.get_tags():
             if tag.name == ("%s%s" % (prefix, version)):
-                return repo.html_url + '/tree/' + tag.name
+                return tag
 
-    return repo.html_url + '/tree/' + tag.name
+    return None
+
+
+def get_tag_url(repo_name, version, org="openmicroscopy",
+                fork="snoopycrimecop", prefix="v"):
+    """Return URL of GitHub tag matching a version"""
+
+    # Retrieve organization and fork repositories
+    json = get_tag_json(repo_name, version, org=org, fork=fork, prefix=prefix)
+
+    return json['url']
+
+
+def get_tag_json(repo_name, version, org="openmicroscopy",
+                 fork="snoopycrimecop", prefix="v"):
+    """Return JSON for a GitHub tag"""
+
+    # Retrieve organization and fork repositories
+    tag = get_tag(repo_name, version, org=org, fork=fork, prefix=prefix)
+
+    if tag:
+        return {'sha': tag.sha, 'url': tag.url}
+    else:
+        return None

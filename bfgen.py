@@ -7,7 +7,7 @@ import datetime
 import fileinput
 import json
 
-from utils import RSYNC_PATH, get_version, get_tag_url
+from utils import RSYNC_PATH, get_version, get_tag_json
 from doc_generator import find_artifact, repl_all
 
 
@@ -23,8 +23,8 @@ except:
 
 d = {}
 d['version'] = version
-d['monthyear'] = datetime.datetime.now().strftime("%b %Y")
 d['year'] = datetime.datetime.now().strftime("%Y")
+d.update(get_tag_json(version))
 
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
 BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
@@ -37,7 +37,7 @@ repl = {
     "@VERSION@": d['version'],
     "@MONTHYEAR@": d['monthyear'],
     "@YEAR@": d['year'],
-    "@TAG_URL@": get_tag_url("bioformats", version),
+    "@TAG_URL@": d['url'],
     "@DOC_URL@": "http://docs.openmicroscopy.org/latest/bio-formats%s.%s" % (
         major_version, minor_version)
     }
