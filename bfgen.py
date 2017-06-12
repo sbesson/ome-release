@@ -46,7 +46,7 @@ artifacts = {
     'COMMAND_LINE_TOOLS': "artifacts/bftools.zip",
     'MATLAB_TOOLS': "artifacts/bfmatlab.zip",
     'OCTAVE_PACKAGE': "artifacts/bioformats-octave-%s.tar.gz" % version,
-    "DOC": "artifacts/bio-formats-doc-@VERSION@.zip",
+    "DOC": "artifacts/bio-formats-doc-%s.zip" % version,
     "JAVADOCS": "artifacts/bio-formats-javadocs-%s.zip" % version,
     "SOURCE_CODE_ZIP": "artifacts/bioformats-%s.zip" % version,
     "SOURCE_CODE_TXZ": "artifacts/bioformats-%s.tar.xz" % version,
