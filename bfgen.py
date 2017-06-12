@@ -24,7 +24,7 @@ except:
 d = {}
 d['version'] = version
 d['year'] = datetime.datetime.now().strftime("%Y")
-d.update(get_tag_json(version))
+d.update(get_tag_json("bioformats", version))
 
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
 BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
