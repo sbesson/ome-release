@@ -5,9 +5,10 @@ import os
 import sys
 import datetime
 import fileinput
+import json
 
 from utils import RSYNC_PATH, get_version, get_tag_url
-from doc_generator import find_pkg, repl_all
+from doc_generator import find_artifact, repl_all
 
 
 def usage():
@@ -20,42 +21,62 @@ try:
 except:
     usage()
 
-repl = {"@VERSION@": version,
-        "@MONTHYEAR@": datetime.datetime.now().strftime("%b %Y"),
-        "@YEAR@": datetime.datetime.now().strftime("%Y")}
-
-# Read major and minor version from input version
-major_version, minor_version = get_version(version)
-
-repl["@TAG_URL@"] = get_tag_url("bioformats", version)
-repl["@DOC_URL@"] = (
-    "http://www.openmicroscopy.org/site/support/bio-formats%s.%s"
-    % (major_version, minor_version))
+d = {}
+d['version'] = version
+d['monthyear'] = datetime.datetime.now().strftime("%b %Y")
+d['year'] = datetime.datetime.now().strftime("%Y")
 
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
 BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
-for x, y in (
-        ("COMMAND_LINE_TOOLS", "artifacts/bftools.zip"),
-        ("MATLAB_TOOLS", "artifacts/bfmatlab.zip"),
-        ("OCTAVE_PACKAGE", "artifacts/bioformats-octave-@VERSION@.tar.gz"),
-        ("DOC", "artifacts/bio-formats-doc-@VERSION@.zip"),
-        ("JAVADOCS", "artifacts/bio-formats-javadocs-@VERSION@.zip"),
-        ("SOURCE_CODE_ZIP", "artifacts/bioformats-@VERSION@.zip"),
-        ("SOURCE_CODE_TXZ", "artifacts/bioformats-@VERSION@.tar.xz"),
-        ("bioformats_package.jar", "artifacts/bioformats_package.jar"),
-        ("bio-formats_plugins.jar", "artifacts/bio-formats_plugins.jar"),
-        ("bio-formats-testing-framework.jar",
-         "artifacts/bio-formats-testing-framework.jar"),
-        ("formats-api.jar", "artifacts/formats-api.jar"),
-        ("formats-bsd.jar", "artifacts/formats-bsd.jar"),
-        ("formats-gpl.jar", "artifacts/formats-gpl.jar"),
-        ("jai_imageio.jar", "artifacts/jai_imageio.jar"),
-        ("loci_tools.jar", "artifacts/loci_tools.jar"),
-        ("turbojpeg.jar", "artifacts/turbojpeg.jar"),
-        ):
+# Read major and minor version from input version
+major_version, minor_version = get_version(version)
 
-    find_pkg(repl, BF_RSYNC_PATH, x, y)
+# Create replacement dictionary
+repl = {
+    "@VERSION@": d['version'],
+    "@MONTHYEAR@": d['monthyear'],
+    "@YEAR@": d['year'],
+    "@TAG_URL@": get_tag_url("bioformats", version),
+    "@DOC_URL@": "http://docs.openmicroscopy.org/latest/bio-formats%s.%s" % (
+        major_version, minor_version)
+    }
 
-for line in fileinput.input(["bf_downloads.html"]):
-    print repl_all(repl, line, check_http=True),
+artifacts = {
+    'COMMAND_LINE_TOOLS': "artifacts/bftools.zip",
+    'MATLAB_TOOLS': "artifacts/bfmatlab.zip",
+    'OCTAVE_PACKAGE': "artifacts/bioformats-octave-%s.tar.gz" % version,
+    "DOC": "artifacts/bio-formats-doc-@VERSION@.zip",
+    "JAVADOCS": "artifacts/bio-formats-javadocs-@VERSION@.zip",
+    "SOURCE_CODE_ZIP": "artifacts/bioformats-@VERSION@.zip",
+    "SOURCE_CODE_TXZ": "artifacts/bioformats-@VERSION@.tar.xz",
+    "bioformats_package.jar": "artifacts/bioformats_package.jar",
+    "bio-formats_plugins.jar": "artifacts/bio-formats_plugins.jar",
+    "bio-formats-testing-framework.jar":
+        "artifacts/bio-formats-testing-framework.jar",
+    "formats-api.jar": "artifacts/formats-api.jar",
+    "formats-bsd.jar": "artifacts/formats-bsd.jar",
+    "formats-gpl.jar": "artifacts/formats-gpl.jar",
+    "jai_imageio.jar": "artifacts/jai_imageio.jar",
+    "loci_tools.jar": "artifacts/loci_tools.jar",
+    "turbojpeg.jar": "artifacts/turbojpeg.jar",
+}
+
+
+d['artifacts'] = []
+for (k, v) in artifacts.iteritems():
+    artifact = find_artifact(BF_RSYNC_PATH, v)
+    d['artifacts'].append(artifact)
+    repl["@%s@" % k] = "./" + artifact['path']
+    repl["@%s_MD5@" % k] = artifact['md5'][0:8]
+    repl["@%s_SHA1@" % k] = artifact['sha1'][0:8]
+    repl["@%s_SIZE@" % k] = artifact['humansize']
+    repl["@%s_BASE@" % k] = os.path.basename(artifact['path'])
+
+
+with open('index.json', 'w') as outfile:
+    json.dump(d, outfile)
+
+with open('index.html', 'w') as outfile:
+    for line in fileinput.input(["bf_downloads.html"]):
+        outfile.write(repl_all(repl, line, check_http=True))

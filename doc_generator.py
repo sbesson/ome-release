@@ -91,7 +91,7 @@ def get_hash(filename, type):
 
     read_hash = None
     with open(filename + '.' + type, "r") as f:
-        read_hash = f.read()
+        read_hash = f.read().rsplit()[0]
     return read_hash
 
 
@@ -124,24 +124,25 @@ def humansize(nbytes):
     return '%s %s' % (f, suffixes[i])
 
 
-def find_pkg(repl, snapshot_path, name, path, ignore_md5=[]):
+def find_artifact(snapshot_path, path, ignore_md5=[]):
     """
     Mutates the repl argument
     """
-    path = repl_all(repl, path)
+    # path = repl_all(repl, path)
     rv = glob.glob(snapshot_path + path)
+    d = {}
+    d['path'] = path
     if len(rv) != 1:
-        raise Exception("Results!=1 for %s (%s): %s"
-                        % (name, snapshot_path + path, rv))
-    path = rv[0]
-    md5_hash = get_hash(path, 'md5')
-    sha1_hash = get_hash(path, 'sha1')
-    if "SKIP_MD5" not in os.environ and md5_hash not in ignore_md5:
-        furl = "/".join([FINGERPRINT_URL, md5_hash, "api", "xml"])
+        raise Exception("Results!=1 for %s: %s" % (snapshot_path + path, rv))
+    fullpath = rv[0]
+
+    d['md5'] = get_hash(fullpath, 'md5')
+    d['sha1'] = get_hash(fullpath, 'sha1')
+    d['size'] = os.path.getsize(fullpath)
+    d['humansize'] = humansize(d['size'])
+    d['name'] = os.path.basename(path)
+    if "SKIP_MD5" not in os.environ and d['md5'] not in ignore_md5:
+        furl = "/".join([FINGERPRINT_URL, d['md5'], "api", "xml"])
         if not check_url(furl):
             raise Exception("Error accessing %s for %s" % (furl, path))
-    repl["@%s@" % name] = "./" + path[len(snapshot_path):]
-    repl["@%s_MD5@" % name] = md5_hash[0:8]
-    repl["@%s_SHA1@" % name] = sha1_hash[0:8]
-    repl["@%s_SIZE@" % name] = humansize(os.path.getsize(path))
-    repl["@%s_BASE@" % name] = os.path.basename(path)
+    return d
