@@ -47,9 +47,9 @@ artifacts = {
     'MATLAB_TOOLS': "artifacts/bfmatlab.zip",
     'OCTAVE_PACKAGE': "artifacts/bioformats-octave-%s.tar.gz" % version,
     "DOC": "artifacts/bio-formats-doc-@VERSION@.zip",
-    "JAVADOCS": "artifacts/bio-formats-javadocs-@VERSION@.zip",
-    "SOURCE_CODE_ZIP": "artifacts/bioformats-@VERSION@.zip",
-    "SOURCE_CODE_TXZ": "artifacts/bioformats-@VERSION@.tar.xz",
+    "JAVADOCS": "artifacts/bio-formats-javadocs-%s.zip" % version,
+    "SOURCE_CODE_ZIP": "artifacts/bioformats-%s.zip" % version,
+    "SOURCE_CODE_TXZ": "artifacts/bioformats-%s.tar.xz" % version,
     "bioformats_package.jar": "artifacts/bioformats_package.jar",
     "bio-formats_plugins.jar": "artifacts/bio-formats_plugins.jar",
     "bio-formats-testing-framework.jar":
