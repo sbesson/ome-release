@@ -22,6 +22,7 @@ except:
     usage()
 
 d = {}
+d['component'] = 'bio-formats'
 d['version'] = version
 d['year'] = datetime.datetime.now().strftime("%Y")
 d.update(get_tag_json("bioformats", version))
