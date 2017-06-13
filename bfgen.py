@@ -7,7 +7,7 @@ import datetime
 import fileinput
 import json
 
-from utils import RSYNC_PATH, get_version, get_tag_json
+from utils import RSYNC_PATH, get_tag_json
 from doc_generator import find_artifact, repl_all
 
 
