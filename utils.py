@@ -54,6 +54,6 @@ def get_tag_json(repo_name, version, org="openmicroscopy",
     tag = get_tag(repo_name, version, org=org, fork=fork, prefix=prefix)
 
     if tag:
-        return {'sha': tag.commit.sha, 'url': tag.url}
+        return {'sha': tag.commit.sha, 'url': tag.commit.url}
     else:
         return None
