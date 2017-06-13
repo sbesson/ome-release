@@ -25,7 +25,7 @@ except:
 
 
 d = {}
-d['component'] = 'bio-formats'
+d['component'] = 'omero'
 d['version'] = version
 d['buildnumber'] = build
 d['year'] = datetime.datetime.now().strftime("%Y")
