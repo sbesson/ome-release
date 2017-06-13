@@ -30,17 +30,14 @@ d.update(get_tag_json("bioformats", version))
 PREFIX = os.environ.get('PREFIX', 'bio-formats')
 BF_RSYNC_PATH = '%s/%s/%s/' % (RSYNC_PATH, PREFIX, version)
 
-# Read major and minor version from input version
-major_version, minor_version = get_version(version)
 
 # Create replacement dictionary
 repl = {
     "@VERSION@": d['version'],
-    "@MONTHYEAR@": d['monthyear'],
     "@YEAR@": d['year'],
     "@TAG_URL@": d['url'],
-    "@DOC_URL@": "http://docs.openmicroscopy.org/latest/bio-formats%s.%s" % (
-        major_version, minor_version)
+    "@DOC_URL@": "https://docs.openmicroscopy.org/%s/%s" % (
+        d['component'], d['version'])
     }
 
 artifacts = {
