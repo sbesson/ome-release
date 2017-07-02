@@ -21,11 +21,11 @@ try:
 except:
     usage()
 
-superbuild_version = '0.3.2'
-common_version = '5.4.0'
-model_version = '5.5.1'
-files_version = '0.3.2'
-qtwidgets_version = '5.4.0'
+superbuild_version = '0.4.0'
+common_version = '5.4.2'
+model_version = '5.5.6'
+files_version = '0.4.0'
+qtwidgets_version = '5.4.2'
 
 if files_job_version != files_version:
     print "files version mismatch"
@@ -122,12 +122,12 @@ ome_sources = [
           superbuild_version, superbuild_version))]
 
 thirdparty_sources = {
-    'BOOST_SOURCE': 'boost_1_63_0.tar.bz2',
+    'BOOST_SOURCE': 'boost_1_64_0.tar.bz2',
     'BZIP2_SOURCE': 'bzip2-1.0.6.tar.gz',
     'GTEST_SOURCE': 'release-1.8.0.tar.gz',
     'ICU_SOURCE': 'icu4c-57_1-src.tgz',
-    'PNG_SOURCE': 'libpng-1.6.28.tar.xz',
-    'TIFF_SOURCE': 'tiff-4.0.7.tar.gz',
+    'PNG_SOURCE': 'libpng-1.6.30.tar.xz',
+    'TIFF_SOURCE': 'tiff-4.0.8.tar.gz',
     'XALAN_SOURCE': 'xalan_c-1.11-src.tar.gz',
     'XERCES_SOURCE': 'xerces-c-3.1.4.tar.xz',
     'ZLIB_SOURCE': 'zlib-1.2.10.tar.xz'}
